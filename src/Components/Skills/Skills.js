@@ -11,7 +11,7 @@ const Skills = () => {
       <h2 className={classes.Skill__title}>Skills</h2>
       <ul className={classes.Skill__list}>
         {skillsList.map((skill) => (
-          <li>
+          <li className={classes.Skill__item}>
             <SkillItem {...skill} />
           </li>
         ))}

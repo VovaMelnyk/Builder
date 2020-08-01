@@ -29,3 +29,14 @@
   font-size: 14px;
   line-height: 17px;
 }
+
+.Skill__item {
+  padding-bottom: 16px;
+}
+
+.SkillItem_plus {
+  background-image: url(../SkillItem/icons/plus.svg);
+  background-size: 11px 11px;
+  background-repeat: no-repeat;
+  background-position: left 20px center;
+}

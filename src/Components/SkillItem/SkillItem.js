@@ -3,7 +3,7 @@ import classes from "./SkillItem.module.css";
 import withToggle from "../../hoc/withToggle";
 import { useSelector } from "react-redux";
 
-const SkillItem = ({ skill }) => {
+const SkillItem = ({ skill, toggle, open }) => {
   return (
     <>
       <div className={classes.SkillsContainer}>
@@ -12,6 +12,7 @@ const SkillItem = ({ skill }) => {
           <div className={classes.SkillItem_buttons}>
             <button
               className={`${classes.SkillItem_button} ${classes.SkillItem_edit}`}
+              onClick={toggle}
             >
               Edit
             </button>
@@ -22,20 +23,24 @@ const SkillItem = ({ skill }) => {
             </button>
             <button
               className={`${classes.SkillItem_button} ${classes.SkillItem_sort}`}
+              onClick={toggle}
             ></button>
           </div>
         </div>
       </div>
-      <form className={classes.SkillsInput}>
-        <div className={classes.SkillsNameContainer}>
-          <input
-            className={classes.Skill__name}
-            type="text"
-            name="Skill"
-            placeholder="Enter your skill"
-          />
-        </div>
-      </form>
+
+      {open && (
+        <form className={classes.SkillsInput}>
+          <div className={classes.SkillsNameContainer}>
+            <input
+              className={classes.Skill__name}
+              type="text"
+              name="Skill"
+              placeholder="Enter your skill"
+            />
+          </div>
+        </form>
+      )}
     </>
   );
 };

@@ -9,11 +9,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
 }
 
 .SkillItem__name {
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 17px;
   color: #181c27;
@@ -95,13 +94,5 @@
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-
   color: rgba(24, 28, 39, 0.6);
-}
-
-.SkillItem_plus {
-  background-image: url(../SkillItem/icons/plus.svg);
-  background-size: 11px 11px;
-  background-repeat: no-repeat;
-  background-position: left 20px center;
 }
