@@ -8,10 +8,12 @@ import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
 import "./App.css";
+import EmploymentHistoryItem from "./Components/EmploymentHistoryItem/EmploymentHistoryItem";
 
 function App() {
   return (
     <div className="App">
+      <EmploymentHistoryItem />
       <Header />
       <Switch>
         <Route path={paths.registration} component={Registration} />
