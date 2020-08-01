@@ -15,7 +15,6 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Languages />
         <Route path={paths.registration} component={Registration} />
         <Route path={paths.login} component={Login} />
         <Route path={paths.dashboard} component={Dashboard} />
