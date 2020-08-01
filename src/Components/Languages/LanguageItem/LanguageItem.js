@@ -2,9 +2,28 @@ import React from "react";
 import styles from "./LanguageItem.module.css";
 import withToggle from "../../../hoc/withToggle";
 import Select from "react-select";
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  deleteLanguage,
+  updateLanguage,
+} from "../../../redux/actions/languages";
 
 const LanguageItem = (props) => {
-  const { open, toggle, language } = props;
+  const { open, toggle, language, index, level } = props;
+  const dispatch = useDispatch();
+  const deletedNewLanguage = () => {
+    dispatch(deleteLanguage(index));
+  };
+  const editLanguage = (e) => {
+    dispatch(updateLanguage(index, { language: e.target.value, level: level }));
+  };
+  const editLevel = (e) => {
+    if (!e) {
+      return dispatch(updateLanguage(index, { language: language, level: "" }));
+    }
+    dispatch(updateLanguage(index, { language: language, level: e.value }));
+  };
   const options = [
     { value: "C2", label: "C2" },
     { value: "C1", label: "C1" },
@@ -14,18 +33,22 @@ const LanguageItem = (props) => {
     { value: "A2", label: "A2" },
     { value: "Native", label: "Native speaker" },
   ];
+
   return (
     <>
       <div className={styles.wrapper}>
         <div className={styles.header}>
-          <span className={styles.languageName}>{language.language}</span> |{" "}
-          <span className={styles.languageLevel}>{language.level}</span>
+          <span className={styles.languageName}>{language}</span> |{" "}
+          <span className={styles.languageLevel}>{level}</span>
         </div>
         <div className={styles.buttonSpace}>
           <div className={styles.editBtn} onClick={toggle}>
             Edit
           </div>
-          <div className={styles.deleteBtn}> Delete</div>
+          <div className={styles.deleteBtn} onClick={deletedNewLanguage}>
+            {" "}
+            Delete
+          </div>
           <div className={styles.arrowBtn} onClick={toggle} value=" "></div>
         </div>
       </div>
@@ -35,12 +58,15 @@ const LanguageItem = (props) => {
             className={styles.input}
             type="text"
             placeholder="Enter a language"
+            onChange={editLanguage}
+            value={language}
           ></input>
           <Select
             className={styles.select}
             options={options}
             isClearable
-            placeholder="level..."
+            placeholder={level}
+            onChange={editLevel}
           />
         </form>
       )}
