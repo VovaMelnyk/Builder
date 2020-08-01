@@ -18,17 +18,11 @@ const EmploymentHistoryItem = ({
   open,
   toggle,
 }) => {
-  // const [startDate, setStartDate] = useState(new Date());
-  // const [endDate, setEndDate] = useState(new Date());
-
   const dispatch = useDispatch();
 
   const deleteEmployment = () => {
     dispatch(deletePosition(index));
   };
-
-  console.log(start);
-  console.log(moment(start)._d);
 
   return (
     <div
@@ -37,7 +31,7 @@ const EmploymentHistoryItem = ({
       <div className={styles.EmploymentHistoryItem_Header}>
         <div className={styles.EmploymentHistoryItem_Editor_Box}>
           <h5 className={styles.EmploymentHistoryItem_Editor_Title}>
-            Job Title
+            {jobTitle}
           </h5>
           <div className={styles.EmploymentHistoryItem_Editor_Edit_Btn_Box}>
             <button
@@ -66,13 +60,13 @@ const EmploymentHistoryItem = ({
           <p className={styles.EmploymentHistoryItem_Editor_Years_Descr}>
             Start
             <span className={styles.EmploymentHistoryItem_Editor_Years_Span}>
-              mm/year
+              {moment(start).format("MM/YYYY")}
             </span>
           </p>
           <p className={styles.EmploymentHistoryItem_Editor_Years_Descr}>
             End
             <span className={styles.EmploymentHistoryItem_Editor_Years_Span}>
-              mm/year
+              {moment(end).format("MM/YYYY")}
             </span>
           </p>
         </div>
