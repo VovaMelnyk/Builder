@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
-import { paths } from "../../constants";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { paths } from "../../constants";
 import { logInUser } from "../../redux/actions/user";
 
 const formInitialState = {
@@ -13,6 +13,7 @@ const formInitialState = {
 const Login = () => {
   const [form, setForm] = useState(formInitialState);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const inputHandler = e => {
     const name = e.target.name;
@@ -28,6 +29,7 @@ const Login = () => {
     // request to firebase
     // result of request write to global state
     dispatch(logInUser(userData));
+    history.push(paths.dashboard);
     setForm(formInitialState);
   };
   const { email, password } = form;
