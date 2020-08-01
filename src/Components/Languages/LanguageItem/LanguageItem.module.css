@@ -1,0 +1,68 @@
+.wrapper {
+  margin: 0 auto;
+  width: 470px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+
+  color: #181c27;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+.header {
+  /* Ukrainian | Native */
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+
+  color: #181c27;
+}
+.buttonSpace {
+  display: flex;
+  justify-content: flex-end;
+}
+.button {
+  border: none;
+  margin: 5px;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+}
+.button:hover {
+  background: rgba(24, 28, 39, 0.1);
+}
+.form {
+  margin: 0 auto;
+  background: rgba(24, 28, 39, 0.1);
+  width: 470px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+.show {
+  display: block;
+}
+.select,
+.input {
+  width: 211px;
+  padding: 10px;
+}
