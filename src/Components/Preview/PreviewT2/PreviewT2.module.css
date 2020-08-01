@@ -63,7 +63,9 @@
   grid-template:
     "profile profile skills" auto
     "history history skills" auto
-    "education education skills" auto;
+    "education education skills" auto
+    "languages languages skills" auto;
+
   grid-row-gap: 20px;
   padding-left: 100px;
   padding-right: 120px;
@@ -140,4 +142,8 @@
   text-transform: uppercase;
   color: rgba(24, 28, 39, 0.6);
   list-style: none;
+}
+
+.languages {
+  grid-area: languages;
 }

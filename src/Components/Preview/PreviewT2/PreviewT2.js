@@ -5,6 +5,8 @@ import Education from "./Education";
 import Skills from "./Skills";
 
 import styles from "./PreviewT2.module.css";
+import Languages from "./Languages";
+import Project from "./Project";
 
 const PreviewT2 = () => {
   const {
@@ -24,6 +26,8 @@ const PreviewT2 = () => {
 
   const education = useSelector((state) => state.resume.educations);
   const skills = useSelector((state) => state.resume.skills);
+  const languages = useSelector((state) => state.resume.languages);
+  const projects = useSelector((state) => state.resume.projects);
 
   return (
     <div className={styles.previewT2}>
@@ -69,6 +73,27 @@ const PreviewT2 = () => {
             {education.map((el) => (
               <li key={el.school} className={styles.list}>
                 <Education {...el} />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className={styles.languages}>
+          <h3 className={styles.nameBlock}>Languages</h3>
+          <ul>
+            {languages.map((el) => (
+              <li key={el.school} className={styles.list}>
+                <Languages {...el} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.projects}>
+          <h3 className={styles.nameBlock}>Projects</h3>
+          <ul>
+            {projects.map((el) => (
+              <li key={el.jobTitle} className={styles.list}>
+                <Project {...el} />
               </li>
             ))}
           </ul>
