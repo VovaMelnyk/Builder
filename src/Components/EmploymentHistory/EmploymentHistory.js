@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "./EmploymentHistory.module.css";
 import EmploymentHistoryItem from "../EmploymentHistoryItem/EmploymentHistoryItem";
 import { addPosition } from "../../redux/actions/employmentHistory";
+import moment from "moment";
 
 const EmploymentHistory = () => {
   const employmentHistory = useSelector(
@@ -14,8 +15,8 @@ const EmploymentHistory = () => {
     const newEmployment = {
       jobTitle: "",
       employer: "",
-      start: "",
-      end: "",
+      start: moment(),
+      end: moment(),
       city: "",
       description: "",
     };

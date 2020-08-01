@@ -47,6 +47,7 @@
   background-position: 10%;
   background-repeat: no-repeat;
   cursor: pointer;
+  outline: none;
 }
 
 .EmploymentHistoryItem_Editor_Edit_Btn {
