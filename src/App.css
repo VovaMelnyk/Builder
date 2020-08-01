@@ -1,2 +1,8 @@
 /* font-family: 'Montserrat', sans-serif; */
 /* font-family: 'Roboto', sans-serif; */
+
+.react-datepicker__tab-loop {
+  position: absolute !important;
+  top: -18px;
+  width: 110%;
+}

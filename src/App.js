@@ -8,6 +8,7 @@ import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
 import "./App.css";
+import PreviewT2 from "./Components/Preview/PreviewT2/PreviewT2";
 
 function App() {
   return (
