@@ -3,8 +3,11 @@ export const paths = {
   login: "/login",
   dashboard: "/dashboard",
   editor: "/editor",
-  templates: "/templates"
+  templates: "/templates",
 };
 export const reduxUserTypes = {
-  LOG_OUT: "LOG_OUT"
+  LOG_OUT: "LOG_OUT",
 };
+
+export const ADD_POSITION = "ADD_POSITION";
+export const DELETE_POSITION = "DELETE_POSITION";

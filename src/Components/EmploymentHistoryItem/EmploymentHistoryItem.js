@@ -2,10 +2,18 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import styles from "./EmploymentHistoryItem.module.css";
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch } from "react-redux";
+import { deletePosition } from "../../redux/actions/employmentHistory";
 
-const EmploymentHistoryItem = () => {
+const EmploymentHistoryItem = ({ emHistory, index }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+
+  const dispatch = useDispatch();
+
+  const deleteEmployment = () => {
+    dispatch(deletePosition(index));
+  };
 
   return (
     <div
@@ -24,6 +32,7 @@ const EmploymentHistoryItem = () => {
             </button>
             <button
               className={`${styles.EmploymentHistoryItem_Editor_Btn} ${styles.EmploymentHistoryItem_Editor_Delete_Btn}`}
+              onClick={deleteEmployment}
             >
               Delete
             </button>

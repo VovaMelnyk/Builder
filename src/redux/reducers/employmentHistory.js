@@ -1,3 +1,5 @@
+import { ADD_POSITION, DELETE_POSITION } from "../../constants";
+
 const initialState = [
   {
     jobTitle: "Front end Developer",
@@ -9,8 +11,15 @@ const initialState = [
   },
 ];
 
-export default (state = initialState, action) => {
-  switch (action.type) {
+export default (state = initialState, { type, payload }) => {
+  switch (type) {
+    case ADD_POSITION:
+      return [...state, payload];
+    case DELETE_POSITION:
+      const newState = [...state];
+      newState.splice(payload, 1);
+
+      return newState;
     default:
       return state;
   }
