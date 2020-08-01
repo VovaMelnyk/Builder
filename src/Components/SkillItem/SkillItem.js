@@ -50,7 +50,7 @@ const SkillItem = ({ skill, toggle, open, index }) => {
               type="text"
               name="Skill"
               placeholder="Enter your skill"
-              //   value={skill}
+              value={skill}
             />
           </div>
         </form>
