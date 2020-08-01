@@ -9,12 +9,11 @@ import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
 import "./App.css";
 import PreviewT2 from "./Components/Preview/PreviewT2/PreviewT2";
-import BasicInfo from "./Components/BasicInfo/BasicInfo";
+
 function App() {
   return (
     <div className="App">
       <Header />
-      <BasicInfo />
       <Switch>
         <Route path={paths.registration} component={Registration} />
         <Route path={paths.login} component={Login} />

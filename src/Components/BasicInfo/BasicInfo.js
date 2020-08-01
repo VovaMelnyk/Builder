@@ -1,4 +1,5 @@
 import React from "react";
+import InputMask from "react-input-mask";
 import styles from "./BasicInfo.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { changeBasicInputs } from "../../redux/actions/basicInfo";
@@ -76,7 +77,10 @@ const BasicInfo = () => {
             value={email}
             onChange={inputHandler}
           />
-          <input
+
+          <InputMask
+            mask="+99 (999) 99 999 99"
+            maskChar="_"
             className={styles.smallInput}
             type="text"
             name="phone"
@@ -92,7 +96,6 @@ const BasicInfo = () => {
             value={country}
             onChange={inputHandler}
           />
-
           <input
             className={styles.smallInput}
             type="text"
