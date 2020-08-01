@@ -4,8 +4,8 @@ const initialState = [
   {
     school: "Best school ever",
     degree: "master",
-    start: Date.now(),
-    end: Date.now(),
+    start: "",
+    end: "",
   },
 ];
 

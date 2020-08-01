@@ -38,10 +38,16 @@ return (
     <div className={style.degreeSchool}>
     <h2 className={style.schoolLabel}>{`${!!school ? school : 'School'} ${!!degree ? degree : 'degree'}`}</h2>
     <div className={style.degreeEdits}>
+
+    <div onClick={toggle} className={style.degreeEditsHover}>
       <div className={style.degreeEditIcon}></div>
-        <p className={style.degreeEditsHover} onClick={toggle}>Edit</p>
+        <p  >Edit</p>
+        </div>
+
+        <div onClick={remove} className={style.degreeEditsHover}>
         <div className={style.degreeDeleteIcon}></div>
-        <p className={style.degreeEditsHover} onClick={remove}>Delete</p>
+        <p  >Delete</p>
+        </div>
         <div
         className={
           !open
