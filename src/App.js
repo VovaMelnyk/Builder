@@ -8,6 +8,7 @@ import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
 import "./App.css";
+import PreviewT1 from "./Components/Preview/PreviewT1/PreviewT1";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path={paths.editor} component={Editor} />
         <Route path={paths.templates} component={Templates} />
       </Switch>
+      <PreviewT1 />
     </div>
   );
 }

@@ -76,6 +76,11 @@ ul {
   color: #181c27;
   margin-bottom: 4px;
 }
+
+.emailLink {
+  color: rgba(24, 28, 39, 0.6);
+}
+
 .listItemContent {
   font-family: Montserrat;
   font-style: normal;
