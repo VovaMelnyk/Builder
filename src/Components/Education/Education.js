@@ -1,50 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./Education.module.css";
-import withToggle from "../../hoc/withToggle";
-import EducationItem from "./EducationItem"
-import {addEducation, deleteEducation} from '../../redux/education/actions';
-
-import { useSelector, useDispatch } from "react-redux";
+import EducationItem from "./EducationItem";
+import {addEducation, deleteEducation } from '../../redux/actions/educations';
+import { connect, useDispatch } from "react-redux";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const Education = (props) => {
-  console.log(props);
+const Education = ({educations}) => {
+  const dispatch = useDispatch();
 
-  const education = useSelector((state) => state.resume.educations);
-  const dispatch = useDispatch;
+  const handleAddClick = () => {
+    dispatch(addEducation({school: '', degree: '', start: Date.now(), end: Date.now()}))
+  };
 
-  console.log(education);
-
-
-
-  // const [schoolInfo, setSchoolInfo] = useState(education)
-//   const [schoolInfo, setSchoolInfo] = useState(initialState);
-
-//   const handleChangeStart = (date1) => {
-//     setSchoolInfo({ ...schoolInfo, start: date1 });
-//   };
-
-//   const handleChangeEnd = (date1) => {
-//     setSchoolInfo({ ...schoolInfo, end: date1 });
-//   };
-
-  // const addButton = () => {
-  //     setDate([...date, {school: "", degree: "", dateStart: new Date(), dateEnd: new Date()}])
-  // }
+  const handleRemoveClick = (index) => {
+      dispatch(deleteEducation(index));
+  };
 
   return (
     <div className={style.wraper}>
       <h1 className={style.title}>Education</h1>
 
-    {education.map(el => (
-        <EducationItem el={el}/>
+    {educations.map((el, index) => (
+        <EducationItem key={index} school={el.school} index={index} degree={el.degree} start={el.start} end={el.end} handleRemoveClick={handleRemoveClick}/>
     ))}
 
-
-      <button className={style.addButton}>+ Add Education</button>
+      <button className={style.addButton} onClick={handleAddClick}>+ Add Education</button>
     </div>
   );
 };
 
-export default Education;
+const mapStateToProps = state => ({
+  educations: state.resume.educations
+});
+
+export default connect(mapStateToProps)(Education);
