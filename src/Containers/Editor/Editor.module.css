@@ -1,7 +1,11 @@
-.BackgroundLight {
-    background: #FAFAFA;
-}
-
 .BackgroundDark {
-    background: rgba(24, 28, 39, 0.9);
+  background: rgba(24, 28, 39, 0.9);
+}
+.BackgroundLight {
+  background: #fafafa;
+}
+.editorWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 4% 0;
 }

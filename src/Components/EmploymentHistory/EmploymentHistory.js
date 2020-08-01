@@ -4,7 +4,7 @@ import EmploymentHistoryItem from "../EmploymentHistoryItem/EmploymentHistoryIte
 
 const EmploymentHistory = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <h2 className={styles.EmploymentHistory_Title}>Employment History</h2>
       <EmploymentHistoryItem />
       <button className={styles.EmploymentHistory_Add_Btn}>Add Position</button>
