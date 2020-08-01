@@ -1,0 +1,107 @@
+.SkillsContainer {
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.Wrapper {
+  padding: 12px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SkillItem__name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #181c27;
+}
+
+.SkillItem_buttons {
+  width: 178px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8px;
+}
+
+.SkillItem_button {
+  padding-left: 15px;
+  border: none;
+  font-family: Montserrat;
+  background-color: transparent;
+  color: rgba(24, 28, 39, 0.4);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+.SkillItem_edit {
+  background-image: url(./icons/edit.svg);
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.SkillItem_delete {
+  background-image: url(./icons/delete.svg);
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.SkillItem_sort {
+  background-image: url(./icons/sort.svg);
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.SkillsForm {
+  max-width: 470px;
+  margin-left: 55px;
+}
+
+.SkillsInput {
+  max-width: 470px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.SkillsNameContainer {
+  width: 100%;
+  max-height: 72px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: rgba(24, 28, 39, 0.1);
+}
+
+.Skill__name {
+  width: 100%;
+  max-height: 40px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px rgba(0, 0, 0, 0.12);
+  border: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+
+  color: rgba(24, 28, 39, 0.6);
+}
+
+.SkillItem_plus {
+  background-image: url(../SkillItem/icons/plus.svg);
+  background-size: 11px 11px;
+  background-repeat: no-repeat;
+  background-position: left 20px center;
+}
