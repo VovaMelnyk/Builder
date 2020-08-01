@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <EmploymentHistory />
       <Switch>
         <Route path={paths.registration} component={Registration} />
         <Route path={paths.login} component={Login} />
