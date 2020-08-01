@@ -6,7 +6,6 @@ import Select from "react-select";
 const LanguageItem = (props) => {
   const { open, toggle, language } = props;
   const options = [
-    // { value: "", label: "Level..." },
     { value: "C2", label: "C2" },
     { value: "C1", label: "C1" },
     { value: "B2", label: "B2" },
