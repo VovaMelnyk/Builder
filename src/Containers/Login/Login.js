@@ -7,7 +7,7 @@ import { logInUser } from "../../redux/actions/user";
 
 const formInitialState = {
   email: "",
-  password: ""
+  password: "",
 };
 
 const Login = () => {
@@ -15,16 +15,16 @@ const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const inputHandler = e => {
+  const inputHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setForm({ ...form, [name]: value });
   };
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
     const userData = {
       email: form.email,
-      uid: "qwerty"
+      uid: "qwerty",
     };
     // request to firebase
     // result of request write to global state
@@ -60,7 +60,7 @@ const Login = () => {
           </button>
         </form>
         <p className={styles.register}>
-          In case you don't have your account yet, please
+          In case you don't have your account yet, please{" "}
           <Link to={paths.registration} className={styles.registerLink}>
             register.
           </Link>

@@ -45,6 +45,7 @@
   border-bottom: 1px solid rgba(24, 28, 39, 0.2);
   padding: 8px;
   margin-bottom: 31px;
+  outline: none;
 }
 .loginInput:last-of-type {
   margin-bottom: 60px;
