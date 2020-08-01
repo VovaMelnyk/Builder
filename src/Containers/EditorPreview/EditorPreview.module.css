@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 .Title {
@@ -27,10 +28,12 @@
     line-height: 17px;
     position: relative;
     display: block;
-    margin-top: 6px;
+    margin-top: 10px;
     text-decoration: none;
-    margin-left: 23px;
-    padding: 3px;
+    padding: 2px;
+    padding-left: 26px;
+    margin: auto 0;
+
 }
 
 .SelectTitle::after {
@@ -39,12 +42,9 @@
     position: absolute;
     width: 14px;
     height: 14px;
-    left: -21.5px;
+    left: 3.5px;
     top: 3px;
     background-image: url(/icons/windows-select.svg);
-    padding-top: 33px;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .ButtonWrapper {
@@ -56,6 +56,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .ButtonDownloadWrapper {
@@ -65,7 +66,6 @@
     position: relative;
     padding-left: 38px;
     margin-bottom: 28px;
-
 }
 
 .ButtonDownloadWrapper::after {

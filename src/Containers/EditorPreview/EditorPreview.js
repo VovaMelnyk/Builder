@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import styles from "./EditorPreview.module.css";
+import { NavLink } from "react-router-dom";
+import { paths } from "../../constants";
 const EditorPreview = () => {
+  const { templates } = paths;
   return (
     <Fragment>
       <div className={styles.MainWrapper}>
@@ -11,9 +14,12 @@ const EditorPreview = () => {
           <p>Download</p>
         </div>
         <div className={styles.SheetWrapper}></div>
-        <a href="#" className={`${styles.Title} ${styles.SelectTitle}`}>
+        <NavLink
+          to={templates}
+          className={`${styles.Title} ${styles.SelectTitle}`}
+        >
           Select Template
-        </a>
+        </NavLink>
         <div
           className={`${styles.Title} ${styles.ButtonWrapper} ${styles.ButtonSaveWrapper}`}
         >
