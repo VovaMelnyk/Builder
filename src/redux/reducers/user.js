@@ -15,6 +15,8 @@ export default (state = initialState, action) => {
       return userLogOut;
     case reduxUserTypes.LOG_IN:
       return action.payload;
+    case reduxUserTypes.REGISTER:
+      return action.payload;
     default:
       return state;
   }
