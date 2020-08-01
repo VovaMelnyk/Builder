@@ -37,7 +37,12 @@ const PreviewT1 = () => {
               </li>
               <li className={styles.contactListItem}>
                 <h4 className={styles.listItemTitle}>Email</h4>
-                <p className={styles.listItemContent}>{`${basicInfo.email}`}</p>
+                <p className={styles.listItemContent}>
+                  <a
+                    className={styles.emailLink}
+                    href={`mailto:${basicInfo.email}`}
+                  >{`${basicInfo.email}`}</a>
+                </p>
               </li>
             </ul>
           </div>
