@@ -3,7 +3,9 @@ import styles from "./EmploymentHistoryItem.module.css";
 
 const EmploymentHistoryItem = () => {
   return (
-    <div className={styles.EmploymentHistoryItem_Conteiner}>
+    <div
+      className={`${styles.EmploymentHistoryItem_Container} ${styles.mb_16}`}
+    >
       <div className={styles.EmploymentHistoryItem_Header}>
         <div className={styles.EmploymentHistoryItem_Editor_Box}>
           <h5 className={styles.EmploymentHistoryItem_Editor_Title}>
