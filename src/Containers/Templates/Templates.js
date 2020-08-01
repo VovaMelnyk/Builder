@@ -9,16 +9,7 @@ const Templates = () => {
   const path = useRouteMatch().path;
   const dispatch = useDispatch();
   const changeNumber = (number) => {
-    switch (number) {
-      case 1:
-        dispatch(changeType(1));
-        return;
-      case 2:
-        dispatch(changeType(2));
-        return;
-      default:
-        return;
-    }
+    dispatch(changeType(number));
   };
 
   return (

@@ -25,12 +25,11 @@
 
 .LinkWrapper {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     height: 114px;
 }
 
 .LinkWrapper .Link:first-child {
-    margin-left: 515px;
     margin-right: 58px;
 }
