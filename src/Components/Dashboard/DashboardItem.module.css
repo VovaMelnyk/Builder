@@ -1,0 +1,211 @@
+.resumeName {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  letter-spacing: 0.04em;
+  text-align: start;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 15px;
+}
+
+.resumeItem {
+  display: grid;
+  width: 370px;
+}
+
+.resume {
+  background-color: blanchedalmond;
+  width: 370px;
+  height: 468px;
+}
+
+.button {
+  border-radius: 25px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: 0.04em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.button:hover {
+  background: #17ecff;
+  color: #181c27;
+}
+
+.buttonBlock {
+  display: grid;
+  grid-template-columns: 0.5fr 0.3fr 0.5fr;
+  text-align: center;
+  grid-gap: 5%;
+  margin-top: 10px;
+}
+
+.buttonSvg {
+  margin-right: 5px;
+}
+
+.previewT2 {
+  display: grid;
+  grid-template:
+    "name name name" 1fr
+    "location lo" auto;
+}
+
+.name {
+  grid-area: name;
+  background-color: gray;
+
+  /* margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  grid-template-columns: auto;
+
+    background-color: gray;
+  background-position: center;
+  width: 200px; */
+}
+
+.location {
+  grid-area: location;
+  background-color: gray;
+
+  /*     
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+
+  margin-bottom: 44px;
+  padding-left: 100px;
+  padding-right: 120px;
+  background-color: gray;
+  background-position: center;
+  width: 200px;
+  height: 18px;
+  margin: 0 auto;
+  margin-bottom: 10px; */
+}
+
+.jobTitle {
+  grid-area: jobTitle;
+
+  /* 
+  display: grid;
+
+  background-color: gray;
+  background-position: center;
+  width: 200px;
+  height: 8px;
+  margin: 0 auto;
+  margin-bottom: 10px; */
+}
+
+.resumeBlock {
+  display: grid;
+  grid-template:
+    "profile profile skills" auto
+    "history history skills" auto
+    "education education skills" auto
+    "languages languages skills" auto;
+
+  grid-row-gap: 20px;
+  padding-left: 100px;
+  padding-right: 120px;
+}
+
+.nameBlock {
+  width: max-content;
+  padding: 4px 8px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(24, 28, 39, 0.6);
+  margin-bottom: 20px;
+}
+
+.profile {
+  grid-area: profile;
+  background-color: gray;
+}
+.summary {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 18px;
+  color: rgba(24, 28, 39, 0.6);
+  background-color: gray;
+}
+
+.history {
+  grid-area: history;
+  background-color: gray;
+}
+
+.date {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 9px;
+  letter-spacing: 0.02em;
+
+  color: #181c27;
+}
+.list {
+  list-style: none;
+}
+
+.title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #181c27;
+  background-color: gray;
+}
+
+.education {
+  grid-area: education;
+  background-color: gray;
+}
+
+.skills {
+  grid-area: skills;
+  display: inline;
+  background-color: gray;
+  margin-left: 10px;
+}
+.skill {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: rgba(24, 28, 39, 0.6);
+  list-style: none;
+}
+
+.languages {
+  grid-area: languages;
+  background-color: gray;
+}
