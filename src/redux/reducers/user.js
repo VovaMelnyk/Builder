@@ -13,6 +13,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case reduxUserTypes.LOG_OUT:
       return userLogOut;
+    case reduxUserTypes.LOG_IN:
+      return action.payload;
     default:
       return state;
   }
