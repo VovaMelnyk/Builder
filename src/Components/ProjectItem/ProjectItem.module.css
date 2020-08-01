@@ -1,0 +1,147 @@
+.project_item {
+    margin-left: 55px;
+    width: 470px;
+    font-family: Montserrat;
+    color: #181C27;
+}
+
+.title {
+    padding-bottom: 16px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.header__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 12px 8px;
+}
+
+.header__btn_container {
+    padding: 12px 8px;
+    width: 178px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__btn {
+    padding-left: 15px;
+    border: none;
+    font-family: Montserrat;
+    background-color: transparent;
+    color: rgba(24, 28, 39, 0.4);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.header__btn_pen {
+    background-image: url(./icons/pen-solid.svg);
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.header__btn_close {
+    background-image: url(./icons/times-solid.svg);
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.header__btn_hide {
+    background-image: url(./icons/sort-up-solid.svg);
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.btn_add_logo {
+    background-image: url(./icons/plus-solid.svg);
+    background-size: 11px 11px;
+    background-repeat: no-repeat;
+    background-position: left 20px center;
+}
+
+.header__form {
+    background: rgba(24, 28, 39, 0.1);
+    margin-bottom: 16px;
+}
+
+.header_form_container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 438px;
+}
+
+.form__title {
+    margin: 16px 0;
+    width: 211px;
+    padding: 12px 8px;
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.form__company {
+    margin: 16px 0;
+    width: 211px;
+    padding: 12px 8px;
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.form__description {
+    margin-left: 16px;
+    margin-bottom: 16px;
+    padding: 12px 8px;
+    width: 438px;
+    height: 200px;
+    text-align: start;
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+}
+
+.btn_add{
+    width: 144px;
+    padding: 8px 16px 8px 38px;
+    background-color: rgba(24, 28, 39, 0.1);
+    border: none;
+    border-radius: 25px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
