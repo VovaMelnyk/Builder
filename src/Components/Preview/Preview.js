@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Preview.module.css";
-import PreviewT1 from "./RB-59/PreviewT1";
+import PreviewT1 from "./PreviewT1/PreviewT1";
 const Preview = () => {
   return (
     <div>
