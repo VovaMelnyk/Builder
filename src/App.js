@@ -8,12 +8,14 @@ import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
 import "./App.css";
+import Languages from "./Components/Languages/Languages";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Switch>
+        <Languages />
         <Route path={paths.registration} component={Registration} />
         <Route path={paths.login} component={Login} />
         <Route path={paths.dashboard} component={Dashboard} />
