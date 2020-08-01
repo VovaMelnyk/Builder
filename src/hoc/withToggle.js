@@ -18,5 +18,4 @@ const withToggle = (NestedComponent) => {
     }
   };
 };
-
 export default withToggle;
