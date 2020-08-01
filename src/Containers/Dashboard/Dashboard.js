@@ -1,12 +1,8 @@
 import React from "react";
 import styles from "./Dashboard.module.css";
-import BasicInfo from "../../Components/BasicInfo/BasicInfo";
+
 const Dashboard = () => {
-  return (
-    <div>
-      <BasicInfo />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Dashboard;
