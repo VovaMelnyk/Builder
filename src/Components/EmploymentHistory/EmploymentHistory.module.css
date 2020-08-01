@@ -1,0 +1,24 @@
+.EmploymentHistory_Title {
+  margin-bottom: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #181c27;
+}
+
+.EmploymentHistory_Add_Btn {
+  width: 153px;
+  padding: 8px 16px 8px 20px;
+  background-color: rgba(24, 28, 39, 0.1);
+  border-radius: 25px;
+  border: none;
+  background-image: url("/icons/employment_add_position_btn_icon.svg");
+  background-repeat: no-repeat;
+  background-position: 10%;
+  background-size: 10%;
+  cursor: pointer;
+}
