@@ -8,11 +8,13 @@ import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
 import "./App.css";
+import Education from './Components/Education/Education'
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Education />
       <Switch>
         <Route path={paths.registration} component={Registration} />
         <Route path={paths.login} component={Login} />
