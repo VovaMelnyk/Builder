@@ -158,3 +158,9 @@
 .mb_16 {
   margin-bottom: 16px;
 }
+
+/*Date picker styles*/
+.EmploymentHistoryItem_Calendar_Container {
+  position: relative;
+  display: inline-block;
+}
