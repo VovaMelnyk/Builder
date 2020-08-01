@@ -1,25 +1,46 @@
 import React from "react";
 import styles from "./ResumeTemplates.module.css";
+import { useSelector } from "react-redux";
+import projects from "../../redux/reducers/projects";
 
 const ResumeTemplate2 = () => {
+	const recumeInfo = useSelector((state) => state.resume);
+	const {
+		basicInfo: {
+			jobTitle,
+			firstName,
+			lastName,
+			email,
+			phone,
+			country,
+			city,
+			summary,
+		},
+		employmentHistory,
+		educations,
+		skills,
+		projects,
+		languages,
+	} = recumeInfo;
+
 	return (
 		<div className={styles.ResumeWrapper}>
 			<div className={styles.Container}>
 				<div className={styles.ResumeHeding}>
-					<h1 className={styles.ResumeTitle}>DANIEL JONSON</h1>
-					<p className={styles.ResumeSubtitle}>FRONT-END DEVELOPER</p>
+					<h1 className={styles.ResumeTitle}>{`${firstName} ${lastName}`}</h1>
+					<p className={styles.ResumeSubtitle}>{jobTitle}</p>
 					<div className={styles.ContactsContainer}>
 						<div className={styles.ContactItem}>
 							<div className={`${styles.Map} ${styles.Icon}`}></div>
-							<p className={styles.ContactText}>Kyiv, Ukraine</p>
+							<p className={styles.ContactText}>{`${city}, ${country}`}</p>
 						</div>
 						<div className={styles.ContactItem}>
 							<div className={`${styles.Phone} ${styles.Icon}`}></div>
-							<p className={styles.ContactText}>+380 000 000 00</p>
+							<p className={styles.ContactText}>{phone}</p>
 						</div>
 						<div className={styles.ContactItem}>
 							<div className={`${styles.Mail} ${styles.Icon}`}></div>
-							<p className={styles.ContactText}>email.com</p>
+							<p className={styles.ContactText}>{email}</p>
 						</div>
 					</div>
 				</div>
@@ -28,24 +49,22 @@ const ResumeTemplate2 = () => {
 						<div>
 							<div>
 								<h2 className={styles.BoxName}>PROFILE</h2>
-								<p className={styles.BoxText}>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-									provident asperiores excepturi enim iure deleniti sequi saepe
-									iusto facilis. At, ipsa id, quasi saepe assumenda, obcaecati
-									nulla recusandae corrupti voluptatum a maxime numquam placeat
-									consequuntur reiciendis quo voluptates perferendis accusantium
-								</p>
+								<p className={styles.BoxText}>{summary}</p>
 							</div>
-							<div className="EMPLOYMENT_HISTORY">
-								<h2 className={styles.BoxName}>EMPLOYMENT HISTORY</h2>
-
+							{!!employmentHistory.length && (
 								<div>
-									<h3 className={styles.BoxTitle}>
-										Lorem ipsum dolor sit amet consectetur.
-									</h3>
-									<p className={styles.BoxSubtitle}>Lorem, ipsum dolor.</p>
-									<ul className={styles.ItrmList}>
-										<li className={styles.UlItem}>
+									<h2 className={styles.BoxName}>EMPLOYMENT HISTORY</h2>
+									{employmentHistory.map((el) => (
+										<div key={`${el.jobTitle}, ${el.employer}, ${el.city}`}>
+											<h3 className={styles.BoxTitle}>
+												{`${el.jobTitle}, ${el.employer}, ${el.city}`}
+											</h3>
+											<p
+												className={styles.BoxSubtitle}
+											>{`${el.start} - ${el.end}`}</p>
+											<p className={styles.BoxText}>
+												{el.description}
+												{/* <li className={styles.UlItem}>
 											Lorem ipsum dolor sit amet consectetur adipisicing elit.
 											tetur ipsa labore pariatur!
 										</li>
@@ -60,67 +79,66 @@ const ResumeTemplate2 = () => {
 										<li className={styles.UlItem}>
 											Rerum, ipsa repellendus omnis saepe eos excepturi quis
 											maxime magnam itaque vel neque,
-										</li>
-									</ul>
+										</li> */}
+											</p>
+										</div>
+									))}
 								</div>
+							)}
+							{!!educations.length && (
 								<div>
-									<h3 className={styles.BoxTitle}>
-										Lorem ipsum dolor sit amet consectetur.
-									</h3>
-									<p className={styles.BoxSubtitle}>Lorem, ipsum dolor.</p>
-									<ul className={styles.ItrmList}>
-										<li className={styles.UlItem}>
-											Esse error suscipit quisquam blanditiis, praesentium quasi
-											totam, nobis consequuntur unde fugit
-										</li>
-										<li className={styles.UlItem}>
-											Rem, omnis? Distinctio voluptates, fuga reiciendis
-											deserunt inventore sequi voluptatibus .
-										</li>
-										<li className={styles.UlItem}>
-											Esse molestiae laborum ratione alias animi blanditiis ab.
-											Minus quas expedita labore ipsa
-										</li>
-										<li className={styles.UlItem}>
-											Ad debitis magnam molestias quam, odit amet animi
-											explicabo autem nihil
-										</li>
-									</ul>
+									<h2 className={styles.BoxName}>education</h2>
+									{educations.map((el) => (
+										<div
+											key={`${el.school}, ${el.degree}`}
+											className={styles.EducationItem}
+										>
+											<h3
+												className={styles.BoxTitle}
+											>{`${el.school}, ${el.degree}`}</h3>
+											<p
+												className={styles.BoxSubtitle}
+											>{`${el.start} - ${el.end}`}</p>
+										</div>
+									))}
 								</div>
-							</div>
-							<div className="education">
-								<h2 className={styles.BoxName}>education</h2>
-								<div className={styles.EducationItem}>
-									<h3 className={styles.BoxTitle}>Lorem ipsum dolor sit.</h3>
-									<p className={styles.BoxSubtitle}>Lorem, ipsum dolor.</p>
-								</div>
-
-								<div className={styles.EducationItem}>
-									<h3 className={styles.BoxTitle}>Lorem ipsum dolor sit.</h3>
-									<p className={styles.BoxSubtitle}>Eius, sit ex.</p>
-								</div>
-							</div>
+							)}
 						</div>
 					</div>
-
 					<div className={styles.column2}>
-						<div>
-							<h2 className={styles.BoxName}>SKILLS</h2>
-							<ul className={styles.ScillsList}>
-								<li>Lorem.</li>
-								<li>Iure?</li>
-								<li>Perspiciatis!</li>
-								<li>Quia.</li>
-								<li>Voluptate.</li>
-								<li>Vitae.</li>
-								<li>Eligendi.</li>
-								<li>Delectus!</li>
-								<li>Esse.</li>
-								<li>Dignissimos.</li>
-								<li>Dicta.</li>
-								<li>Ipsa.</li>
-							</ul>
-						</div>
+						{!!skills.length && (
+							<div>
+								<h2 className={styles.BoxName}>SKILLS</h2>
+								<ul className={styles.ScillsList}>
+									{skills.map((el) => (
+										<li key={el.skill}>{el.skill}</li>
+									))}
+								</ul>
+							</div>
+						)}
+						{!!projects.length && (
+							<div>
+								<h2 className={styles.BoxName}>projects</h2>
+								{projects.map((el) => (
+									<div key={el.projectTitle}>
+										<h3 className={styles.BoxTitle}>{el.projectTitle}</h3>
+										<p className={styles.BoxSubtitle}>{el.company}</p>
+										<p className={styles.BoxText}>{el.description}</p>
+									</div>
+								))}
+							</div>
+						)}
+						{!!languages.length && (
+							<div>
+								<h2 className={styles.BoxName}>languages</h2>
+								{languages.map((el) => (
+									<div key={el.language} className={styles.EducationItem}>
+										<h3 className={styles.BoxTitle}>{el.language}</h3>
+										<p className={styles.BoxSubtitle}>{el.level}</p>
+									</div>
+								))}
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
