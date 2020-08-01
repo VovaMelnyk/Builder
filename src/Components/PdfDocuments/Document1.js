@@ -9,7 +9,14 @@ import {
 } from "@react-pdf/renderer";
 
 const Document1 = ({ resume }) => {
-  const { basicInfo, employmentHistory, skills, educations } = resume;
+  const {
+    basicInfo,
+    employmentHistory,
+    skills,
+    educations,
+    languages,
+    projects,
+  } = resume;
 
   return (
     <Document>
@@ -21,7 +28,7 @@ const Document1 = ({ resume }) => {
             </Text>
             <Text style={styles.subtitle}>{basicInfo.jobTitle}</Text>
           </View>
-          <View style={styles.contentBox}>
+          {/* <View style={styles.contentBox}> */}
             <View style={styles.viewBox}>
               <View style={styles.infoBox}>
                 <Text style={styles.infoTitle}>Info</Text>
@@ -37,8 +44,8 @@ const Document1 = ({ resume }) => {
                 <Text style={styles.infoTitle}>Skills</Text>
                 <View style={styles.border}></View>
                 <View>
-                  {skills.map((el, i) => (
-                    <Text style={styles.skillInfo} key={i}>
+                  {skills.map((el) => (
+                    <Text style={styles.skillInfo} key={el.skill}>
                       {el.skill}
                     </Text>
                   ))}
@@ -51,36 +58,75 @@ const Document1 = ({ resume }) => {
                 <Text style={styles.infoTitle}>employment history</Text>
                 <View style={styles.border}></View>
                 <View style={styles.historyBox}>
-                  <Text style={styles.infoSubTitle}>
-                    {employmentHistory[0].jobTitle},
-                    {employmentHistory[0].employer}
-                  </Text>
-                  <Text style={styles.textInfoCity}>
-                    {employmentHistory[0].city}
-                  </Text>
+                  <View>
+                    {employmentHistory.map((el) => (
+                      <View key={el.employer}>
+                        <View style={styles.companyBox}>
+                          <View>
+                            <Text style={styles.infoSubTitle}>
+                              {el.jobTitle}, {el.employer}
+                            </Text>
+                          </View>
+                          <View>
+                            <Text style={styles.textInfoCity}>{el.city}</Text>
+                          </View>
+                        </View>
+                        <Text style={styles.dataInfo}>
+                          {el.start}1111-1111 {el.end}
+                        </Text>
+                        <Text style={styles.textInfo}>{el.description}</Text>
+                      </View>
+                    ))}
+                  </View>
                 </View>
-                <Text style={styles.dataInfo}>
-                  {employmentHistory[0].start}-{employmentHistory[0].end}
-                </Text>
-                <Text style={styles.textInfo}>
-                  {employmentHistory[0].description}
-                </Text>
                 <Text style={styles.infoTitle}>Education</Text>
                 <View style={styles.border}></View>
-                <View style={styles.historyBox}>
-                  <Text style={styles.infoSubTitle}>
-                    {educations[0].school}, {educations[0].degree}
-                  </Text>
+
+                <View>
+                  {educations.map((el) => (
+                    <View key={el.school}>
+                      <View style={styles.companyBox}>
+                        <Text style={styles.infoSubTitle}>{el.school}</Text>
+                        <Text style={styles.dataInfo}>
+                          {el.start}-{el.end}
+                        </Text>
+                      </View>
+                    </View>
+                  ))}
                 </View>
-                <Text style={styles.dataInfo}>
-                  {educations[0].start}-{educations[0].end}
-                </Text>
+                <Text style={styles.infoTitle}>projects</Text>
+                <View style={styles.border}></View>
+                <View>
+                  {projects.map((el) => (
+                    <View key={el.projectTitle}>
+                      <View>
+                        <Text style={styles.infoSubTitle}>
+                          {el.projectTitle}, {el.company}
+                        </Text>
+                      </View>
+                      <Text style={styles.textInfo}>{el.description}</Text>
+                    </View>
+                  ))}
+                </View>
+
+                <Text style={styles.infoTitle}>languages</Text>
+                <View style={styles.border}></View>
+                <View>
+                  {languages.map((el) => (
+                    <View key={el.language}>
+                      <View>
+                        <Text style={styles.infoSubTitle}>{el.language}</Text>
+                      </View>
+                      <Text style={styles.textInfo}>{el.level}</Text>
+                    </View>
+                  ))}
+                </View>
               </View>
             </View>
           </View>
-        </View>
+        {/* </View> */}
 
-        {/* <View style={styles.pageNumberBox}>
+        <View style={styles.pageNumberBox}>
           <Text
             style={styles.pageNumber}
             render={({ pageNumber, totalPages }) =>
@@ -89,15 +135,15 @@ const Document1 = ({ resume }) => {
             fixed
             bottom
           />
-        </View> */}
+        </View>
       </Page>
     </Document>
   );
 };
 
 Font.register({
-  family: 'Oswald',
-  src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf'
+  family: "Oswald",
+  src: "https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf",
 });
 
 const styles = StyleSheet.create({
@@ -120,11 +166,11 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     marginBottom: 16,
   },
-  contentBox: {
-    borderColor: "#d3d3d3",
-    borderTopWidth: 1,
-    borderTopStyle: "solid",
-  },
+  // contentBox: {
+  //   borderColor: "#d3d3d3",
+  //   borderTopWidth: 1,
+  //   borderTopStyle: "solid",
+  // },
 
   subtitle: {
     fontSize: 14,
@@ -141,6 +187,9 @@ const styles = StyleSheet.create({
   viewBox: {
     display: "flex",
     flexDirection: "row",
+    borderColor: "#d3d3d3",
+    borderTopWidth: 1,
+    borderTopStyle: "solid",
   },
   infoTitle: {
     fontWeight: 500,
@@ -165,7 +214,9 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     textTransform: "uppercase",
   },
-
+  historyText: {
+    paddingRight: 10,
+  },
   emailInfo: {
     fontSize: 14,
     fontFamily: "Oswald",
@@ -207,11 +258,17 @@ const styles = StyleSheet.create({
     flexWrap: "nowrap",
     marginBottom: 8,
   },
+  companyBox: {
+    // flexDirection: "row",
+    // alignItems: "flex-start",
+    // justifyContent:"space-between"
+  },
   textInfoCity: {
-    left: 65,
+    // left: 65,
     fontSize: 14,
     fontFamily: "Oswald",
     color: "grey",
+    marginBottom: 8,
   },
 
   dataInfo: {
