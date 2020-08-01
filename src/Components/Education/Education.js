@@ -1,80 +1,49 @@
 import React, { useState } from "react";
-import style from './Education.module.css'
+import style from "./Education.module.css";
 import withToggle from "../../hoc/withToggle";
-import DatePicker from "react-datepicker";
-import moment from "moment"
- 
+import EducationItem from "./EducationItem"
+
+import { useSelector, useDispatch } from "react-redux";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 const Education = (props) => {
-    console.log(props);
-    
-    const initialState = {school: "", degree: "", dateStart: Date.now(), dateEnd: new Date()}
+  console.log(props);
 
-    const [schoolInfo, setSchoolInfo] = useState(initialState)
+  const education = useSelector((state) => state.resume.educations);
+  const dispatch = useDispatch;
 
-    const handleChangeStart = (date1) => {
-        setSchoolInfo({...schoolInfo, dateStart: date1})        
-    }
+  console.log(education);
 
-    const handleChangeEnd = (date1) => {
-        setSchoolInfo({...schoolInfo, dateEnd: date1})        
-    }
 
-    // const addButton = () => {
-    //     setDate([...date, {school: "", degree: "", dateStart: new Date(), dateEnd: new Date()}])
-    // }
 
-    
+  // const [schoolInfo, setSchoolInfo] = useState(education)
+//   const [schoolInfo, setSchoolInfo] = useState(initialState);
 
-    console.log(schoolInfo);
+//   const handleChangeStart = (date1) => {
+//     setSchoolInfo({ ...schoolInfo, start: date1 });
+//   };
 
+//   const handleChangeEnd = (date1) => {
+//     setSchoolInfo({ ...schoolInfo, end: date1 });
+//   };
+
+  // const addButton = () => {
+  //     setDate([...date, {school: "", degree: "", dateStart: new Date(), dateEnd: new Date()}])
+  // }
 
   return (
     <div className={style.wraper}>
       <h1 className={style.title}>Education</h1>
-      <div className={style.degree}>
-        <div className={style.degreeSchool}>
-          <h2 className={style.schoolLabel}>School degree</h2>
-          <div className={style.degreeEdits}>
-              <div className={style.degreeEditIcon}></div>
-          <p className={style.degreeEditsHover}>Edit</p>
-          <div className={style.degreeDeleteIcon}></div>
-          <p className={style.degreeEditsHover}>Delete</p>
-          <div className={!props.open ? style.degreeTreeangle : style.degreeTreeangleRotate} onClick={props.toggle}></div>
-          </div>
 
-        </div>
-     
-     
-        <div className={style.degreeDates}>
-          <p className={style.degreeText}>Start</p>
-  <p className={style.Date}>{`${moment(schoolInfo.dateStart).format("l")}`}</p>
-          <p className={style.degreeText}>End</p>
-          <p className={style.Date}>{`${moment(schoolInfo.dateEnd).format("l")}`}</p>
-        </div>
-      </div>
+    {education.map(el => (
+        <EducationItem el={el}/>
+    ))}
 
-{props.open && (
-    
-      <div className={style.fillIn}>
-        <input type="text" placeholder="School" name="school" className={style.inputSpace}/>
-        <input type="text" placeholder="Degree" name="school" className={style.inputSpace}/>
-
-        <div className={style.fillInDate}>
-
-            {/* <input type="date" placeholder="Start date" name="startDate" /> */}
-            <DatePicker selected={schoolInfo.dateStart} onChange={handleChangeStart} className={style.inputDate} name="dateStart" />
-            <DatePicker selected={schoolInfo.dateEnd} onChange={handleChangeEnd} className={style.inputDate} name="dateEnd"/>
-            {/* <input type="date" placeholder="End date" name="endDate" className={style.inputDate}/> */}
-        </div>
-      </div>
-)
-}
 
       <button className={style.addButton}>+ Add Education</button>
     </div>
   );
 };
 
-export default withToggle(Education) ;
+export default Education;
