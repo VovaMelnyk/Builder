@@ -22,7 +22,7 @@ const Registration = () => {
           <div className={styles.formDiv}>
             <input
               className={styles.input}
-              type="text"
+              type="password"
               placeholder="Password"
               id="RB6PasswordInput"
             />

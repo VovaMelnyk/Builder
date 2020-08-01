@@ -41,6 +41,19 @@
 .formDiv {
   position: relative;
 }
+.label {
+  display: none;
+  position: absolute;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.04em;
+  color: rgba(24, 28, 39, 0.6);
+  top: -12px;
+  padding-left: 8px;
+}
 
 .input {
   outline: none;
@@ -58,20 +71,6 @@
   color: #181c27;
 }
 
-.label {
-  display: none;
-  position: absolute;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.04em;
-  color: rgba(24, 28, 39, 0.6);
-  top: -12px;
-  padding-left: 8px;
-}
-
 .input::placeholder {
   color: rgba(24, 28, 39, 0.6);
 }
@@ -82,6 +81,11 @@
 
 .input:first-of-type {
   margin-bottom: 40px;
+}
+
+.input:invalid {
+  color: #ff2c0c;
+  border-bottom: 1px solid #ff2c0c;
 }
 
 .button {
@@ -166,9 +170,4 @@
   border-radius: 0 75px 0 0;
   bottom: 0;
   left: 0;
-}
-
-.onError {
-  color: #ff2c0c;
-  border-bottom: 1px solid #ff2c0c;
 }

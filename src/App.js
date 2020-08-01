@@ -1,14 +1,13 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { paths } from "./constants";
-// import Registration from "./Containers/Registration/Registration";
+import Registration from "./Containers/Registration/Registration";
 import Login from "./Containers/Login/Login";
 import Dashboard from "./Containers/Dashboard/Dashboard";
 import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
 import "./App.css";
-import Registration from "./Containers/Registration/Registration-RB-6/RegistrationRB6";
 
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
         <Route path={paths.editor} component={Editor} />
         <Route path={paths.templates} component={Templates} />
       </Switch>
-      <Registration />
     </div>
   );
 }
