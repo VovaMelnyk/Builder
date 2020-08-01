@@ -3,8 +3,9 @@ export const paths = {
   login: "/login",
   dashboard: "/dashboard",
   editor: "/editor",
-  templates: "/templates"
+  templates: "/templates",
 };
 export const reduxUserTypes = {
-  LOG_OUT: "LOG_OUT"
+  LOG_OUT: "LOG_OUT",
 };
+export const BASIC_INFO = "@basicInfo/change";
