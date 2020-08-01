@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "./Education.module.css";
 import withToggle from "../../hoc/withToggle";
 import EducationItem from "./EducationItem"
+import {addEducation, deleteEducation} from '../../redux/education/actions';
 
 import { useSelector, useDispatch } from "react-redux";
 
