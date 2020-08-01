@@ -1,0 +1,96 @@
+.MainWrapper {
+    width: 640px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #181C27;
+    display: block;
+}
+
+.PreviewTitle {
+    font-size: 18px;
+    line-height: 22px;
+    padding-top: 5px;
+    margin-bottom: 28px;
+    margin-left: 1px;
+}
+
+.SelectTitle {
+    font-size: 14px;
+    line-height: 17px;
+    position: relative;
+    display: block;
+    margin-top: 6px;
+    text-decoration: none;
+    margin-left: 23px;
+    padding: 3px;
+}
+
+.SelectTitle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: -21.5px;
+    top: 3px;
+    background-image: url(/icons/windows-select.svg);
+    padding-top: 33px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ButtonWrapper {
+    width: 131px;
+    height: 33px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.ButtonDownloadWrapper {
+    background: #181C27;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+    color: #FFFFFF;
+    position: relative;
+    padding-left: 38px;
+    margin-bottom: 28px;
+
+}
+
+.ButtonDownloadWrapper::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 13px;
+    left: 20px;
+    top: 10px;
+    background-image: url(/icons/download.svg);
+}
+
+.ButtonSaveWrapper {
+    background: #FF6B08;
+    box-shadow: 0px 1px 4px rgba(255, 107, 8, 0.12), 0px 1px 1px rgba(255, 107, 8, 0.16), 0px 1px 4px rgba(255, 107, 8, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.SheetWrapper {
+    width: 640px;
+    height: 905.9px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.02), 1px 1px 4px rgba(0, 0, 0, 0.06), 1px 4px 4px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+
+}
