@@ -103,6 +103,29 @@ const ResumeTemplate2 = () => {
 									))}
 								</div>
 							)}
+							{!!projects.length && (
+								<div>
+									<h2 className={styles.BoxName}>projects</h2>
+									{projects.map((el) => (
+										<div key={el.projectTitle}>
+											<h3 className={styles.BoxTitle}>{el.projectTitle}</h3>
+											<p className={styles.BoxSubtitle}>{el.company}</p>
+											<p className={styles.BoxText}>{el.description}</p>
+										</div>
+									))}
+								</div>
+							)}
+							{!!languages.length && (
+								<div>
+									<h2 className={styles.BoxName}>languages</h2>
+									{languages.map((el) => (
+										<div key={el.language} className={styles.EducationItem}>
+											<h3 className={styles.BoxTitle}>{el.language}</h3>
+											<p className={styles.BoxSubtitle}>{el.level}</p>
+										</div>
+									))}
+								</div>
+							)}
 						</div>
 					</div>
 					<div className={styles.column2}>
@@ -114,29 +137,6 @@ const ResumeTemplate2 = () => {
 										<li key={el.skill}>{el.skill}</li>
 									))}
 								</ul>
-							</div>
-						)}
-						{!!projects.length && (
-							<div>
-								<h2 className={styles.BoxName}>projects</h2>
-								{projects.map((el) => (
-									<div key={el.projectTitle}>
-										<h3 className={styles.BoxTitle}>{el.projectTitle}</h3>
-										<p className={styles.BoxSubtitle}>{el.company}</p>
-										<p className={styles.BoxText}>{el.description}</p>
-									</div>
-								))}
-							</div>
-						)}
-						{!!languages.length && (
-							<div>
-								<h2 className={styles.BoxName}>languages</h2>
-								{languages.map((el) => (
-									<div key={el.language} className={styles.EducationItem}>
-										<h3 className={styles.BoxTitle}>{el.language}</h3>
-										<p className={styles.BoxSubtitle}>{el.level}</p>
-									</div>
-								))}
 							</div>
 						)}
 					</div>
