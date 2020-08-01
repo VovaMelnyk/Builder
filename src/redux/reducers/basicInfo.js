@@ -1,3 +1,5 @@
+import { CHANGE_TYPE } from "../../constants";
+
 const initialState = {
   type: 1,
   id: "",
@@ -14,6 +16,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case CHANGE_TYPE:
+      return { ...state, ...action.payload };
     default:
       return state;
   }

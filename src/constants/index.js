@@ -5,3 +5,5 @@ export const paths = {
   editor: "/editor",
   templates: "/templates",
 };
+
+export const CHANGE_TYPE = "CHANGE_TYPE";
