@@ -1,3 +1,7 @@
+.EmploymentHistory_Container {
+  padding-bottom: 40px;
+}
+
 .EmploymentHistory_Title {
   margin-bottom: 16px;
   font-family: "Montserrat", sans-serif;
@@ -21,4 +25,5 @@
   background-position: 10%;
   background-size: 10%;
   cursor: pointer;
+  outline: none;
 }
