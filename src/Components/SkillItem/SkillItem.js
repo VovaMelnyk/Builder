@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import classes from "./SkillItem.module.css";
 import withToggle from "../../hoc/withToggle";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteSkill, updateSkill } from "../../redux/actions/skills";
 
-const SkillItem = ({ skill, toggle, open }) => {
+const SkillItem = ({ skill, toggle, open, index }) => {
+  const dispatch = useDispatch();
+
+  const changeSkill = (event) => {
+    dispatch(updateSkill(index, { skill: event.target.value }));
+  };
+
+  const deleteOneSkill = () => {
+    dispatch(deleteSkill(index));
+  };
+
   return (
     <>
       <div className={classes.SkillsContainer}>
@@ -18,6 +29,7 @@ const SkillItem = ({ skill, toggle, open }) => {
             </button>
             <button
               className={`${classes.SkillItem_button} ${classes.SkillItem_delete}`}
+              onClick={deleteOneSkill}
             >
               Delete
             </button>
@@ -33,10 +45,12 @@ const SkillItem = ({ skill, toggle, open }) => {
         <form className={classes.SkillsInput}>
           <div className={classes.SkillsNameContainer}>
             <input
+              onChange={changeSkill}
               className={classes.Skill__name}
               type="text"
               name="Skill"
               placeholder="Enter your skill"
+              //   value={skill}
             />
           </div>
         </form>
