@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ResumeTemplates.module.css";
 import { useSelector } from "react-redux";
+import moment from "moment";
 
 const ResumeTemplate2 = () => {
 	const recumeInfo = useSelector((state) => state.resume);
@@ -90,9 +91,11 @@ const ResumeTemplate2 = () => {
 												<h3 className={styles.BoxTitle}>
 													{`${el.jobTitle}, ${el.employer}, ${el.city}`}
 												</h3>
-												<p
-													className={styles.BoxSubtitle}
-												>{`${el.start} - ${el.end}`}</p>
+												<p className={styles.BoxSubtitle}>{`${moment(
+													el.start
+												).format("MMM YYYY")} - ${moment(el.end).format(
+													"MMM YYYY"
+												)}`}</p>
 												<p className={styles.BoxText}>{el.description}</p>
 											</div>
 										))
@@ -124,9 +127,11 @@ const ResumeTemplate2 = () => {
 												<h3
 													className={styles.BoxTitle}
 												>{`${el.school}, ${el.degree}`}</h3>
-												<p
-													className={styles.BoxSubtitle}
-												>{`${el.start} - ${el.end}`}</p>
+												<p className={styles.BoxSubtitle}>{`${moment(
+													el.start
+												).format("MMM YYYY")} - ${moment(el.end).format(
+													"MMM YYYY"
+												)}`}</p>
 											</div>
 										))
 									) : (
