@@ -74,7 +74,7 @@ const Document1 = ({ resume }) => {
                         </View>
                       </View>
                       <Text style={styles.dataInfo}>
-                        {el.start}-{el.end} 
+                        {el.start}-{el.end}
                       </Text>
                       <View style={styles.pointBox}>
                         <View style={styles.point}></View>
@@ -108,13 +108,6 @@ const Document1 = ({ resume }) => {
                         {el.projectTitle}, {el.company}
                       </Text>
                     </View>
-                    <Text style={styles.textInfo}>{el.description}</Text>
-                    <Text style={styles.textInfo}>{el.description}</Text>
-                    <Text style={styles.textInfo}>{el.description}</Text>
-                    <Text style={styles.textInfo}>{el.description}</Text>
-                    <Text style={styles.textInfo}>{el.description}</Text>
-                    <Text style={styles.textInfo}>{el.description}</Text>
-                    <Text style={styles.textInfo}>{el.description}</Text>
                     <Text style={styles.textInfo}>{el.description}</Text>
                   </View>
                 ))}
@@ -176,7 +169,7 @@ const styles = StyleSheet.create({
   },
   viewBox: {
     display: "flex",
-    flexDirection: "row",    
+    flexDirection: "row",
   },
 
   infoBox: {
@@ -185,7 +178,7 @@ const styles = StyleSheet.create({
     borderRightStyle: "solid",
     paddingTop: 25,
     paddingRight: 50,
-    width: 150
+    width: 150,
   },
 
   infoTitle: {
