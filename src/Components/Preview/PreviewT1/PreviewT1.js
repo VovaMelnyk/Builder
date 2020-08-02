@@ -15,9 +15,11 @@ const PreviewT1 = () => {
   return (
     <div className={styles.preview}>
       <div className={styles.topPart}>
-        <h2
-          className={styles.name}
-        >{`${basicInfo.firstName} ${basicInfo.lastName}`}</h2>
+        <h2 className={styles.name}>
+          {basicInfo.firstName.length || basicInfo.lastName.length
+            ? `${basicInfo.firstName} ${basicInfo.lastName}`
+            : "your name"}
+        </h2>
         <p className={styles.titleJob}>{basicInfo.jobTitle}</p>
       </div>
       <div className={styles.main}>
@@ -67,12 +69,11 @@ const PreviewT1 = () => {
             <ul>
               {employmentHistory.map((job) => (
                 <li key={`${job.employer}-${job.jobTitle}`}>
-                  <div className={styles.titleAndCity}>
-                    <h4 className={styles.listItemTitle}>
-                      {`${job.jobTitle}, ${job.employer}`}
-                    </h4>
-                    <p className={styles.listItemContent}>{job.city}</p>
-                  </div>
+                  <h4 className={styles.listItemTitle}>
+                    {`${job.jobTitle}, ${job.employer}`}
+                  </h4>
+                  <p className={styles.listItemContent}>{job.city}</p>
+
                   <p className={styles.jobPeriod}>
                     {`${job.start} - ${job.end}`}
                   </p>
@@ -99,11 +100,9 @@ const PreviewT1 = () => {
             <ul>
               {educations.map((edu) => (
                 <li key={edu.school}>
-                  <div className={styles.titleAndCity}>
-                    <h4 className={styles.listItemTitle}>
-                      {`${edu.school}, ${edu.degree}`}
-                    </h4>
-                  </div>
+                  <h4 className={styles.listItemTitle}>
+                    {`${edu.school}, ${edu.degree}`}
+                  </h4>
                   <p
                     className={styles.jobPeriod}
                   >{`${edu.start} - ${edu.end}`}</p>
