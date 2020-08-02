@@ -76,21 +76,13 @@ const EducationItem = ({
             !!degree ? degree : "degree"
           }`}</h2>
           <div className={style.degreeEdits}>
-            <div onClick={toggle} className={style.degreeEditsHover}>
-              <div className={style.degreeEditIcon}></div>
-              <p>Edit</p>
-            </div>
-
-            <div onClick={remove} className={style.degreeEditsHover}>
-              <div className={style.degreeDeleteIcon}></div>
-              <p>Delete</p>
-            </div>
-            <div
-              className={
-                !open ? style.degreeTreeangle : style.degreeTreeangleRotate
+            <button onClick={toggle} className={`${style.degreeEditsHover} ${style.degreeEditIcon}`}>Edit</button>
+            <button onClick={remove} className={`${style.degreeEditsHover} ${style.degreeDeleteIcon}`}>Delete</button>
+            <button
+              className={`${style.degreeEditsHover} ${!!open ? style.degreeTreeangle : style.degreeTreeangleRotate}`
               }
               onClick={toggle}
-            ></div>
+            ></button>
           </div>
         </div>
 

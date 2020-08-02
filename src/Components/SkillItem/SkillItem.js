@@ -8,6 +8,7 @@ const SkillItem = ({ skill, toggle, open, index }) => {
   const dispatch = useDispatch();
 
   const changeSkill = (event) => {
+    event.preventDefault();
     dispatch(updateSkill(index, { skill: event.target.value }));
   };
 
@@ -34,7 +35,7 @@ const SkillItem = ({ skill, toggle, open, index }) => {
               Delete
             </button>
             <button
-              className={`${classes.SkillItem_button} ${classes.SkillItem_sort}`}
+              className={`${classes.SkillItem_button} ${open ? classes.SkillItem_sort : classes.SkillItem_sortDown}`}
               onClick={toggle}
             ></button>
           </div>
