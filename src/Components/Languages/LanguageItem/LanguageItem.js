@@ -38,7 +38,7 @@ const LanguageItem = (props) => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.header}>
-          <span className={styles.languageName}>{language}</span> |{" "}
+          <span className={styles.languageName}>{language}</span> {level && "|"}
           <span className={styles.languageLevel}>{level}</span>
         </div>
         <div className={styles.buttonSpace}>
