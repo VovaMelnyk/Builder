@@ -18,8 +18,10 @@ function App() {
 
   useEffect(() => {
     const user = storage.get("user");
-    if (!!Object.keys(user).length) {
-      dispatch(logInUser(user));
+    if (user) {
+      if (!!Object.keys(user).length) {
+        dispatch(logInUser(user));
+      }
     }
   }, []);
 
