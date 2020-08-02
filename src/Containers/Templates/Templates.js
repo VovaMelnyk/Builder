@@ -2,9 +2,9 @@ import React, { Fragment, useState } from "react";
 import styles from "./Templates.module.css";
 import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
 import { useDispatch, useSelect } from "react-redux";
-import COMPONENT from "../Editor/Editor";
 import { changeType } from "../../redux/actions/basicInfo";
-
+import Template_1 from "../../Components/Template_1/Tempate_1";
+import Template_2 from "../../Components/ResumeTemplate2/ResumeTemplate2";
 const Templates = () => {
   const path = useRouteMatch().path;
   const dispatch = useDispatch();
@@ -34,8 +34,8 @@ const Templates = () => {
       </div>
 
       <Switch>
-        <Route path={`${path}/1`} component={COMPONENT} />
-        <Route path={`${path}/2`} component={COMPONENT} />
+        <Route path={`${path}/1`} component={Template_1} />
+        <Route path={`${path}/2`} component={Template_2} />
       </Switch>
     </Fragment>
   );
