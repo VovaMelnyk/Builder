@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import classes from "./ResumeTemplate1.module.css";
 
-const Template_1 = () => {
+const ResumeTemplate1 = () => {
   const resume = useSelector((state) => state.resume);
   //------Global State----------------------------------------
   const {
@@ -262,4 +262,4 @@ const Template_1 = () => {
   );
 };
 
-export default Template_1;
+export default ResumeTemplate1;
