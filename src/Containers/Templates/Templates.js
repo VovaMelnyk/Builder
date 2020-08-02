@@ -34,7 +34,7 @@ const Templates = () => {
       </div>
 
       <Switch>
-        <Route path={`${path}`} component={Template_1} />
+        <Route exact path={`${path}`} component={Template_1} />
         <Route path={`${path}/2`} component={Template_2} />
       </Switch>
     </Fragment>
