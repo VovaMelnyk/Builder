@@ -18,6 +18,7 @@ export const reduxUserTypes = {
   LOG_OUT: "LOG_OUT",
   LOG_IN: "LOG_IN",
   REGISTER: "REGISTER",
+  USER_ERROR: "USER_ERROR",
 };
 
 export const CHANGE_TYPE = "CHANGE_TYPE";
