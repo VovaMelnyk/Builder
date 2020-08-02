@@ -1,8 +1,8 @@
 .Container {
-  margin-left: 55px;
   width: 470px;
   font-family: Montserrat;
   color: #181c27;
+  margin-bottom: 40px;
 }
 
 .Skill__title {
@@ -18,25 +18,19 @@
 }
 
 .Skill__submit {
-  width: 121px;
   padding: 8px 16px 8px 38px;
   background-color: rgba(24, 28, 39, 0.1);
-  border: none;
   border-radius: 25px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
+  border: none;
+  background-image: url("/icons/employment_add_position_btn_icon.svg");
+  background-repeat: no-repeat;
+  background-position: 10%;
+  background-size: 10%;
+  cursor: pointer;
+  font: 500 14px/17px "Montserrat";
+  text-align: left;
 }
 
 .Skill__item {
   padding-bottom: 16px;
-}
-
-.SkillItem_plus {
-  background-image: url(../SkillItem/icons/plus.svg);
-  background-size: 11px 11px;
-  background-repeat: no-repeat;
-  background-position: left 20px center;
 }
