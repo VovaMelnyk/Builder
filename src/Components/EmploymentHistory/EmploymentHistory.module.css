@@ -23,6 +23,7 @@
   background-position: 10%;
   background-size: 10%;
   cursor: pointer;
+  outline: none;
   font: 500 14px/17px "Montserrat";
   text-align: left;
 }
