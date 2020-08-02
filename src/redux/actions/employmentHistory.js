@@ -4,6 +4,7 @@ import {
   CHANGE_DATA_POSITION,
   CHANGE_POSITION_START_DATE,
   CHANGE_POSITION_END_DATE,
+  CLEAR_RESUME,
 } from "../../constants";
 
 export const addPosition = (employment) => ({
@@ -38,4 +39,8 @@ export const changePositionEndDate = (end, index) => ({
     end,
     index,
   },
+});
+
+export const clearResume = () => ({
+  type: CLEAR_RESUME,
 });

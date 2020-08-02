@@ -34,7 +34,7 @@ const SkillItem = ({ skill, toggle, open, index }) => {
               Delete
             </button>
             <button
-              className={`${classes.SkillItem_button} ${classes.SkillItem_sort}`}
+              className={`${classes.SkillItem_button} ${open ? classes.SkillItem_sort : classes.SkillItem_sortDown}`}
               onClick={toggle}
             ></button>
           </div>

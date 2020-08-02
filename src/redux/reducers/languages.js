@@ -1,3 +1,5 @@
+import { CLEAR_RESUME } from "../../constants";
+
 const initialState = [
   {
     language: "Ukrainian",
@@ -17,6 +19,8 @@ export default (state = initialState, action) => {
       const newStateSet = state.slice();
       newStateSet.splice(action.payload.index, 1, action.payload.editLanguage);
       return newStateSet;
+    case CLEAR_RESUME:
+      return initialState;
     default:
       return state;
   }

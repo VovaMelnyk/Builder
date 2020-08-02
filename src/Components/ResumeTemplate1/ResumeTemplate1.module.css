@@ -1,5 +1,9 @@
-.wrapper {
+.resumeWrapper {
+    margin: 0 auto;
     padding: 70px 100px 49px;
+    width: 970px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06), 1px 3px 4px rgba(0, 0, 0, 0.08),
+        1px 4px 6px rgba(0, 0, 0, 0.12);
 
 }
 
@@ -120,8 +124,6 @@ p.info_text:last-child {
 }
 
 .employment_history_title {
-    display: flex;
-    justify-content: space-between;
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
