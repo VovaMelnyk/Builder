@@ -6,7 +6,7 @@
 }
 .Container {
 	margin: 0 auto;
-	padding: 90px 100px 132px;
+	padding: 60px 70px 100px;
 }
 .ResumeHeding {
 	display: flex;
@@ -111,7 +111,7 @@
 }
 .column2 {
 	width: 30%;
-	padding-left: 10px;
+	padding-left: 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;

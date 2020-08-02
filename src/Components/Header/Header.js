@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { paths } from "../../constants";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../redux/actions/user";
+import { auth } from "../../configFirebase";
+import storage from "../../helpers/storage";
 
 const Header = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
-  const isUserAuth = useSelector(state => state.user);
+  const isUserAuth = useSelector((state) => state.user);
   const logOut = () => {
     dispatch(logOutUser());
+    auth.signOut();
+    storage.save("user", {});
+    history.push(paths.login);
   };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}></div>
-      {isUserAuth.email !== "" && (
+      {!!Object.keys(isUserAuth).length && (
         <nav className={styles.headerNav}>
           <ul className={styles.headerNavList}>
             <li className={styles.navItem}>
