@@ -121,18 +121,18 @@ const EducationItem = ({
           <div className={style.fillInDate}>
             {/* <input type="date" placeholder="Start date" name="startDate" /> */}
             <DatePicker
-              selected={start}
-              // onChange={handleChangeStart}
-              className={style.inputDate}
-              name="start"
+              selected={moment(start)._d}
               onChange={handleStart}
+              className={style.inputDate}
+              dateFormat="MM/yyyy"
+              showMonthYearPicker
             />
             <DatePicker
-              selected={end}
-              // onChange={handleChangeEnd}
-              className={style.inputDate}
-              name="end"
+              selected={moment(end)._d}
               onChange={handleEnd}
+              className={style.inputDate}
+              dateFormat="MM/yyyy"
+              showMonthYearPicker
             />
             {/* <input type="date" placeholder="End date" name="endDate" className={style.inputDate}/> */}
           </div>

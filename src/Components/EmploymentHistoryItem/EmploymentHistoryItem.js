@@ -71,7 +71,7 @@ const EmploymentHistoryItem = ({
           </p>
         </div>
       </div>
-      {!open && (
+      {open && (
         <form className={styles.EmploymentHistoryItem_Form}>
           <input
             type="text"

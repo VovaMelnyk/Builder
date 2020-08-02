@@ -10,4 +10,5 @@
   cursor: pointer;
   font: 500 14px/17px "Montserrat";
   text-align: left;
+  outline: none;
 }

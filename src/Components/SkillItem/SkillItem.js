@@ -8,7 +8,6 @@ const SkillItem = ({ skill, toggle, open, index }) => {
   const dispatch = useDispatch();
 
   const changeSkill = (event) => {
-    event.preventDefault();
     dispatch(updateSkill(index, { skill: event.target.value }));
   };
 
