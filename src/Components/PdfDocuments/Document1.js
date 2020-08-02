@@ -56,7 +56,8 @@ const Document1 = ({ resume }) => {
             <View style={styles.profileBox}>
               <Text style={styles.infoTitle}>Profile</Text>
               <View style={styles.border}></View>
-              <Text style={styles.profileInfo}>{basicInfo.summary}</Text>
+              <Text style={styles.profileInfo}>{basicInfo.summary}
+              </Text>
               <Text style={styles.infoTitle}>employment history</Text>
               <View style={styles.border}></View>
               <View style={styles.historyBox}>
@@ -228,6 +229,7 @@ const styles = StyleSheet.create({
   profileBox: {
     paddingTop: 20,
     paddingLeft: 20,
+    width: 345,
   },
 
   profileInfo: {
