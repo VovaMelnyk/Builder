@@ -7,6 +7,7 @@ import Dashboard from "./Containers/Dashboard/Dashboard";
 import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
+import PrivateRoute from "./Containers/PrivateRoute";
 import "./App.css";
 
 function App() {
@@ -16,9 +17,9 @@ function App() {
       <Switch>
         <Route path={paths.registration} component={Registration} />
         <Route path={paths.login} component={Login} />
-        <Route path={paths.dashboard} component={Dashboard} />
-        <Route path={paths.editor} component={Editor} />
-        <Route path={paths.templates} component={Templates} />
+        <PrivateRoute path={paths.dashboard} component={Dashboard} />
+        <PrivateRoute path={paths.editor} component={Editor} />
+        <PrivateRoute path={paths.templates} component={Templates} />
       </Switch>
     </div>
   );

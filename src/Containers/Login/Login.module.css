@@ -1,5 +1,5 @@
 .sectionWrapper {
-  padding-top: 100px;
+  padding: 100px 0;
 }
 .loginWrapper {
   width: 610px;
@@ -48,7 +48,7 @@
   outline: none;
 }
 .loginInput:last-of-type {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .submitBtn {
   display: block;
@@ -73,4 +73,15 @@
 }
 .registerLink {
   color: rgba(24, 28, 39, 0.6);
+}
+
+.error {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #ff2c0c;
+  margin-bottom: 20px;
 }

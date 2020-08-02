@@ -6,9 +6,8 @@ ul {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.02), 1px 1px 4px rgba(0, 0, 0, 0.06),
     1px 4px 4px rgba(0, 0, 0, 0.08);
 
-  padding: 35px 100px 0 70px;
+  padding: 35px 100px 35px 70px;
   background-color: #fff;
-  margin-bottom: 24px;
   width: 100%;
 }
 .topPart {
@@ -18,7 +17,7 @@ ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 30px;
   line-height: 34px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -30,7 +29,7 @@ ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 10px;
   text-transform: uppercase;
   color: rgba(24, 28, 39, 0.6);
@@ -54,7 +53,7 @@ ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -75,7 +74,7 @@ ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 18px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -91,7 +90,7 @@ ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 10px;
   letter-spacing: 0.02em;
   color: rgba(24, 28, 39, 0.6);
@@ -111,18 +110,11 @@ ul {
   margin-bottom: 20px;
 }
 
-.titleAndCity {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
 .cvInfoData {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 18px;
   letter-spacing: 0.02em;
   color: rgba(24, 28, 39, 0.6);
@@ -133,7 +125,7 @@ ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 10px;
   display: flex;
   align-items: center;
