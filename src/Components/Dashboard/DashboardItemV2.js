@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./DashboardItem.module.css";
 
-const DashboardItemV2 = ({ basicInfo }) => {
-  console.log(basicInfo);
+const DashboardItemV2 = () => {
   return (
     <div className={styles.resumeItem}>
-      <div className={styles.resumeName}>{basicInfo.title}</div>
+      <div className={styles.resumeName}>"basicInfo.title"</div>
       <div className={styles.resume}>
         <img src="/icons/resv2.png" />
       </div>

@@ -1,9 +1,11 @@
 .previewT2 {
-  width: 640px;
-  height: 906px;
+  width: 100%;
   margin: 0 auto;
   /* text-align: center; */
   /* list-style: none; */
+  background-color: #fff;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.02), 1px 1px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 4px rgba(0, 0, 0, 0.08);
 }
 
 .name {
@@ -29,7 +31,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 18px;
   color: rgba(24, 28, 39, 0.6);
   margin-bottom: 44px;
@@ -50,7 +52,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 18px;
   text-transform: uppercase;
   text-align: center;
@@ -78,7 +80,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 12px;
   text-transform: uppercase;
   color: #ffffff;
@@ -93,7 +95,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 18px;
   color: rgba(24, 28, 39, 0.6);
 }
@@ -106,8 +108,8 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
-  line-height: 9px;
+  font-size: 10px;
+  line-height: 11px;
   letter-spacing: 0.02em;
 
   color: #181c27;
@@ -120,8 +122,8 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 14px;
   color: #181c27;
 }
 
@@ -137,7 +139,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 18px;
   text-transform: uppercase;
   color: rgba(24, 28, 39, 0.6);
