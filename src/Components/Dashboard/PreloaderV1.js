@@ -5,15 +5,15 @@ const PreloaderV1 = () => {
   return (
     <div>
       <div className={styles.gridTemplate}>
-        <p className={styles.one}></p>
-        <p className={styles.two}></p>
-        <p className={styles.three}></p>
-        <p className={styles.four}></p>
+        <p className={`${styles.one} ${styles.dashboard_text}`}></p>
+        <p className={`${styles.two} ${styles.dashboard_text}`}></p>
+        <p className={`${styles.three} ${styles.dashboard_text}`}></p>
+        <p className={`${styles.four} ${styles.dashboard_text}`}></p>
 
-        <p className={styles.six}></p>
+        <p className={`${styles.six} ${styles.dashboard_text}`}></p>
 
-        <p className={styles.eight}></p>
-        <p className={styles.nine}></p>
+        <p className={`${styles.eight} ${styles.dashboard_text}`}></p>
+        <p className={`${styles.nine} ${styles.dashboard_text}`}></p>
       </div>
     </div>
   );
