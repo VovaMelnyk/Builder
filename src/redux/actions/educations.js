@@ -1,4 +1,4 @@
-import { CLEAR_RESUME } from "../../constants";
+import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 export const addEducation = (data) => ({
   type: ADD_EDUCATION,
@@ -17,6 +17,11 @@ export const deleteEducation = (index) => ({
 
 export const clearResume = () => ({
   type: CLEAR_RESUME,
+});
+
+export const updateResume = (data) => ({
+  type: UPDATE_RESUME,
+  payload: data,
 });
 
 export const ADD_EDUCATION = "ADD_EDUCATION";

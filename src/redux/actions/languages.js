@@ -1,4 +1,4 @@
-import { CLEAR_RESUME } from "../../constants";
+import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 export const addLanguage = () => ({
   type: "ADD_LANGUAGE",
@@ -17,4 +17,9 @@ export const updateLanguage = (index, editLanguage) => ({
 
 export const clearResume = () => ({
   type: CLEAR_RESUME,
+});
+
+export const updateResume = (data) => ({
+  type: UPDATE_RESUME,
+  payload: data,
 });

@@ -5,6 +5,7 @@ import {
   CHANGE_POSITION_START_DATE,
   CHANGE_POSITION_END_DATE,
   CLEAR_RESUME,
+  UPDATE_RESUME,
 } from "../../constants";
 import moment from "moment";
 
@@ -44,6 +45,8 @@ export default (state = initialState, { type, payload }) => {
       );
     case CLEAR_RESUME:
       return initialState;
+    case UPDATE_RESUME:
+      return payload.employmentHistory;
     default:
       return state;
   }

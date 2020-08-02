@@ -1,4 +1,4 @@
-import { BASIC_INFO, CLEAR_RESUME } from "../../constants/index";
+import { BASIC_INFO, CLEAR_RESUME, UPDATE_RESUME } from "../../constants/index";
 import { CHANGE_TYPE } from "../../constants";
 
 const initialState = {
@@ -22,6 +22,8 @@ export default (state = initialState, action) => {
       return { ...state, ...action.payload };
     case CLEAR_RESUME:
       return initialState;
+    case UPDATE_RESUME:
+      return action.payload.basicInfo;
     default:
       return state;
   }

@@ -1,19 +1,16 @@
 import React from "react";
 import styles from "./DashboardItem.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  deleteResumeFromDatabase,
-  updateResumeFromDatabase,
-} from "../../redux/operations/resumeCollection";
+import { deleteResumeFromDatabase } from "../../redux/operations/resumeCollection";
 import { useHistory } from "react-router-dom";
-import { paths } from "../../constants";
+import { paths, UPDATE_RESUME } from "../../constants";
 
 const DashboardItemV2 = ({ id, basicInfo }) => {
-  // const resumeCollectionId = useSelector((state) => state.resumeCollection.id);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const collectionName = user.uid;
   const history = useHistory();
+  const resumeCollections = useSelector((state) => state.resumeCollection);
 
   const deleteDocument = () => {
     dispatch(deleteResumeFromDatabase(collectionName, id));
@@ -21,7 +18,10 @@ const DashboardItemV2 = ({ id, basicInfo }) => {
 
   const edit = () => {
     history.push(`${paths.editor}?id=${id}`);
-    // dispatch(updateResumeFromDatabase(collectionName, id));
+
+    const res = resumeCollections.find((doc) => doc.id === id);
+
+    dispatch({ type: UPDATE_RESUME, payload: res });
   };
 
   return (
