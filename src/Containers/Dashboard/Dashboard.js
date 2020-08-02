@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { paths } from "../../constants";
 import DashboardItem from "../../Components/Dashboard/DashboardItem";
 import { useSelector } from "react-redux";
+import DashboardItemV2 from "../../Components/Dashboard/DashboardItemV2";
 
 const Dashboard = () => {
   const resumeList = useSelector((state) => state.resumeCollection);
@@ -19,7 +20,7 @@ const Dashboard = () => {
           <DashboardItem {...el} />
         ))}
         <DashboardItem />
-        <DashboardItem />
+        <DashboardItemV2 />
       </div>
     </div>
   );
