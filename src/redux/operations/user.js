@@ -1,6 +1,7 @@
 import { auth } from "../../configFirebase";
 import { registerUser, userError, logInUser } from "../actions/user";
 import { paths } from "../../constants/index";
+import storage from "../../helpers/storage";
 
 export const createUserRegistration = (user, history) => async (dispatch) => {
   const { email, password } = user;
@@ -16,6 +17,7 @@ export const createUserRegistration = (user, history) => async (dispatch) => {
     };
 
     dispatch(registerUser(userAuthenticated));
+    storage.save("user", userAuthenticated);
 
     history.push(paths.dashboard);
   } catch (error) {
@@ -37,6 +39,7 @@ export const createUserLogin = (user, history) => async (dispatch) => {
     };
 
     dispatch(logInUser(userAuthenticated));
+    storage.save("user", userAuthenticated);
 
     history.push(paths.dashboard);
   } catch (error) {

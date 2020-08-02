@@ -1,14 +1,14 @@
 import { reduxUserTypes } from "../../constants";
 
 const initialState = {
-  email: "user@gmail.com",
-  uid: "34234uhkj4jh2343424n23kl4",
-  error: null,
+  // email: "user@gmail.com",
+  // uid: "34234uhkj4jh2343424n23kl4",
+  // error: null,
 };
 
 const userLogOut = {
-  email: "",
-  uid: "",
+  // email: "",
+  // uid: "",
 };
 
 export default (state = initialState, action) => {
