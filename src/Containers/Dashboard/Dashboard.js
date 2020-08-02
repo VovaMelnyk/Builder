@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const Dashboard = () => {
   const resumeList = useSelector((state) => state.resumeCollection);
-  console.log(resumeList);
+
   return (
     <div className={styles.dashboard}>
       <h1 className={styles.created}>Created Resume</h1>
@@ -18,6 +18,7 @@ const Dashboard = () => {
         {resumeList.map((el) => (
           <DashboardItem {...el} />
         ))}
+        <DashboardItem />
         <DashboardItem />
       </div>
     </div>
