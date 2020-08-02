@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import classes from "./Template_1.module.css";
+import classes from "./ResumeTemplate1.module.css";
 
 const Template_1 = () => {
   const resume = useSelector((state) => state.resume);
-
+  //------Global State----------------------------------------
   const {
     firstName,
     lastName,
@@ -15,16 +15,86 @@ const Template_1 = () => {
     summary,
     jobTitle,
   } = resume.basicInfo;
-
   const { employmentHistory, educations, languages, projects, skills } = resume;
+  //===================================================
+
+  //------Model State-------------------------------------
+  const modelBasicInfo = {
+    type: 1,
+    id: "",
+    title: "",
+    jobTitle: "Front-End Developer",
+    firstName: "Daniel",
+    lastName: "Johnson",
+    email: "email@sample.com",
+    phone: "+38 000 111 11 11",
+    country: "Ukraine",
+    city: "Kiev",
+    summary:
+      "I am currently looking for a company that has a common goal to provide high-quality services with passion, resulting in satisfaction for both the business and the employees. As a motivated team player, I would like to work on interesting projects with people, who will become my second family",
+  };
+  const modelEmploymentHistory = [
+    {
+      jobTitle: "Front end Developer",
+      employer: "Google",
+      start: "Jan 2020",
+      end: "Jul 2020",
+      city: "Kyiv",
+      description:
+        "I am currently looking for a company that has a common goal to provide high-quality services with passion, resulting in satisfaction for both the business and the employees.",
+    },
+  ];
+  const modelSkills = [
+    { skill: "HTML5" },
+    { skill: "SASS/SCSS" },
+    { skill: "JavaScript" },
+    { skill: "ES6+" },
+    { skill: "React/Redux" },
+    { skill: "Bootstrap" },
+    { skill: "jQuery" },
+  ];
+  const modelLanguages = [
+    {
+      language: "Ukraine",
+      level: "Native",
+    },
+  ];
+  const modelProjects = [
+    {
+      projectTitle: "YouTube",
+      company: "Google",
+      description:
+        "I am currently looking for a company that has a common goal to provide high-quality services with passion.",
+    },
+  ];
+  const modelEducations = [
+    {
+      school: "Best school ever",
+      degree: "master",
+      start: "Jan 2020",
+      end: "Jul 2020",
+    },
+  ];
+
+  let finalSkills = skills.length ? skills : modelSkills;
+  let finalEmploymentHistory = employmentHistory.length
+    ? employmentHistory
+    : modelEmploymentHistory;
+  let finalEducations = educations.length ? educations : modelEducations;
+  let finalLanguages = languages.length ? languages : modelLanguages;
+  let finalProjects = projects.length ? projects : modelProjects;
 
   return (
     <div className={classes.wrapper}>
       <div className={classes.wrapper_title}>
-        <h1
-          className={`${classes.name} ${classes.text_primary}`}
-        >{`${firstName} ${lastName}`}</h1>
-        <p className={`${classes.job} ${classes.text_secondary}`}>{jobTitle}</p>
+        <h1 className={`${classes.name} ${classes.text_primary}`}>
+          {`${!firstName ? modelBasicInfo.firstName : firstName} ${
+            !lastName ? modelBasicInfo.lastName : lastName
+          }`}
+        </h1>
+        <p className={`${classes.job} ${classes.text_secondary}`}>
+          {!jobTitle ? modelBasicInfo.jobTitle : jobTitle}
+        </p>
       </div>
 
       <div className={classes.wrapper_columns}>
@@ -39,14 +109,17 @@ const Template_1 = () => {
             <p className={`${classes.subtitle} ${classes.text_primary}`}>
               Address
             </p>
+
             <p className={`${classes.text_secondary} ${classes.info_text}`}>
-              {`${city}, ${country}`}
+              {`${!city ? modelBasicInfo.city : city}, ${
+                !country ? modelBasicInfo.country : country
+              } `}
             </p>
             <p className={`${classes.subtitle} ${classes.text_primary}`}>
               phone
             </p>
             <p className={`${classes.text_secondary} ${classes.info_text}`}>
-              {phone}
+              {!phone ? modelBasicInfo.phone : phone}
             </p>
             <p className={`${classes.subtitle} ${classes.text_primary}`}>
               E-mail
@@ -56,7 +129,7 @@ const Template_1 = () => {
               className={`${classes.text_secondary} ${classes.info_text} ${classes.info_email}`}
               href={`mailto:${email}`}
             >
-              {email}
+              {!email ? modelBasicInfo.email : email}
             </a>
           </div>
 
@@ -64,7 +137,7 @@ const Template_1 = () => {
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Skills
             </h2>
-            {skills.map((el) => (
+            {finalSkills.map((el) => (
               <p
                 className={`${classes.text_primary} ${classes.skill_text} `}
                 key={el.skill}
@@ -86,7 +159,9 @@ const Template_1 = () => {
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Profile
             </h2>
-            <p className={`${classes.text_secondary}`}>{summary}</p>
+            <p className={`${classes.text_secondary}`}>
+              {!summary ? modelBasicInfo.summary : summary}
+            </p>
           </div>
 
           {/** ================================================================*/}
@@ -97,7 +172,7 @@ const Template_1 = () => {
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Employment history
             </h2>
-            {employmentHistory.map((el) => (
+            {finalEmploymentHistory.map((el) => (
               <div key={employmentHistory}>
                 <div className={`${classes.employment_history_title}`}>
                   <p className={`${classes.text_primary}`}>
@@ -123,7 +198,7 @@ const Template_1 = () => {
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Education
             </h2>
-            {educations.map((el) => (
+            {finalEducations.map((el) => (
               <div key={educations}>
                 <div className={`${classes.employment_history_title}`}>
                   <p
@@ -148,7 +223,7 @@ const Template_1 = () => {
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Languages
             </h2>
-            {languages.map((el) => (
+            {finalLanguages.map((el) => (
               <div key={languages} className={classes.languages_wrapper}>
                 <p
                   className={`${classes.text_primary} ${classes.skill_text} ${classes.languages_language}`}
@@ -167,7 +242,7 @@ const Template_1 = () => {
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Projects
             </h2>
-            {projects.map((el) => (
+            {finalProjects.map((el) => (
               <div key={projects}>
                 <p
                   className={`${classes.text_primary} ${classes.projects_title}`}
