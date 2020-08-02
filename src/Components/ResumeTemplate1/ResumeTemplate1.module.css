@@ -120,8 +120,6 @@ p.info_text:last-child {
 }
 
 .employment_history_title {
-    display: flex;
-    justify-content: space-between;
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;

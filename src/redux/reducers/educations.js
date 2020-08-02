@@ -1,11 +1,12 @@
 import { ADD_EDUCATION, SET_EDUCATION, DELETE_EDUCATION } from '../actions/educations';
+import moment from "moment";
 
 const initialState = [
   {
     school: "Best school ever",
     degree: "master",
-    start: "",
-    end: "",
+    start: moment(),
+    end: moment(),
   },
 ];
 
