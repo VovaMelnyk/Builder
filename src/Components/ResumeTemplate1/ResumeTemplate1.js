@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import classes from "./ResumeTemplate1.module.css";
+import moment from "moment";
 
 const ResumeTemplate1 = () => {
   const resume = useSelector((state) => state.resume);
@@ -85,7 +86,7 @@ const ResumeTemplate1 = () => {
   let finalProjects = projects.length ? projects : modelProjects;
 
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.resumeWrapper}>
       <div className={classes.wrapper_title}>
         <h1 className={`${classes.name} ${classes.text_primary}`}>
           {`${!firstName ? modelBasicInfo.firstName : firstName} ${
@@ -183,7 +184,8 @@ const ResumeTemplate1 = () => {
                 <p
                   className={`${classes.text_primary} ${classes.employment_history_data}`}
                 >
-                  {`${el.start} - ${el.end}`}
+                  {el.start ? `${moment(el.start).format("MMM YYYY")}` : ""}-
+                  {el.end ? `${moment(el.end).format("MMM YYYY")}` : ""}
                 </p>
                 <p className={`${classes.text_secondary}`}>{el.description}</p>
               </div>
@@ -209,7 +211,8 @@ const ResumeTemplate1 = () => {
                 <p
                   className={`${classes.text_primary} ${classes.employment_history_data}`}
                 >
-                  {`${el.start} - ${el.end}`}
+                  {el.start ? `${moment(el.start).format("MMM YYYY")}` : ""}-
+                  {el.end ? `${moment(el.end).format("MMM YYYY")}` : ""}
                 </p>
               </div>
             ))}
