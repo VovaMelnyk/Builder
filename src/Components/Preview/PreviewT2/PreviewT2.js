@@ -38,76 +38,100 @@ const PreviewT2 = () => {
 
       <div className={styles.location}>
         <div className={styles.svg}>
-          <img src="/icons/location.svg" className={styles.icon} />
-          <p>
-            {city}, {country}
-          </p>
+          {city && country ? (
+            <>
+              <img src="/icons/location.svg" className={styles.icon} />
+              <p>{`${city}, ${country}`}</p>
+            </>
+          ) : null}
         </div>
         <div className={styles.svg}>
-          <img src="/icons/Phone.svg" className={styles.icon} />
-          <p className="phone">{phone}</p>
+          {phone && (
+            <>
+              <img src="/icons/Phone.svg" className={styles.icon} />
+              <p className="phone">{phone}</p>
+            </>
+          )}
         </div>
         <div className={styles.svg}>
-          <img src="/icons/Email.svg" className={styles.icon} />
-          <p className="email">{email}</p>
+          {email && (
+            <>
+              <img src="/icons/Email.svg" className={styles.icon} />
+              <p className="email">{email}</p>
+            </>
+          )}
         </div>
       </div>
       <div className={styles.resumeBlock}>
         <div className={styles.profile}>
-          <h3 className={styles.nameBlock}>Profile</h3>
-          <p className={styles.summary}>{summary}</p>
+          {summary && (
+            <>
+              <h3 className={styles.nameBlock}>Profile</h3>
+              <p className={styles.summary}>{summary}</p>
+            </>
+          )}
         </div>
-        <div className={styles.history}>
-          <h3 className={styles.nameBlock}>Employment history</h3>
-          <ul>
-            {employmentHistory.map((el) => (
-              <li key={el.jobTitle} className={styles.list}>
-                <EmploymentHistoryList {...el} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.education}>
-          <h3 className={styles.nameBlock}>Education</h3>
-          <ul>
-            {education.map((el) => (
-              <li key={el.school} className={styles.list}>
-                <Education {...el} />
-              </li>
-            ))}
-          </ul>
-        </div>
+        {employmentHistory.length > 0 && (
+          <div className={styles.history}>
+            <h3 className={styles.nameBlock}>Employment history</h3>
+            <ul>
+              {employmentHistory.map((el) => (
+                <li key={el.jobTitle} className={styles.list}>
+                  <EmploymentHistoryList {...el} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {education.length > 0 && (
+          <div className={styles.education}>
+            <h3 className={styles.nameBlock}>Education</h3>
+            <ul>
+              {education.map((el) => (
+                <li key={el.school} className={styles.list}>
+                  <Education {...el} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-        <div className={styles.languages}>
-          <h3 className={styles.nameBlock}>Languages</h3>
-          <ul>
-            {languages.map((el) => (
-              <li key={el.school} className={styles.list}>
-                <Languages {...el} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.projects}>
-          <h3 className={styles.nameBlock}>Projects</h3>
-          <ul>
-            {projects.map((el) => (
-              <li key={el.jobTitle} className={styles.list}>
-                <Project {...el} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.skills}>
-          <h3 className={styles.nameBlock}>skills</h3>
-          <ul>
-            {skills.map((skill) => (
-              <li className={styles.skill}>
-                <Skills {...skill} />
-              </li>
-            ))}
-          </ul>
-        </div>
+        {languages.length > 0 && (
+          <div className={styles.languages}>
+            <h3 className={styles.nameBlock}>Languages</h3>
+            <ul>
+              {languages.map((el) => (
+                <li key={el.school} className={styles.list}>
+                  <Languages {...el} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {projects.length > 0 && (
+          <div className={styles.projects}>
+            <h3 className={styles.nameBlock}>Projects</h3>
+            <ul>
+              {projects.map((el) => (
+                <li key={el.jobTitle} className={styles.list}>
+                  <Project {...el} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {skills.length > 0 && (
+          <div className={styles.skills}>
+            <h3 className={styles.nameBlock}>skills</h3>
+            <ul>
+              {skills.map((skill) => (
+                <li className={styles.skill}>
+                  <Skills {...skill} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
