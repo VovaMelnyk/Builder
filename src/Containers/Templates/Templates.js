@@ -16,7 +16,7 @@ const Templates = () => {
     <Fragment>
       <div className={styles.LinkWrapper}>
         <NavLink
-          to={`${path}/1`}
+          to={`${path}`}
           className={styles.Link}
           activeClassName={styles.ActiveLink}
           onClick={() => changeNumber(1)}
@@ -34,7 +34,7 @@ const Templates = () => {
       </div>
 
       <Switch>
-        <Route path={`${path}/1`} component={Template_1} />
+        <Route path={`${path}`} component={Template_1} />
         <Route path={`${path}/2`} component={Template_2} />
       </Switch>
     </Fragment>
