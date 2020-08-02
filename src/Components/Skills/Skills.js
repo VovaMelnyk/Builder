@@ -12,7 +12,6 @@ const Skills = () => {
   };
 
   const skillsList = useSelector(state => state.resume.skills);
-  console.log(skillsList);
   return (
     <div className={classes.Container}>
       <h2 className={classes.Skill__title}>Skills</h2>
