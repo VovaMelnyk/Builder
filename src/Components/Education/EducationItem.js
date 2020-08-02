@@ -23,7 +23,6 @@ const EducationItem = ({
   const dispatch = useDispatch();
 
   const handleSchool = e => {
-    console.log(e.target.value);
     dispatch(
       setEducation(index, {
         school: e.target.value,
@@ -46,7 +45,6 @@ const EducationItem = ({
   };
 
   const handleStart = data => {
-    //  console.log(e.target.value);
     dispatch(
       setEducation(index, {
         school: school,
