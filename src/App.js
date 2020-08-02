@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 import { paths } from "./constants";
 import Registration from "./Containers/Registration/Registration";
 import Login from "./Containers/Login/Login";
@@ -7,22 +7,46 @@ import Dashboard from "./Containers/Dashboard/Dashboard";
 import Editor from "./Containers/Editor/Editor";
 import Templates from "./Containers/Templates/Templates";
 import Header from "./Components/Header/Header";
-import PrivateRoute from "./Containers/PrivateRoute";
+import storage from "./helpers/storage";
 import "./App.css";
-
+import { useDispatch, useSelector } from "react-redux";
+import { logInUser } from "./redux/actions/user";
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Switch>
-        <Route path={paths.registration} component={Registration} />
-        <Route path={paths.login} component={Login} />
-        <PrivateRoute path={paths.dashboard} component={Dashboard} />
-        <PrivateRoute path={paths.editor} component={Editor} />
-        <PrivateRoute path={paths.templates} component={Templates} />
-      </Switch>
-    </div>
-  );
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  let isAuth = !!Object.keys(user).length;
+
+  useEffect(() => {
+    const user = storage.get("user");
+    if (user) {
+      if (!!Object.keys(user).length) {
+        dispatch(logInUser(user));
+      }
+    }
+  }, []);
+
+  if (isAuth) {
+    return (
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route path={paths.dashboard} component={Dashboard} />
+          <Route path={paths.editor} component={Editor} />
+          <Route path={paths.templates} component={Templates} />
+        </Switch>
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route path={paths.registration} component={Registration} />
+          <Route path={paths.login} component={Login} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;

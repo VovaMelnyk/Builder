@@ -59,7 +59,7 @@ const Document1 = ({ resume }) => {
                   </View>
                 ) : null}
 
-                {skills.length > 0 && (
+                {skills && (
                   <View>
                     <Text style={styles.infoTitle}>Skills</Text>
                     <View style={styles.border}></View>
@@ -84,7 +84,7 @@ const Document1 = ({ resume }) => {
                   </View>
                 ) : null}
 
-                {employmentHistory.length > 0 ? (
+                {employmentHistory ? (
                   <View>
                     <Text style={styles.infoTitle}>employment history</Text>
                     <View style={styles.border}></View>
@@ -121,7 +121,7 @@ const Document1 = ({ resume }) => {
                   </View>
                 ) : null}
 
-                {educations.length > 0 ? (
+                {educations ? (
                   <View>
                     <Text style={styles.infoTitle}>Education</Text>
                     <View style={styles.border}></View>
@@ -144,7 +144,7 @@ const Document1 = ({ resume }) => {
                   </View>
                 ) : null}
 
-                {projects.length > 0 ? (
+                {projects ? (
                   <View>
                     <Text style={styles.infoTitle}>projects</Text>
                     <View style={styles.border}></View>
@@ -163,7 +163,7 @@ const Document1 = ({ resume }) => {
                   </View>
                 ) : null}
 
-                {languages.length > 0 ? (
+                {languages ? (
                   <View>
                     <Text style={styles.infoTitle}>languages</Text>
                     <View style={styles.border}></View>

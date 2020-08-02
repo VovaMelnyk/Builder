@@ -1,14 +1,12 @@
 import { reduxUserTypes } from "../../constants";
 
 const initialState = {
-  email: "",
-  uid: "",
-  error: null,
+
 };
 
 const userLogOut = {
-  email: "",
-  uid: "",
+  // email: "",
+  // uid: "",
 };
 
 export default (state = initialState, action) => {
