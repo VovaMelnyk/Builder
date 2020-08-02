@@ -11,14 +11,14 @@ const Skills = () => {
     dispatch(addSkill());
   };
 
-  const skillsList = useSelector(state => state.resume.skills);
+  const skillsList = useSelector((state) => state.resume.skills);
   console.log(skillsList);
   return (
     <div className={classes.Container}>
       <h2 className={classes.Skill__title}>Skills</h2>
       <ul className={classes.Skill__list}>
         {skillsList.map((skill, index) => (
-          <li className={classes.Skill__item} key={skill.skill}>
+          <li className={classes.Skill__item} key={index}>
             <SkillItem {...skill} index={index} />
           </li>
         ))}
