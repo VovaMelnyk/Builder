@@ -12,6 +12,19 @@ const initialState = {
   summary: "Bla bla bla bla",
 };
 
+// const initialState = {
+//   type: 1,
+//   id: "2",
+//   title: "",
+//   jobTitle: "",
+//   firstName: "",
+//   lastName: "",
+//   email: "",
+//   phone: "",
+//   country: "",
+//   city: "",
+//   summary: "",
+// };
 export default (state = initialState, action) => {
   switch (action.type) {
     default:
