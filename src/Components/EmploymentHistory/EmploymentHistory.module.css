@@ -1,7 +1,6 @@
-.EmploymentHistory_Container {
-  padding-bottom: 40px;
+.container {
+  margin-bottom: 40px;
 }
-
 .EmploymentHistory_Title {
   margin-bottom: 16px;
   font-family: "Montserrat", sans-serif;
@@ -15,8 +14,7 @@
 }
 
 .EmploymentHistory_Add_Btn {
-  width: 153px;
-  padding: 8px 16px 8px 20px;
+  padding: 8px 16px 8px 38px;
   background-color: rgba(24, 28, 39, 0.1);
   border-radius: 25px;
   border: none;
@@ -26,4 +24,6 @@
   background-size: 10%;
   cursor: pointer;
   outline: none;
+  font: 500 14px/17px "Montserrat";
+  text-align: left;
 }

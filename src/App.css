@@ -4,11 +4,12 @@
 .react-datepicker__tab-loop {
   position: absolute !important;
   top: -18px;
+  width: 220px;
 }
 
 .react-datepicker__header {
   position: absolute;
-  width: 280px;
+  width: 220px;
   padding: 7px;
 }
 
@@ -83,6 +84,8 @@
 
 .react-datepicker__monthPicker {
   margin: 0 !important;
+  padding-top: 32px;
+  width: 220px;
 }
 
 .react-datepicker {

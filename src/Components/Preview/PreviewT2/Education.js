@@ -8,7 +8,7 @@ const Education = ({ school, degree, start, end }) => {
         {school}, {degree}
       </h4>
       <p className={styles.date}>
-        {start}-{end}
+        {`${start}`}-{`${end}`}
       </p>
     </div>
   );
