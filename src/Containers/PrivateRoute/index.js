@@ -2,14 +2,14 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { auth } from "../../configFirebase";
 const PrivateRoute = ({ component, ...rest }) => {
-  let isAuth;
+  let isAuth = true;
   const Interface = component;
 
   auth.onAuthStateChanged((user) => {
     if (user) {
       isAuth = true;
     } else {
-      isAuth = false;
+      isAuth = true;
     }
   });
   console.log(isAuth);

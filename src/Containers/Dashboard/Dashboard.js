@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Dashboard.module.css";
 import { NavLink } from "react-router-dom";
 import { paths } from "../../constants";
 import DashboardItem from "../../Components/Dashboard/DashboardItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getResumeFromDatabase } from "../../redux/operations/resumeCollection";
 
 const Dashboard = () => {
   const resumeList = useSelector((state) => state.resumeCollection);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
   console.log(resumeList);
+
+  useEffect(() => {
+    dispatch(getResumeFromDatabase(user.uid));
+  }, [dispatch, user.uid]);
+
   return (
     <div className={styles.dashboard}>
       <h1 className={styles.created}>Created Resume</h1>
@@ -15,10 +24,11 @@ const Dashboard = () => {
         Create New
       </NavLink>
       <div className={styles.preloader}>
-        {resumeList.map((el) => (
-          <DashboardItem {...el} />
-        ))}
-        <DashboardItem />
+        {resumeList.length === 0 ? (
+          <h1>Loading...</h1>
+        ) : (
+          resumeList.map((el, index) => <DashboardItem {...el} key={index} />)
+        )}
       </div>
     </div>
   );

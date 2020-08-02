@@ -11,8 +11,8 @@ const initialState = [
   {
     jobTitle: "Front end Developer",
     employer: "Google",
-    start: moment(),
-    end: moment(),
+    start: moment()._d,
+    end: moment()._d,
     city: "Kyiv",
     description: "Bla bla bla bla",
   },
