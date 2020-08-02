@@ -1,9 +1,11 @@
 .previewT2 {
-  width: 640px;
-  height: 906px;
+  width: 100%;
   margin: 0 auto;
   /* text-align: center; */
   /* list-style: none; */
+  background-color: #fff;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.02), 1px 1px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 4px rgba(0, 0, 0, 0.08);
 }
 
 .name {

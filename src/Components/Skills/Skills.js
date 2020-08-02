@@ -18,7 +18,7 @@ const Skills = () => {
       <h2 className={classes.Skill__title}>Skills</h2>
       <ul className={classes.Skill__list}>
         {skillsList.map((skill, index) => (
-          <li className={classes.Skill__item}>
+          <li className={classes.Skill__item} key={skill.skill}>
             <SkillItem {...skill} index={index} />
           </li>
         ))}
