@@ -7,7 +7,7 @@ import { deleteSkill, updateSkill } from "../../redux/actions/skills";
 const SkillItem = ({ skill, toggle, open, index }) => {
   const dispatch = useDispatch();
 
-  const changeSkill = (event) => {
+  const changeSkill = event => {
     dispatch(updateSkill(index, { skill: event.target.value }));
   };
 

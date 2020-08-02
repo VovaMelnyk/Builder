@@ -12,6 +12,9 @@
   letter-spacing: 0.04em;
   color: #181c27;
 }
+.EmploymentHistory_Title_Dark {
+  color: #ffffff;
+}
 
 .EmploymentHistory_Add_Btn {
   padding: 8px 16px 8px 38px;
