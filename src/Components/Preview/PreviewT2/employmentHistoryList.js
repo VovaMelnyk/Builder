@@ -15,7 +15,7 @@ const employmentHistoryList = ({
         {jobTitle}, {employer}, {city}
       </h4>
       <p className={styles.date}>
-        {start}-{end}
+        {`${start}`}-{`${end}`}
       </p>
       <p className={styles.summary}>{description}</p>
     </div>

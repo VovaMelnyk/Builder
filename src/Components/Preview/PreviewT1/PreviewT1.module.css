@@ -3,7 +3,13 @@ ul {
 }
 
 .preview {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.02), 1px 1px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 4px rgba(0, 0, 0, 0.08);
+
   padding: 35px 100px 0 70px;
+  background-color: #fff;
+  margin-bottom: 24px;
+  width: 100%;
 }
 .topPart {
   margin-bottom: 20px;

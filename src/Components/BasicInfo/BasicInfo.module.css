@@ -1,6 +1,5 @@
 .basicForm {
   max-width: 470px;
-
   width: 100%;
 }
 
@@ -39,7 +38,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin-bottom: 0;
+  margin-bottom: 40px;
 }
 
 .smallInput {

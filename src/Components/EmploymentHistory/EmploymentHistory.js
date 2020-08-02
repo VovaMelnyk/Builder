@@ -25,7 +25,7 @@ const EmploymentHistory = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2 className={styles.EmploymentHistory_Title}>Employment History</h2>
       {employmentHistory.map((emHis, index) => (
         <EmploymentHistoryItem key={index} emHistory={emHis} index={index} />

@@ -2,7 +2,7 @@ import { BASIC_INFO } from "../../constants/index";
 import { CHANGE_TYPE } from "../../constants";
 
 const initialState = {
-  type: null,
+  type: 1,
   id: "",
   title: "",
   jobTitle: "",
