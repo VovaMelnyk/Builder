@@ -2,20 +2,27 @@ import {
   saveResume,
   getResume,
   deleteResume,
-  editResume,
 } from "../actions/resumeCollection";
 import { paths, CLEAR_RESUME } from "../../constants";
 
 const { db } = require("../../configFirebase");
 
-export const saveResumeToDatabase = (collectionName, data, history) => async (
-  dispatch
-) => {
+export const saveResumeToDatabase = (
+  collectionName,
+  data,
+  history,
+  id
+) => async (dispatch) => {
   try {
-    const result = await db.collection(collectionName).add(data);
+    if (id) {
+      await db.collection(collectionName).doc(id).update(data);
+    } else {
+      const result = await db.collection(collectionName).add(data);
 
-    const item = { ...data, id: result.id };
-    dispatch(saveResume(item));
+      const item = { ...data, id: result.id };
+      dispatch(saveResume(item));
+    }
+
     dispatch({ type: CLEAR_RESUME });
 
     history.push(paths.dashboard);
@@ -57,7 +64,7 @@ export const updateResumeFromDatabase = (
 ) => async (dispatch) => {
   try {
     await db.collection(collectionName).doc(collectionId).update(data);
-    dispatch(editResume(collectionId));
+    // dispatch(editResume(collectionId));
   } catch (error) {
     console.error("delete collection resume error", error);
   }

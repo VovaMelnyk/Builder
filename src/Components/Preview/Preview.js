@@ -9,6 +9,7 @@ import {
 } from "../../redux/operations/resumeCollection";
 import { useHistory, useLocation } from "react-router-dom";
 import queryString from "query-string";
+import { UPDATE_RESUME } from "../../constants";
 
 const getStringFromLocation = (location) =>
   queryString.parse(location.search).id;
@@ -26,19 +27,8 @@ const Preview = () => {
   const saveResume = () => {
     const collectionName = user.uid;
 
-    // if (id) {
-    //   dispatch(updateResumeFromDatabase(collectionName, resume, "data"));
-    // } else {
-    dispatch(saveResumeToDatabase(collectionName, resume, history));
-    // }
+    dispatch(saveResumeToDatabase(collectionName, resume, history, id));
   };
-
-  useEffect(() => {
-    if (!id) return;
-
-    const res = resumeCollections.find((doc) => doc.id === id);
-    console.log(res);
-  });
 
   return (
     <div className={styles.container}>
