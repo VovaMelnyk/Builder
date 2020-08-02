@@ -109,6 +109,13 @@ const Document1 = ({ resume }) => {
                       </Text>
                     </View>
                     <Text style={styles.textInfo}>{el.description}</Text>
+                    <Text style={styles.textInfo}>{el.description}</Text>
+                    <Text style={styles.textInfo}>{el.description}</Text>
+                    <Text style={styles.textInfo}>{el.description}</Text>
+                    <Text style={styles.textInfo}>{el.description}</Text>
+                    <Text style={styles.textInfo}>{el.description}</Text>
+                    <Text style={styles.textInfo}>{el.description}</Text>
+                    <Text style={styles.textInfo}>{el.description}</Text>
                   </View>
                 ))}
               </View>
@@ -169,7 +176,7 @@ const styles = StyleSheet.create({
   },
   viewBox: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row",    
   },
 
   infoBox: {
@@ -178,6 +185,7 @@ const styles = StyleSheet.create({
     borderRightStyle: "solid",
     paddingTop: 25,
     paddingRight: 50,
+    width: 150
   },
 
   infoTitle: {

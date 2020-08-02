@@ -27,9 +27,7 @@ function App() {
         <Route path={paths.templates} component={Templates} />
       </Switch>
 
-      {/* <PDFDownloadLink document={<Document1 />} fileName="somename.pdf">
-      {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
-    </PDFDownloadLink> */}
+  
       <PDFViewer width="1500" height="1500">
         <Document1 resume={resume}/>
       </PDFViewer>
