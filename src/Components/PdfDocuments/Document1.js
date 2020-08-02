@@ -30,7 +30,6 @@ const Document1 = ({ resume }) => {
             </Text>
             <Text style={styles.subtitle}>{basicInfo.jobTitle}</Text>
           </View>
-          {/* <View style={styles.contentBox}> */}
           <View style={styles.viewBox}>
             <View style={styles.infoBox}>
               <Text style={styles.infoTitle}>Info</Text>
@@ -53,6 +52,7 @@ const Document1 = ({ resume }) => {
                 ))}
               </View>
             </View>
+
             <View style={styles.profileBox}>
               <Text style={styles.infoTitle}>Profile</Text>
               <View style={styles.border}></View>
@@ -74,22 +74,24 @@ const Document1 = ({ resume }) => {
                         </View>
                       </View>
                       <Text style={styles.dataInfo}>
-                        {el.start}1111-1111 {el.end}
+                        {el.start}-{el.end} 
                       </Text>
-                      <Text style={styles.textInfo}>{el.description}</Text>
+                      <View style={styles.pointBox}>
+                        <View style={styles.point}></View>
+                        <Text style={styles.pointInfo}>{el.description}</Text>
+                      </View>
                     </View>
                   ))}
                 </View>
               </View>
               <Text style={styles.infoTitle}>Education</Text>
               <View style={styles.border}></View>
-
               <View>
                 {educations.map((el) => (
                   <View key={el.school}>
                     <View style={styles.companyBox}>
                       <Text style={styles.infoSubTitle}>{el.school}</Text>
-                      <Text style={styles.dataInfo}>
+                      <Text style={styles.dataInfoEdu}>
                         {el.start}-{el.end}
                       </Text>
                     </View>
@@ -119,24 +121,12 @@ const Document1 = ({ resume }) => {
                     <View>
                       <Text style={styles.infoSubTitle}>{el.language}</Text>
                     </View>
-                    <Text style={styles.textInfo}>{el.level}</Text>
+                    <Text style={styles.text}>{el.level}</Text>
                   </View>
                 ))}
               </View>
             </View>
           </View>
-        </View>
-        {/* </View> */}
-
-        <View style={styles.pageNumberBox}>
-          <Text
-            style={styles.pageNumber}
-            render={({ pageNumber, totalPages }) =>
-              `${pageNumber} / ${totalPages}`
-            }
-            fixed
-            bottom
-          />
         </View>
       </Page>
     </Document>
@@ -154,60 +144,67 @@ const styles = StyleSheet.create({
     paddingVertical: 50,
     paddingHorizontal: 50,
   },
-
-  section: {
-    width: "100%",
-  },
   titleBox: {
     borderColor: "#d3d3d3",
     borderBottomWidth: 1,
     borderBottomStyle: "solid",
   },
   title: {
-    fontSize: 48,
+    fontSize: 36,
+    fontWeight: 500,
     fontStyle: "normal",
     textAlign: "left",
     fontFamily: "Oswald",
     textTransform: "uppercase",
-    marginBottom: 16,
+    marginBottom: 10,
+    letterSpacing: 2,
   },
-  // contentBox: {
-  //   borderColor: "#d3d3d3",
-  //   borderTopWidth: 1,
-  //   borderTopStyle: "solid",
-  // },
 
   subtitle: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: "Oswald",
     textTransform: "uppercase",
-    fontWeight: 100,
-    marginBottom: 40,
-  },
-  text: {
-    fontSize: 14,
-    fontFamily: "Oswald",
-    color: "grey",
+    marginBottom: 20,
+    letterSpacing: 2,
   },
   viewBox: {
     display: "flex",
     flexDirection: "row",
   },
-  infoTitle: {
-    fontWeight: 500,
-    fontSize: 20,
-    textTransform: "uppercase",
+
+  infoBox: {
+    borderColor: "#d3d3d3",
+    borderRightWidth: 1,
+    borderRightStyle: "solid",
+    paddingTop: 25,
+    paddingRight: 50,
   },
+
+  infoTitle: {
+    fontSize: 18,
+    textTransform: "uppercase",
+    letterSpacing: 2,
+  },
+  border: {
+    backgroundColor: "black",
+    width: 40,
+    height: 3,
+    marginTop: 4,
+    marginBottom: 20,
+  },
+
   infoSubTitle: {
     fontSize: 14,
     textTransform: "uppercase",
     marginBottom: 8,
+    letterSpacing: 2,
   },
+
   textInfo: {
     fontSize: 14,
     fontFamily: "Oswald",
     color: "grey",
-    marginBottom: 40,
+    marginBottom: 30,
   },
   skillInfo: {
     fontSize: 14,
@@ -223,55 +220,38 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "Oswald",
     color: "grey",
-    marginBottom: 40,
+    marginBottom: 30,
     textDecoration: "underline",
   },
+
+  profileBox: {
+    paddingTop: 20,
+    paddingLeft: 20,
+  },
+
   profileInfo: {
     fontSize: 14,
     fontFamily: "Oswald",
     color: "grey",
     paddingBottom: 40,
-    marginBottom: 40,
+    marginBottom: 20,
     borderColor: "#d3d3d3",
     borderBottomWidth: 1,
     borderBottomStyle: "solid",
   },
-  border: {
-    backgroundColor: "black",
-    width: 40,
-    height: 4,
-    marginTop: 4,
-    marginBottom: 40,
-  },
-  infoBox: {
-    borderColor: "#d3d3d3",
-    borderRightWidth: 1,
-    borderRightStyle: "solid",
-    paddingTop: 40,
-    paddingRight: 50,
-    width: 150,
-  },
-  profileBox: {
-    paddingTop: 40,
-    paddingLeft: 30,
-  },
+
   historyBox: {
     display: "flex",
     flexDirection: "row",
     flexWrap: "nowrap",
     marginBottom: 8,
   },
-  companyBox: {
-    // flexDirection: "row",
-    // alignItems: "flex-start",
-    // justifyContent:"space-between"
-  },
+
   textInfoCity: {
-    // left: 65,
     fontSize: 14,
     fontFamily: "Oswald",
     color: "grey",
-    marginBottom: 8,
+    marginBottom: 12,
   },
 
   dataInfo: {
@@ -279,10 +259,46 @@ const styles = StyleSheet.create({
     color: "black",
     marginBottom: 16,
   },
+
+  dataInfoEdu: {
+    fontSize: 14,
+    color: "black",
+    marginBottom: 20,
+  },
+
   pageNumberBox: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
+  },
+
+  text: {
+    fontSize: 14,
+    fontFamily: "Oswald",
+    color: "grey",
+    marginBottom: 20,
+  },
+  point: {
+    width: 7,
+    height: 7,
+    borderColor: "black",
+    borderBottomWidth: 2,
+    borderRightWidth: 2,
+    borderBottomStyle: "solid",
+    transform: "rotate(320deg)",
+    marginRight: 15,
+  },
+  pointBox: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+
+  pointInfo: {
+    fontSize: 14,
+    fontFamily: "Oswald",
+    color: "grey",
   },
   pageNumber: {
     fontSize: 12,
@@ -292,3 +308,24 @@ const styles = StyleSheet.create({
 });
 
 export default Document1;
+// contentBox: {
+//   borderColor: "#d3d3d3",
+//   borderTopWidth: 1,
+//   borderTopStyle: "solid",
+// },
+
+// companyBox: {
+//   // flexDirection: "row",
+//   // alignItems: "flex-start",
+//   // justifyContent:"space-between"
+// },
+
+// {/* <View style={styles.pageNumberBox}>
+//           <Text
+//             style={styles.pageNumber}
+//             render={({ pageNumber, totalPages }) =>
+//               `${pageNumber} / ${totalPages}`
+//             }
+//             fixed
+//           />
+//         </View> */}
