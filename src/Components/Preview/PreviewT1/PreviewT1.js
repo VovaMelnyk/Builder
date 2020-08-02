@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styles from "./PreviewT1.module.css";
+import moment from "moment";
 
 const PreviewT1 = () => {
   const resume = useSelector((state) => state.resume);
@@ -93,7 +94,9 @@ const PreviewT1 = () => {
                     <p className={styles.listItemContent}>{job.city}</p>
 
                     <p className={styles.jobPeriod}>
-                      {`${job.start} - ${job.end}`}
+                      {`${moment(job.start).format("MMM YYYY")} - ${moment(
+                        job.end
+                      ).format("MMM YYYY")}`}
                     </p>
                     <p className={styles.cvInfoData}>{job.description}</p>
                   </li>
@@ -125,9 +128,11 @@ const PreviewT1 = () => {
                     <h4 className={styles.listItemTitle}>
                       {`${edu.school}, ${edu.degree}`}
                     </h4>
-                    <p
-                      className={styles.jobPeriod}
-                    >{`${edu.start} - ${edu.end}`}</p>
+                    <p className={styles.jobPeriod}>{`${moment(
+                      edu.start
+                    ).format("MMM YYYY")} - ${moment(edu.end).format(
+                      "MMM YYYY"
+                    )}`}</p>
                   </li>
                 ))}
               </ul>
