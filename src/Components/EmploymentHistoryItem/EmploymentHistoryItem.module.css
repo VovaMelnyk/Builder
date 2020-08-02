@@ -140,6 +140,7 @@
 
 .EmploymentHistoryItem_Form_Input_Area {
   width: 438px;
+  resize: none;
 }
 
 .EmploymentHistoryItem_Form_Input::placeholder,
