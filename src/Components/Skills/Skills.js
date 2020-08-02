@@ -3,6 +3,7 @@ import classes from "./Skills.module.css";
 import SkillItem from "../SkillItem/SkillItem";
 import { useSelector, useDispatch } from "react-redux";
 import { addSkill } from "../../redux/actions/skills";
+import AddButton from "../AddButton/AddButton";
 
 const Skills = () => {
   const dispatch = useDispatch();
@@ -17,18 +18,12 @@ const Skills = () => {
       <h2 className={classes.Skill__title}>Skills</h2>
       <ul className={classes.Skill__list}>
         {skillsList.map((skill, index) => (
-          <li className={classes.Skill__item} key={skill.skill}>
+          <li className={classes.Skill__item} key={index}>
             <SkillItem {...skill} index={index} />
           </li>
         ))}
       </ul>
-      <button
-        className={`${classes.Skill__submit} `}
-        type="submit"
-        onClick={addOneSkill}
-      >
-        Add Skill
-      </button>
+      <AddButton onClick={addOneSkill} title={"Skill"} />
     </div>
   );
 };

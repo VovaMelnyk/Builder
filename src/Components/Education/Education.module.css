@@ -1,9 +1,10 @@
 .wraper {
   display: block;
-  width: 600;
+  max-width: 470px;
 }
 
 .title {
+  margin-bottom: 16px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
@@ -12,18 +13,17 @@
 }
 
 .degree {
-  margin-top: 16px;
-  height: 65px;
-  width: 470px;
+  padding: 12px 13px 13px 8px;
+  background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
     0px 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .degreeSchool {
   display: flex;
-  align-items: stretch;
   justify-content: space-between;
-  padding-top: 12px;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .schoolLabel {
@@ -32,27 +32,30 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  margin-left: 8px;
 }
 
 .degreeEdits {
   display: flex;
-  margin-right: 8px;
-  width: 30%;
-  flex-direction: row;
-  justify-content: space-between;
-  font-family: Montserrat;
+}
+
+.degreeEditsHover {
+  width: 62px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+  letter-spacing: 0.04em;
   color: rgba(24, 28, 39, 0.4);
-}
-
-.degreeEditsHover {
-  display: flex;
-  width: 45%;
-  /* justify-content: space-between; */
+  border: none;
+  background-color: transparent;
+  background-position: 10%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
 }
 
 .degreeEditsHover:hover {
@@ -60,30 +63,27 @@
 }
 
 .degreeEditIcon {
-  font-display: block;
-  width: 14px;
-  height: 14px;
-  background-image: url("./icon/edit.svg");
-  margin-right: 4px;
+  margin-right: 24px;
+  background-image: url("/icons/employment_edit_icon.svg");
+  background-size: contain;
 }
 .degreeDeleteIcon {
-  width: 12px;
-  height: 12px;
-  background-image: url("./icon/delete.svg");
-  margin-right: 4px;
+  margin-right: 24px;
+  background-image: url("/icons/employment_delete_icon.svg");
+  background-size: contain;
 }
 
 .degreeTreeangle {
-  margin-top: 4px;
-  width: 8px;
-  height: 6px;
-  background-image: url("./icon/treeangle.png");
+  width: 0;
+  background-image: url("/icons/employment_toggle_icon.svg");
+  background-size: 60%;
+  background-position: 95%;
 }
 .degreeTreeangleRotate {
-  margin-top: 4px;
-  width: 8px;
-  height: 6px;
-  background-image: url("./icon/treeangle.png");
+  width: 0;
+  background-image: url("/icons/employment_toggle_icon.svg");
+  background-size: 60%;
+  background-position: 15%;
   transform: rotate(180deg);
 }
 
@@ -91,9 +91,7 @@
   width: 44%;
   display: flex;
   justify-content: space-between;
-  margin-top: 8px;
   display: flex;
-  margin-left: 8px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -127,6 +125,11 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
     0px 1px 2px rgba(0, 0, 0, 0.12);
   padding-left: 8px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .fillInDate {
@@ -145,21 +148,12 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
     0px 1px 2px rgba(0, 0, 0, 0.12);
   padding-left: 8px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
 }
 .itemsWrapper {
   margin-bottom: 16px;
-}
-
-.addButton {
-  padding: 8px 16px 8px 38px;
-  background-color: rgba(24, 28, 39, 0.1);
-  border-radius: 25px;
-  border: none;
-  background-image: url("/icons/employment_add_position_btn_icon.svg");
-  background-repeat: no-repeat;
-  background-position: 10%;
-  background-size: 10%;
-  cursor: pointer;
-  font: 500 14px/17px "Montserrat";
-  text-align: left;
 }

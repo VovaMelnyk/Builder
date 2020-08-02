@@ -5,6 +5,7 @@ import { addEducation, deleteEducation } from "../../redux/actions/educations";
 import { connect, useDispatch } from "react-redux";
 
 import "react-datepicker/dist/react-datepicker.css";
+import AddButton from "../AddButton/AddButton";
 
 const Education = ({ educations }) => {
   const dispatch = useDispatch();
@@ -40,10 +41,7 @@ const Education = ({ educations }) => {
           />
         ))}
       </div>
-
-      <button className={style.addButton} onClick={handleAddClick}>
-        Add Education
-      </button>
+      <AddButton onClick={handleAddClick} title={"Education"} />
     </div>
   );
 };

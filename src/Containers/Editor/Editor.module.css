@@ -7,5 +7,5 @@
 .editorWrapper {
   display: flex;
   justify-content: space-between;
-  padding: 40px 4% 0;
+  padding: 40px 4% 40px;
 }

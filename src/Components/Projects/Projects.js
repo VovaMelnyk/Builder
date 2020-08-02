@@ -3,6 +3,7 @@ import styles from "./Projects.module.css";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import { addProject, deleteProject } from "../../redux/projects/action";
 import { connect, useDispatch } from "react-redux";
+import AddButton from "../AddButton/AddButton";
 
 const Projects = ({ projects }) => {
   const dispatch = useDispatch();
@@ -28,9 +29,7 @@ const Projects = ({ projects }) => {
           title={project.projectTitle}
         />
       ))}
-      <button className={styles.btn_add} onClick={handleAddClick}>
-        Add Project
-      </button>
+      <AddButton onClick={handleAddClick} title={"Project"} />
     </div>
   );
 };

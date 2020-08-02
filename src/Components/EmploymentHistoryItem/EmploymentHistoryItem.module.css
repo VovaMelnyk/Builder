@@ -141,8 +141,8 @@
 
 .EmploymentHistoryItem_Form_Input_Area {
   width: 438px;
-  min-height: 200px;
-  resize: vertical;
+  resize: none;
+  min-height: 200px;  
 }
 
 .EmploymentHistoryItem_Form_Input::placeholder,

@@ -5,7 +5,7 @@
 }
 
 .Wrapper {
-  padding: 12px 8px;
+  padding: 12px 13px 13px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,44 +19,54 @@
 }
 
 .SkillItem_buttons {
-  width: 178px;
   display: flex;
-  justify-content: space-between;
-  padding: 12px 8px;
 }
 
 .SkillItem_button {
-  padding-left: 15px;
-  border: none;
-  font-family: Montserrat;
-  background-color: transparent;
-  color: rgba(24, 28, 39, 0.4);
+  width: 62px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+  letter-spacing: 0.04em;
+  color: rgba(24, 28, 39, 0.4);
+  border: none;
+  background-color: transparent;
+  background-position: 10%;
+  background-repeat: no-repeat;
   cursor: pointer;
+  outline: none;
 }
 
 .SkillItem_edit {
-  background-image: url(./icons/edit.svg);
-  background-size: 13px 13px;
-  background-repeat: no-repeat;
-  background-position: left center;
+  margin-right: 24px;
+  background-image: url("/icons/employment_edit_icon.svg");
+  background-size: contain;
 }
 
 .SkillItem_delete {
-  background-image: url(./icons/delete.svg);
-  background-size: 13px 13px;
-  background-repeat: no-repeat;
-  background-position: left center;
+  margin-right: 24px;
+  background-image: url("/icons/employment_delete_icon.svg");
+  background-size: contain;
 }
 
 .SkillItem_sort {
-  background-image: url(./icons/sort.svg);
-  background-size: 13px 13px;
-  background-repeat: no-repeat;
-  background-position: left center;
+  width: 0;
+  background-image: url("/icons/employment_toggle_icon.svg");
+  background-size: 60%;
+  background-position: 95%;
+}
+
+.SkillItem_sortDown {
+  width: 0;
+  background-image: url("/icons/employment_toggle_icon.svg");
+  background-size: 60%;
+  background-position: 15%;
+  transform: rotate(180deg);
 }
 
 .SkillsForm {
