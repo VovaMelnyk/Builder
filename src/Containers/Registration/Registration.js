@@ -1,39 +1,42 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import styles from "./Registration.module.css";
-import { registerUser } from "../../redux/actions/user";
 import { paths } from "../../constants";
+import { createUserRegistration } from "../../redux/operations/user";
 
 const formInitialState = {
   email: "",
-  password: ""
+  password: "",
 };
 
 const Registration = () => {
   const [form, setForm] = useState(formInitialState);
   const dispatch = useDispatch();
   const history = useHistory();
+  const user = useSelector((state) => state.user);
 
-  const inputHandler = e => {
+  const inputHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setForm({ ...form, [name]: value });
   };
 
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    // request to firebase
+
     const userData = {
       email: form.email,
-      uid: "example id"
+      password: form.password,
     };
-    dispatch(registerUser(userData));
-    history.push(paths.dashboard);
+
+    dispatch(createUserRegistration(userData, history));
+
     setForm(formInitialState);
   };
 
   const { email, password } = form;
+
   return (
     <div className={styles.registrationPage}>
       <div className={styles.registrationModule}>
@@ -67,6 +70,7 @@ const Registration = () => {
             <label className={styles.label} htmlFor="RB6PasswordInput">
               Password
             </label>
+            <p className={styles.error}>{user.error && user.error.message}</p>
           </div>
           <button className={styles.button}>Register</button>
         </form>
