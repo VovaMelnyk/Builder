@@ -61,7 +61,7 @@ const PreviewT1 = () => {
               )}
             </ul>
           </div>
-          {skills.length && (
+          {!!skills.length && (
             <div className={styles.sidebarComponent}>
               <h3 className={styles.componentTitle}>Skills</h3>
               <ul>
@@ -81,7 +81,7 @@ const PreviewT1 = () => {
               <p className={styles.cvInfoData}>{basicInfo.summary}</p>
             </div>
           )}
-          {employmentHistory.length && (
+          {!!employmentHistory.length && (
             <div className={styles.cvInfoComponent}>
               <h3 className={styles.componentTitle}> employment history</h3>
               <ul>
@@ -101,7 +101,7 @@ const PreviewT1 = () => {
               </ul>
             </div>
           )}
-          {projects.length && (
+          {!!projects.length && (
             <div className={styles.cvInfoComponent}>
               <h3 className={styles.componentTitle}>projects</h3>
               <ul>
@@ -116,7 +116,7 @@ const PreviewT1 = () => {
               </ul>
             </div>
           )}
-          {educations.length && (
+          {!!educations.length && (
             <div className={styles.cvInfoComponent}>
               <h3 className={styles.componentTitle}>education</h3>
               <ul>
@@ -133,7 +133,7 @@ const PreviewT1 = () => {
               </ul>
             </div>
           )}
-          {languages.length && (
+          {!!languages.length && (
             <div className={styles.cvInfoComponent}>
               <h3 className={styles.componentTitle}>languages</h3>
               <ul>
