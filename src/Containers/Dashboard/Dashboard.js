@@ -15,12 +15,13 @@ const Dashboard = () => {
       <NavLink to={paths.editor} className={styles.createButton}>
         Create New
       </NavLink>
+
       <div className={styles.preloader}>
-        {resumeList.map((el) => (
-          <DashboardItem {...el} />
-        ))}
-        <DashboardItem />
-        <DashboardItemV2 />
+        {!!resumeList.length ? (
+          resumeList.map((el) => <DashboardItemV2 {...el} />)
+        ) : (
+          <DashboardItem />
+        )}
       </div>
     </div>
   );
