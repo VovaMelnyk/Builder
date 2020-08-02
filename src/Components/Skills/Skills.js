@@ -11,7 +11,7 @@ const Skills = () => {
     dispatch(addSkill());
   };
 
-  const skillsList = useSelector((state) => state.resume.skills);
+  const skillsList = useSelector(state => state.resume.skills);
   console.log(skillsList);
   return (
     <div className={classes.Container}>
@@ -24,7 +24,7 @@ const Skills = () => {
         ))}
       </ul>
       <button
-        className={`${classes.Skill__submit} ${classes.SkillItem_plus}`}
+        className={`${classes.Skill__submit} `}
         type="submit"
         onClick={addOneSkill}
       >

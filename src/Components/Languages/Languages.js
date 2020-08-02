@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addLanguage } from "../../redux/actions/languages";
 
 const Languages = () => {
-  const languages = useSelector((state) => state.resume.languages);
+  const languages = useSelector(state => state.resume.languages);
   const dispatch = useDispatch();
   const addNewLanguage = () => {
     dispatch(addLanguage());
@@ -23,8 +23,7 @@ const Languages = () => {
       ))}
 
       <button className={styles.button} onClick={addNewLanguage}>
-        {" "}
-        &#10133; Add Language
+        Add Language
       </button>
     </div>
   );
