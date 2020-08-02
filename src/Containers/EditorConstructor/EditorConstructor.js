@@ -6,6 +6,7 @@ import EmploymentHistory from "../../Components/EmploymentHistory/EmploymentHist
 import Skills from "../../Components/Skills/Skills";
 import Languages from "../../Components/Languages/Languages";
 import Projects from "../../Components/Projects/Projects";
+import Education from "../../Components/Education/Education";
 
 const EditorConstructor = () => {
   return (
@@ -15,6 +16,7 @@ const EditorConstructor = () => {
       <Skills />
       <Languages />
       <Projects />
+      <Education />
     </div>
   );
 };
