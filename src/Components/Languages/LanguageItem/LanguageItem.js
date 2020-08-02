@@ -35,10 +35,10 @@ const LanguageItem = (props) => {
   ];
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.header}>
-          <span className={styles.languageName}>{language}</span> |{" "}
+          <span className={styles.languageName}>{language}</span> {level && "|"}
           <span className={styles.languageLevel}>{level}</span>
         </div>
         <div className={styles.buttonSpace}>
@@ -49,7 +49,7 @@ const LanguageItem = (props) => {
             {" "}
             Delete
           </div>
-          <div className={styles.arrowBtn} onClick={toggle} value=" "></div>
+          <div className={`${open ? styles.arrowBtn : styles.arrowBtnDown}`} onClick={toggle} value=" "></div>
         </div>
       </div>
       {open && (
@@ -70,7 +70,7 @@ const LanguageItem = (props) => {
           />
         </form>
       )}
-    </>
+    </div>
   );
 };
 

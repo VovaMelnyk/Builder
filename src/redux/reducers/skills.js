@@ -1,3 +1,5 @@
+import { CLEAR_RESUME } from "../../constants";
+
 const initialState = [
   { skill: "React" },
   { skill: "HTML" },
@@ -23,7 +25,8 @@ export default (state = initialState, action) => {
         action.payload.editSkill
       );
       return newStateWithEdit;
-
+    case CLEAR_RESUME:
+      return initialState;
     default:
       return state;
   }

@@ -4,10 +4,11 @@ import styles from "./EmploymentHistory.module.css";
 import EmploymentHistoryItem from "../EmploymentHistoryItem/EmploymentHistoryItem";
 import { addPosition } from "../../redux/actions/employmentHistory";
 import moment from "moment";
+import AddButton from "../AddButton/AddButton";
 
 const EmploymentHistory = () => {
   const employmentHistory = useSelector(
-    (state) => state.resume.employmentHistory
+    state => state.resume.employmentHistory
   );
   const dispatch = useDispatch();
 
@@ -18,7 +19,7 @@ const EmploymentHistory = () => {
       start: moment(),
       end: moment(),
       city: "",
-      description: "",
+      description: ""
     };
 
     dispatch(addPosition(newEmployment));
@@ -30,13 +31,7 @@ const EmploymentHistory = () => {
       {employmentHistory.map((emHis, index) => (
         <EmploymentHistoryItem key={index} emHistory={emHis} index={index} />
       ))}
-
-      <button
-        className={styles.EmploymentHistory_Add_Btn}
-        onClick={addNewEmplyment}
-      >
-        Add Position
-      </button>
+      <AddButton onClick={addNewEmplyment} title={"Position"} />
     </div>
   );
 };

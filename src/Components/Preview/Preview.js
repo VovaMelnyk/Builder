@@ -1,10 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Preview.module.css";
 import PreviewT1 from "./PreviewT1/PreviewT1";
 import PreviewT2 from "./PreviewT2/PreviewT2";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  saveResumeToDatabase,
+  updateResumeFromDatabase,
+} from "../../redux/operations/resumeCollection";
+import { useHistory, useLocation } from "react-router-dom";
+import queryString from "query-string";
+
+const getStringFromLocation = (location) =>
+  queryString.parse(location.search).id;
+
 const Preview = () => {
   const type = useSelector((state) => state.resume.basicInfo.type);
+  const user = useSelector((state) => state.user);
+  const resume = useSelector((state) => state.resume);
+  const resumeCollections = useSelector((state) => state.resumeCollection);
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const id = getStringFromLocation(location);
+
+  const saveResume = () => {
+    const collectionName = user.uid;
+
+    // if (id) {
+    //   dispatch(updateResumeFromDatabase(collectionName, resume, "data"));
+    // } else {
+    dispatch(saveResumeToDatabase(collectionName, resume, history));
+    // }
+  };
+
+  useEffect(() => {
+    if (!id) return;
+
+    const res = resumeCollections.find((doc) => doc.id === id);
+    console.log(res);
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles.descriptionWrapper}>
@@ -17,7 +52,9 @@ const Preview = () => {
 
       <div className={styles.saveWrapper}>
         <p className={styles.select}>Select Template</p>
-        <button className={styles.saveBtn}>Save</button>
+        <button className={styles.saveBtn} onClick={saveResume}>
+          Save
+        </button>
       </div>
     </div>
   );

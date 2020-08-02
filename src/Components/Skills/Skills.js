@@ -3,6 +3,7 @@ import classes from "./Skills.module.css";
 import SkillItem from "../SkillItem/SkillItem";
 import { useSelector, useDispatch } from "react-redux";
 import { addSkill } from "../../redux/actions/skills";
+import AddButton from "../AddButton/AddButton";
 
 const Skills = () => {
   const dispatch = useDispatch();
@@ -11,8 +12,7 @@ const Skills = () => {
     dispatch(addSkill());
   };
 
-  const skillsList = useSelector((state) => state.resume.skills);
-  console.log(skillsList);
+  const skillsList = useSelector(state => state.resume.skills);
   return (
     <div className={classes.Container}>
       <h2 className={classes.Skill__title}>Skills</h2>
@@ -23,13 +23,7 @@ const Skills = () => {
           </li>
         ))}
       </ul>
-      <button
-        className={`${classes.Skill__submit} `}
-        type="submit"
-        onClick={addOneSkill}
-      >
-        Add Skill
-      </button>
+      <AddButton onClick={addOneSkill} title={"Skill"} />
     </div>
   );
 };

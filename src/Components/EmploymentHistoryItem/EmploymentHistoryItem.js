@@ -48,7 +48,7 @@ const EmploymentHistoryItem = ({
             </button>
             <button
               className={`${styles.EmploymentHistoryItem_Editor_Btn} ${
-                !open
+                open
                   ? styles.EmploymentHistoryItem_Editor_Toggle_Btn
                   : styles.EmploymentHistoryItem_Editor_Toggle_Btn_Rotate
               }`}
@@ -71,7 +71,7 @@ const EmploymentHistoryItem = ({
           </p>
         </div>
       </div>
-      {!open && (
+      {open && (
         <form className={styles.EmploymentHistoryItem_Form}>
           <input
             type="text"

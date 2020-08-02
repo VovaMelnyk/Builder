@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Font,
 } from "@react-pdf/renderer";
+import moment from "moment";
 
 import font from "./font/montserrat-v14-latin-500.ttf";
 
@@ -31,156 +32,156 @@ const Document1 = ({ resume }) => {
             <Text style={styles.subtitle}>{basicInfo.jobTitle}</Text>
           </View>
           <View style={styles.viewBox}>
-            <View style={styles.infoBox}>              
-                <View>
-                  <Text style={styles.infoTitle}>Info</Text>
-                  <View style={styles.border}></View>
-                  {basicInfo.country || basicInfo.city ? (
-                    <View>
-                      <Text style={styles.infoSubTitle}>Address</Text>
-                      <Text style={styles.textInfo}>
-                        {basicInfo.city}, {basicInfo.country}
-                      </Text>
-                    </View>
-                  ) : null}
+            <View style={styles.infoBox}>
+              <View>
+                <Text style={styles.infoTitle}>Info</Text>
+                <View style={styles.border}></View>
+                {basicInfo.country || basicInfo.city ? (
+                  <View>
+                    <Text style={styles.infoSubTitle}>Address</Text>
+                    <Text style={styles.textInfo}>
+                      {basicInfo.city}, {basicInfo.country}
+                    </Text>
+                  </View>
+                ) : null}
 
-                  {basicInfo.phone ? (
-                    <View>
-                      <Text style={styles.infoSubTitle}>phone</Text>
-                      <Text style={styles.textInfo}>{basicInfo.phone}</Text>
-                    </View>
-                  ) : null}
+                {basicInfo.phone ? (
+                  <View>
+                    <Text style={styles.infoSubTitle}>phone</Text>
+                    <Text style={styles.textInfo}>{basicInfo.phone}</Text>
+                  </View>
+                ) : null}
 
-                  {basicInfo.email ? (
-                    <View>
-                      <Text style={styles.infoSubTitle}>E-mail</Text>
-                      <Text style={styles.emailInfo}>{basicInfo.email}</Text>
-                    </View>
-                  ) : null}
+                {basicInfo.email ? (
+                  <View>
+                    <Text style={styles.infoSubTitle}>E-mail</Text>
+                    <Text style={styles.emailInfo}>{basicInfo.email}</Text>
+                  </View>
+                ) : null}
 
-                  {skills.length > 0 && (
+                {skills && (
+                  <View>
+                    <Text style={styles.infoTitle}>Skills</Text>
+                    <View style={styles.border}></View>
                     <View>
-                      <Text style={styles.infoTitle}>Skills</Text>
-                      <View style={styles.border}></View>
-                      <View>
-                        {skills.map((el) => (
-                          <Text style={styles.skillInfo} key={el.skill}>
-                            {el.skill}
-                          </Text>
-                        ))}
-                      </View>
+                      {skills.map((el) => (
+                        <Text style={styles.skillInfo} key={el.skill}>
+                          {el.skill}
+                        </Text>
+                      ))}
                     </View>
-                  )}
-                </View>
-              
+                  </View>
+                )}
+              </View>
             </View>
-            <View style={styles.profileBox}>           
-                <View>
-                  {basicInfo.summary ? (
-                    <View>
-                      <Text style={styles.infoTitle}>Profile</Text>
-                      <View style={styles.border}></View>
-                      <Text style={styles.profileInfo}>
-                        {basicInfo.summary}
-                      </Text>
-                    </View>
-                  ) : null}
+            <View style={styles.profileBox}>
+              <View>
+                {basicInfo.summary ? (
+                  <View>
+                    <Text style={styles.infoTitle}>Profile</Text>
+                    <View style={styles.border}></View>
+                    <Text style={styles.profileInfo}>{basicInfo.summary}</Text>
+                  </View>
+                ) : null}
 
-                  {employmentHistory.length > 0 ? (
-                    <View>
-                      <Text style={styles.infoTitle}>employment history</Text>
-                      <View style={styles.border}></View>
-                      <View style={styles.historyBox}>
-                        <View>
-                          {employmentHistory.map((el) => (
-                            <View key={el.employer}>
-                              <View style={styles.companyBox}>
-                                <View>
-                                  <Text style={styles.infoSubTitle}>
-                                    {el.jobTitle}, {el.employer}
-                                  </Text>
-                                </View>
-                                <View>
-                                  <Text style={styles.textInfoCity}>
-                                    {el.city}
-                                  </Text>
-                                </View>
-                              </View>
-                              <Text style={styles.dataInfo}>
-                                {el.start}-{el.end}
-                              </Text>
-                              <Text style={styles.pointInfo}>
-                                  {el.description}
-                                </Text>
-                            </View>
-                          ))}
-                        </View>
-                      </View>
-                    </View>
-                  ) : null}
-
-                  {educations.length > 0 ? (
-                    <View>
-                      <Text style={styles.infoTitle}>Education</Text>
-                      <View style={styles.border}></View>
+                {employmentHistory ? (
+                  <View>
+                    <Text style={styles.infoTitle}>employment history</Text>
+                    <View style={styles.border}></View>
+                    <View style={styles.historyBox}>
                       <View>
-                        {educations.map((el) => (
-                          <View key={el.school}>
+                        {employmentHistory.map((el) => (
+                          <View key={el.employer}>
                             <View style={styles.companyBox}>
-                              <Text style={styles.infoSubTitle}>
-                                {el.school}
-                              </Text>
-                              <Text style={styles.dataInfoEdu}>
-                                {el.start}-{el.end}
-                              </Text>
+                              <View>
+                                <Text style={styles.infoSubTitle}>
+                                  {el.jobTitle}, {el.employer}
+                                </Text>
+                              </View>
+                              <View>
+                                <Text style={styles.textInfoCity}>
+                                  {el.city}
+                                </Text>
+                              </View>
                             </View>
-                          </View>
-                        ))}
-                      </View>
-                    </View>
-                  ) : null}
-
-                  {projects.length > 0 ? (
-                    <View>
-                      <Text style={styles.infoTitle}>projects</Text>
-                      <View style={styles.border}></View>
-                      <View>
-                        {projects.map((el) => (
-                          <View key={el.projectTitle}>
-                            <View>
-                              <Text style={styles.infoSubTitle}>
-                                {el.projectTitle}, {el.company}
-                              </Text>
-                            </View>
-                            <Text style={styles.textInfo}>
+                            <Text style={styles.dataInfo}>
+                              {el.start
+                                ? moment(el.start).format("MMM YYYY")
+                                : ""}{" "}
+                              -{" "}
+                              {el.end ? moment(el.end).format("MMM YYYY") : ""}
+                            </Text>
+                            <Text style={styles.pointInfo}>
                               {el.description}
                             </Text>
                           </View>
                         ))}
                       </View>
                     </View>
-                  ) : null}
+                  </View>
+                ) : null}
 
-                  {languages.length > 0 ? (
-                    <View>                      
-                      <Text style={styles.infoTitle}>languages</Text>
-                      <View style={styles.border}></View>
-                      <View>
-                        {languages.map((el) => (
-                          <View key={el.language}>
-                            <View>
-                              <Text style={styles.infoSubTitle}>
-                                {el.language}
-                              </Text>
-                            </View>
-                            <Text style={styles.text}>{el.level}</Text>
+                {educations ? (
+                  <View>
+                    <Text style={styles.infoTitle}>Education</Text>
+                    <View style={styles.border}></View>
+                    <View>
+                      {educations.map((el) => (
+                        <View key={el.school}>
+                          <View style={styles.companyBox}>
+                            <Text style={styles.infoSubTitle}>{el.school}</Text>
+                            <Text style={styles.dataInfoEdu}>
+                              {el.start
+                                ? moment(el.start).format("MMM YYYY")
+                                : ""}{" "}
+                              -{" "}
+                              {el.end ? moment(el.end).format("MMM YYYY") : ""}
+                            </Text>
                           </View>
-                        ))}
-                      </View>
+                        </View>
+                      ))}
                     </View>
-                  ) : null}
-                </View>
-             
+                  </View>
+                ) : null}
+
+                {projects ? (
+                  <View>
+                    <Text style={styles.infoTitle}>projects</Text>
+                    <View style={styles.border}></View>
+                    <View>
+                      {projects.map((el) => (
+                        <View key={el.projectTitle}>
+                          <View>
+                            <Text style={styles.infoSubTitle}>
+                              {el.projectTitle}, {el.company}
+                            </Text>
+                          </View>
+                          <Text style={styles.textInfo}>{el.description}</Text>
+                        </View>
+                      ))}
+                    </View>
+                  </View>
+                ) : null}
+
+                {languages ? (
+                  <View>
+                    <Text style={styles.infoTitle}>languages</Text>
+                    <View style={styles.border}></View>
+                    <View>
+                      {languages.map((el) => (
+                        <View key={el.language}>
+                          <View>
+                            <Text style={styles.infoSubTitle}>
+                              {el.language}
+                            </Text>
+                          </View>
+                          <Text style={styles.text}>{el.level}</Text>
+                        </View>
+                      ))}
+                    </View>
+                  </View>
+                ) : null}
+              </View>
             </View>
           </View>
         </View>

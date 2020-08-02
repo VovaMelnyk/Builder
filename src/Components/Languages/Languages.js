@@ -3,6 +3,7 @@ import LanguageItem from "./LanguageItem/LanguageItem";
 import styles from "./Languages.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addLanguage } from "../../redux/actions/languages";
+import AddButton from "../AddButton/AddButton";
 
 const Languages = () => {
   const languages = useSelector(state => state.resume.languages);
@@ -22,9 +23,7 @@ const Languages = () => {
         />
       ))}
 
-      <button className={styles.button} onClick={addNewLanguage}>
-        Add Language
-      </button>
+      <AddButton onClick={addNewLanguage} title={"Language"} />
     </div>
   );
 };
