@@ -46,6 +46,8 @@
   background-color: transparent;
   background-position: 10%;
   background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
 }
 
 .EmploymentHistoryItem_Editor_Edit_Btn {
@@ -67,10 +69,12 @@
   background-position: 95%;
 }
 
-.EmploymentHistoryItem_Editor_Edit_Btn:hover,
-.EmploymentHistoryItem_Editor_Delete_Btn:hover,
-.EmploymentHistoryItem_Editor_Toggle_Btn:hover {
-  cursor: pointer;
+.EmploymentHistoryItem_Editor_Toggle_Btn_Rotate {
+  width: 0;
+  background-image: url("/icons/employment_toggle_icon.svg");
+  background-size: 60%;
+  background-position: 15%;
+  transform: rotate(180deg);
 }
 
 .EmploymentHistoryItem_Editor_Years_Box {

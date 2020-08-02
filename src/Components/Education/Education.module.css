@@ -1,0 +1,173 @@
+.wraper {
+    display: block;
+    width: 600;
+    margin-left: 54px;
+    margin-top: 100px;
+
+}
+
+.title {
+    font-family: Montserrat;
+    font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+}
+
+
+.degree {
+    margin-top: 16px;
+    height: 65px;
+    width: 470px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.degreeSchool {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding-top: 12px;
+}
+
+.schoolLabel {
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+margin-left: 8px;
+}
+
+.degreeEdits {
+    display: flex;
+    margin-right: 8px;
+    width: 30%;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+color: rgba(24, 28, 39, 0.4);
+}
+
+.degreeEditsHover {
+  display: flex;
+  width: 45%;
+  /* justify-content: space-between; */
+}
+
+.degreeEditsHover:hover {
+    color: rgba(24, 28, 39, 0.9);
+}
+
+.degreeEditIcon {
+    font-display: block;
+    width: 14px;
+    height: 14px;
+    background-image: url('./icon/edit.svg');
+    margin-right: 4px;
+}
+.degreeDeleteIcon {
+    width: 12px;
+    height: 12px;
+    background-image: url('./icon/delete.svg');
+    margin-right: 4px;
+}
+
+.degreeTreeangle {
+    margin-top: 4px;
+    width: 8px;
+    height: 6px;
+    background-image: url('./icon/treeangle.png');
+}
+.degreeTreeangleRotate {
+    margin-top: 4px;
+    width: 8px;
+    height: 6px;
+    background-image: url('./icon/treeangle.png');
+    transform: rotate(180deg);
+}
+
+
+.degreeDates {
+    width: 44%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    display: flex;
+    margin-left: 8px;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+}
+
+.degreeText {
+    color: rgba(24, 28, 39, 0.6);
+}
+
+.degreeDate {
+    color: #181C27;
+}
+
+.fillIn {
+    display: flex;
+    justify-content: left;
+    height: 128px;
+    width: 470px;
+    background: rgba(24, 28, 39, 0.1);
+    flex-wrap: wrap;
+}
+
+.inputSpace {
+    margin-top: 16px;
+    margin-left: 16px;
+    height: 40px;
+    width: 44%;
+    border: none;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+    padding-left: 8px;
+}
+
+.fillInDate {
+    margin-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 44%;
+}
+
+.inputDate {
+    padding: 0;
+    margin-top: 16px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+    padding-left: 8px;
+   }
+
+.addButton {
+    margin-top: 16px;
+    width: 167px;
+    height: 33px;
+    border-radius: 25px;
+    background: #181c271a;
+    border: none;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+}
+
+.addButton:hover {
+    background: white;
+    border: black;
+}
+
+
+
+
