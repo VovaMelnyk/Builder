@@ -1,4 +1,5 @@
 import { ADD_PROJECT, SET_PROJECT, DELETE_PROJECT } from "../projects/types";
+import { CLEAR_RESUME } from "../../constants";
 
 const initialState = [
   {
@@ -18,8 +19,10 @@ export default (state = initialState, action) => {
       return newStateDelete;
     case SET_PROJECT:
       const newStateSet = state.slice();
-      newStateSet.splice(action.payload.index, 1, action.payload.project)
-      return newStateSet
+      newStateSet.splice(action.payload.index, 1, action.payload.project);
+      return newStateSet;
+    case CLEAR_RESUME:
+      return initialState;
     default:
       return state;
   }
