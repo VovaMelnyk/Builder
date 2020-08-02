@@ -4,7 +4,7 @@ import { setProject } from "../../redux/projects/action";
 import { useDispatch } from 'react-redux';
 
 const ProjectItem = ({removeProject, index, company, description, title}) => {
-    const [hiddenForm, setHiddenForm] = useState(false);
+    const [hiddenForm, setHiddenForm] = useState(true);
 
     const dispatch = useDispatch();
 

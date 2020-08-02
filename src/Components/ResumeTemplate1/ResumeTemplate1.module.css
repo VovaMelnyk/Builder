@@ -1,8 +1,14 @@
-.wrapper {
-  padding: 70px 100px 49px;
+.resumeWrapper {
+  margin: 0 auto;
+  /* padding: 70px 100px 49px; */
+  width: 970px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06), 1px 3px 4px rgba(0, 0, 0, 0.08),
+    1px 4px 6px rgba(0, 0, 0, 0.12);
 }
+
 .container {
   background-color: #fff;
+  padding: 70px 100px 49px;
 }
 
 .wrapper_title {
@@ -13,7 +19,7 @@
   font-family: Montserrat;
   font-style: normal;
   text-transform: uppercase;
-  color: #181c27;
+  color: #181C27;
 }
 
 .text_secondary {
@@ -40,7 +46,6 @@
 }
 
 /*wrapper_columns*/
-
 .wrapper_columns {
   display: flex;
   border-top: 1px solid rgba(24, 28, 39, 0.1);
@@ -59,12 +64,12 @@
 }
 
 .title_columns::after {
-  content: "";
+  content: '';
   display: block;
   width: 40px;
   height: 4px;
   margin-top: 3px;
-  background: #181c27;
+  background: #181C27;
 }
 
 .subtitle {
@@ -76,7 +81,6 @@
 }
 
 /*column_left*/
-
 .wrapper_column_left {
   width: 270px;
   padding-top: 40px;
@@ -117,8 +121,6 @@ p.info_text:last-child {
 }
 
 .employment_history_title {
-  display: flex;
-  justify-content: space-between;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -130,7 +132,7 @@ p.info_text:last-child {
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: #181c27;
+  color: #181C27;
   margin-bottom: 16px;
 }
 

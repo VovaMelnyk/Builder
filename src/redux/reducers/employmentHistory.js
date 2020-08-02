@@ -4,6 +4,7 @@ import {
   CHANGE_DATA_POSITION,
   CHANGE_POSITION_START_DATE,
   CHANGE_POSITION_END_DATE,
+  CLEAR_RESUME,
 } from "../../constants";
 import moment from "moment";
 
@@ -11,8 +12,8 @@ const initialState = [
   {
     jobTitle: "Front end Developer",
     employer: "Google",
-    start: moment(),
-    end: moment(),
+    start: moment()._d,
+    end: moment()._d,
     city: "Kyiv",
     description: "Bla bla bla bla",
   },
@@ -41,6 +42,8 @@ export default (state = initialState, { type, payload }) => {
       return state.map((item, index) =>
         index === payload.index ? { ...item, ...payload } : item
       );
+    case CLEAR_RESUME:
+      return initialState;
     default:
       return state;
   }

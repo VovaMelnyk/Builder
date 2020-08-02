@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Header.module.css";
-import { NavLink, useLocation } from "react-router-dom";
 import { paths } from "../../constants";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../redux/actions/user";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { NavLink, useHistory, useLocation } from "react-router-dom";
+import { auth } from "../../configFirebase";
+import storage from "../../helpers/storage";
 
 const Header = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(location);
-  const isUserAuth = useSelector(state => state.user);
+  const isUserAuth = useSelector((state) => state.user);
   const logOut = () => {
     dispatch(logOutUser());
+    auth.signOut();
+    storage.save("user", {});
+    history.push(paths.login);
   };
 
   const isSwitchOn = () => {
@@ -29,7 +34,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}></div>
-      {isUserAuth.email !== "" && (
+      {!!Object.keys(isUserAuth).length && (
         <nav
           className={
             isSwitchOn()

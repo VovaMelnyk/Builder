@@ -1,12 +1,12 @@
 import { reduxUserTypes } from "../../constants";
 
 const initialState = {
-  email: "user@gmail.com",
-  uid: "34234uhkj4jh2343424n23kl4"
+
 };
+
 const userLogOut = {
-  email: "",
-  uid: ""
+  // email: "",
+  // uid: "",
 };
 
 export default (state = initialState, action) => {
@@ -17,6 +17,8 @@ export default (state = initialState, action) => {
       return action.payload;
     case reduxUserTypes.REGISTER:
       return action.payload;
+    case reduxUserTypes.USER_ERROR:
+      return { ...state, error: action.payload };
     default:
       return state;
   }

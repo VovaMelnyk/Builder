@@ -3,7 +3,7 @@ import styles from "./Templates.module.css";
 import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeType } from "../../redux/actions/basicInfo";
-import Template_1 from "../../Components/Template_1/Tempate_1";
+import Template_1 from "../../Components/ResumeTemplate1/ResumeTemplate1";
 import Template_2 from "../../Components/ResumeTemplate2/ResumeTemplate2";
 import { set } from "date-fns";
 import { darkTheme, lightTheme } from "../../redux/actions/theme";

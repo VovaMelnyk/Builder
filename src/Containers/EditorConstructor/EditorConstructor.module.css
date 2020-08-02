@@ -1,6 +1,27 @@
 .MainWrapper {
-  display: block;
-  max-width: 1280px;
-  margin: 0 auto;
-  min-width: 500px;
+	padding-bottom: 5px;
+	display: block;
+	max-width: 1280px;
+	margin: 0 auto;
+	min-width: 500px;
+	height: calc(100vh - 130px);
+	overflow-y: scroll;
+}
+
+.MainWrapper::-webkit-scrollbar {
+	width: 10px;
+}
+
+.MainWrapper::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+}
+
+.MainWrapper::-webkit-scrollbar-thumb {
+	background: rgb(105, 100, 100);
+	border-radius: 10px;
+}
+
+.MainWrapper::-webkit-scrollbar-thumb:hover {
+	background: #7c7777;
 }
