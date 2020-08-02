@@ -36,6 +36,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  width: 450px;
 }
 
 .formDiv {
@@ -115,6 +116,7 @@
 
 .message {
   font-family: "Montserrat", sans-serif;
+  width: ;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;

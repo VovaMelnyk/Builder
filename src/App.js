@@ -14,12 +14,12 @@ import { logInUser } from "./redux/actions/user";
 function App() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  let isAuth = !!Object.keys(user).length;
+  let isAuth = !!Object.keys(user).length && !user.error;
 
   useEffect(() => {
     const user = storage.get("user");
     if (user) {
-      if (!!Object.keys(user).length) {
+      if (!!Object.keys(user).length && !user.error) {
         dispatch(logInUser(user));
       }
     }
