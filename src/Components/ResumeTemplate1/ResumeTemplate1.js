@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import classes from "./ResumeTemplate1.module.css";
 import moment from "moment";
-
 const ResumeTemplate1 = () => {
   const resume = useSelector((state) => state.resume);
   //------Global State----------------------------------------
@@ -18,7 +17,6 @@ const ResumeTemplate1 = () => {
   } = resume.basicInfo;
   const { employmentHistory, educations, languages, projects, skills } = resume;
   //===================================================
-
   //------Model State-------------------------------------
   const modelBasicInfo = {
     type: 1,
@@ -76,7 +74,6 @@ const ResumeTemplate1 = () => {
       end: "Jul 2020",
     },
   ];
-
   let finalSkills = skills.length ? skills : modelSkills;
   let finalEmploymentHistory = employmentHistory.length
     ? employmentHistory
@@ -84,9 +81,9 @@ const ResumeTemplate1 = () => {
   let finalEducations = educations.length ? educations : modelEducations;
   let finalLanguages = languages.length ? languages : modelLanguages;
   let finalProjects = projects.length ? projects : modelProjects;
-
   return (
     <div className={classes.resumeWrapper}>
+      <div className={classes.container}>
       <div className={classes.wrapper_title}>
         <h1 className={`${classes.name} ${classes.text_primary}`}>
           {`${!firstName ? modelBasicInfo.firstName : firstName} ${
@@ -97,20 +94,16 @@ const ResumeTemplate1 = () => {
           {!jobTitle ? modelBasicInfo.jobTitle : jobTitle}
         </p>
       </div>
-
       <div className={classes.wrapper_columns}>
         {/**----------------------------column Left-------------------------------------- */}
-
         <div className={classes.wrapper_column_left}>
           <div className={classes.wrapper_column}>
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               info
             </h2>
-
             <p className={`${classes.subtitle} ${classes.text_primary}`}>
               Address
             </p>
-
             <p className={`${classes.text_secondary} ${classes.info_text}`}>
               {`${!city ? modelBasicInfo.city : city}, ${
                 !country ? modelBasicInfo.country : country
@@ -125,7 +118,6 @@ const ResumeTemplate1 = () => {
             <p className={`${classes.subtitle} ${classes.text_primary}`}>
               E-mail
             </p>
-
             <a
               className={`${classes.text_secondary} ${classes.info_text} ${classes.info_email}`}
               href={`mailto:${email}`}
@@ -133,7 +125,6 @@ const ResumeTemplate1 = () => {
               {!email ? modelBasicInfo.email : email}
             </a>
           </div>
-
           <div className={classes.wrapper_column}>
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Skills
@@ -148,12 +139,9 @@ const ResumeTemplate1 = () => {
             ))}
           </div>
         </div>
-
         {/**----------------------------------column Right-------------------------------- */}
-
         <div className={classes.wrapper_column_right}>
           {/**--------------------------profile------------------------------ */}
-
           <div
             className={`${classes.wrapper_column} ${classes.section_profile}`}
           >
@@ -164,11 +152,8 @@ const ResumeTemplate1 = () => {
               {!summary ? modelBasicInfo.summary : summary}
             </p>
           </div>
-
           {/** ================================================================*/}
-
           {/**--------------------------Employment history-------------------- */}
-
           <div className={classes.wrapper_column}>
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Employment history
@@ -191,11 +176,8 @@ const ResumeTemplate1 = () => {
               </div>
             ))}
           </div>
-
           {/** ================================================================*/}
-
           {/**--------------------------Education----------------------------- */}
-
           <div className={classes.wrapper_column}>
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Education
@@ -207,7 +189,6 @@ const ResumeTemplate1 = () => {
                     className={`${classes.text_primary}`}
                   >{`${el.school}, ${el.degree}`}</p>
                 </div>
-
                 <p
                   className={`${classes.text_primary} ${classes.employment_history_data}`}
                 >
@@ -217,11 +198,8 @@ const ResumeTemplate1 = () => {
               </div>
             ))}
           </div>
-
           {/** ================================================================*/}
-
           {/**--------------------------languages----------------------------- */}
-
           <div className={classes.wrapper_column}>
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Languages
@@ -236,11 +214,8 @@ const ResumeTemplate1 = () => {
               </div>
             ))}
           </div>
-
           {/** ================================================================*/}
-
           {/**--------------------------projects------------------------------ */}
-
           <div className={`${classes.wrapper_column} `}>
             <h2 className={`${classes.title_columns} ${classes.text_primary}`}>
               Projects
@@ -252,17 +227,15 @@ const ResumeTemplate1 = () => {
                 >
                   {`${el.projectTitle}, ${el.company}`}
                 </p>
-
                 <p className={`${classes.text_secondary}`}>{el.description}</p>
               </div>
             ))}
           </div>
-
           {/** ================================================================*/}
         </div>
+      </div>
       </div>
     </div>
   );
 };
-
 export default ResumeTemplate1;

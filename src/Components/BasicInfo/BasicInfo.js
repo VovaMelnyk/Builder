@@ -12,21 +12,22 @@ import {
   getPhone,
   getCountry,
   getCity,
-  getSummary,
+  getSummary
 } from "../../redux/selectors/basicInfo";
 const BasicInfo = () => {
   const dispatch = useDispatch();
-  const title = useSelector((state) => getTitle(state));
-  const jobTitle = useSelector((state) => getJobTitle(state));
-  const firstName = useSelector((state) => getFirstName(state));
-  const lastName = useSelector((state) => getLastName(state));
-  const email = useSelector((state) => getEmail(state));
-  const phone = useSelector((state) => getPhone(state));
-  const country = useSelector((state) => getCountry(state));
-  const city = useSelector((state) => getCity(state));
-  const summary = useSelector((state) => getSummary(state));
+  const title = useSelector(state => getTitle(state));
+  const jobTitle = useSelector(state => getJobTitle(state));
+  const firstName = useSelector(state => getFirstName(state));
+  const lastName = useSelector(state => getLastName(state));
+  const email = useSelector(state => getEmail(state));
+  const phone = useSelector(state => getPhone(state));
+  const country = useSelector(state => getCountry(state));
+  const city = useSelector(state => getCity(state));
+  const summary = useSelector(state => getSummary(state));
+  const theme = useSelector(state => state.theme);
 
-  const inputHandler = (e) => {
+  const inputHandler = e => {
     dispatch(changeBasicInputs(e));
   };
 
@@ -43,7 +44,15 @@ const BasicInfo = () => {
           onChange={inputHandler}
         />
 
-        <h2 className={styles.caption}>Personal Details</h2>
+        <h2
+          className={
+            theme === "dark"
+              ? `${styles.caption} ${styles.captionDarkTheme}`
+              : styles.caption
+          }
+        >
+          Personal Details
+        </h2>
         <input
           className={styles.jobTitle}
           type="text"
@@ -106,7 +115,15 @@ const BasicInfo = () => {
           />
         </div>
 
-        <h2 className={styles.caption}>Professional Summary</h2>
+        <h2
+          className={
+            theme === "dark"
+              ? `${styles.caption} ${styles.captionDarkTheme}`
+              : styles.caption
+          }
+        >
+          Professional Summary
+        </h2>
         <textarea
           className={styles.summaryInput}
           type="text"

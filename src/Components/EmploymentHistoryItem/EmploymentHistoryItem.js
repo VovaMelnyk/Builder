@@ -1,12 +1,12 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import {
   deletePosition,
   changePositionData,
   changePositionStartDate,
-  changePositionEndDate,
+  changePositionEndDate
 } from "../../redux/actions/employmentHistory";
 import withToggle from "../../hoc/withToggle";
 import styles from "./EmploymentHistoryItem.module.css";
@@ -16,9 +16,10 @@ const EmploymentHistoryItem = ({
   emHistory: { jobTitle, employer, start, end, city, description },
   index,
   open,
-  toggle,
+  toggle
 }) => {
   const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme);
 
   const deleteEmployment = () => {
     dispatch(deletePosition(index));
@@ -28,9 +29,21 @@ const EmploymentHistoryItem = ({
     <div
       className={`${styles.EmploymentHistoryItem_Container} ${styles.mb_16}`}
     >
-      <div className={styles.EmploymentHistoryItem_Header}>
+      <div
+        className={
+          theme === "dark"
+            ? `${styles.EmploymentHistoryItem_Header} ${styles.EmploymentHistoryItem_Header_Dark}`
+            : styles.EmploymentHistoryItem_Header
+        }
+      >
         <div className={styles.EmploymentHistoryItem_Editor_Box}>
-          <h5 className={styles.EmploymentHistoryItem_Editor_Title}>
+          <h5
+            className={
+              theme === "dark"
+                ? `${styles.EmploymentHistoryItem_Editor_Title} ${styles.EmploymentHistoryItem_Editor_Title_Dark}`
+                : styles.EmploymentHistoryItem_Editor_Title
+            }
+          >
             {jobTitle}
           </h5>
           <div className={styles.EmploymentHistoryItem_Editor_Edit_Btn_Box}>
@@ -78,7 +91,7 @@ const EmploymentHistoryItem = ({
             placeholder="Job Title"
             name="jobTitle"
             value={jobTitle}
-            onChange={(e) => dispatch(changePositionData(e, index))}
+            onChange={e => dispatch(changePositionData(e, index))}
             className={`${styles.EmploymentHistoryItem_Form_Input} ${styles.EmploymentHistoryItem_Form_Input_Width} ${styles.mr_16}`}
           />
           <input
@@ -86,7 +99,7 @@ const EmploymentHistoryItem = ({
             placeholder="Employer"
             name="employer"
             value={employer}
-            onChange={(e) => dispatch(changePositionData(e, index))}
+            onChange={e => dispatch(changePositionData(e, index))}
             className={`${styles.EmploymentHistoryItem_Form_Input} ${styles.EmploymentHistoryItem_Form_Input_Width} ${styles.mb_16}`}
           />
           <div
@@ -94,16 +107,14 @@ const EmploymentHistoryItem = ({
           >
             <DatePicker
               selected={moment(start)._d}
-              onChange={(date) =>
-                dispatch(changePositionStartDate(date, index))
-              }
+              onChange={date => dispatch(changePositionStartDate(date, index))}
               dateFormat="MM/yyyy"
               showMonthYearPicker
               className={`${styles.EmploymentHistoryItem_Form_Input} ${styles.EmploymentHistoryItem_Form_Input_Date} ${styles.mr_16} ${styles.mb_16}`}
             />
             <DatePicker
               selected={moment(end)._d}
-              onChange={(date) => dispatch(changePositionEndDate(date, index))}
+              onChange={date => dispatch(changePositionEndDate(date, index))}
               dateFormat="MM/yyyy"
               showMonthYearPicker
               className={`${styles.EmploymentHistoryItem_Form_Input} ${styles.EmploymentHistoryItem_Form_Input_Date} ${styles.mb_16}`}
@@ -115,7 +126,7 @@ const EmploymentHistoryItem = ({
             placeholder="City"
             name="city"
             value={city}
-            onChange={(e) => dispatch(changePositionData(e, index))}
+            onChange={e => dispatch(changePositionData(e, index))}
             className={`${styles.EmploymentHistoryItem_Form_Input} ${styles.EmploymentHistoryItem_Form_Input_Width}`}
           />
           <textarea
@@ -124,7 +135,7 @@ const EmploymentHistoryItem = ({
             cols="30"
             rows="10"
             placeholder="Description"
-            onChange={(e) => dispatch(changePositionData(e, index))}
+            onChange={e => dispatch(changePositionData(e, index))}
             className={`${styles.EmploymentHistoryItem_Form_Input} ${styles.EmploymentHistoryItem_Form_Input_Area}`}
           ></textarea>
         </form>
