@@ -1,20 +1,9 @@
-// const initialState = {
-//   type: 1,
-//   id: "",
-//   title: "Resume for Google",
-//   jobTitle: "Front End Developer",
-//   firstName: "User",
-//   lastName: "Usersky",
-//   email: "user@gmail.com",
-//   phone: "067-345-65-45",
-//   country: "Ukraine",
-//   city: "Kyiv",
-//   summary: "Bla bla bla bla",
-// };
+import { BASIC_INFO } from "../../constants/index";
+import { CHANGE_TYPE } from "../../constants";
 
 const initialState = {
   type: 1,
-  id: "2",
+  id: "",
   title: "",
   jobTitle: "",
   firstName: "",
@@ -27,6 +16,10 @@ const initialState = {
 };
 export default (state = initialState, action) => {
   switch (action.type) {
+    case BASIC_INFO:
+      return { ...state, [action.name]: action.value };
+    case CHANGE_TYPE:
+      return { ...state, ...action.payload };
     default:
       return state;
   }

@@ -1,0 +1,41 @@
+/* Languages */
+.wrapper {
+  width: 470px;
+  margin-bottom: 40px;
+}
+
+.title {
+  padding: 10px;
+  width: 180px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+
+  color: #181c27;
+}
+.button {
+  padding: 8px 16px 8px 38px;
+  background-color: rgba(24, 28, 39, 0.1);
+  border-radius: 25px;
+  border: none;
+  background-image: url("/icons/employment_add_position_btn_icon.svg");
+  background-repeat: no-repeat;
+  background-position: 10%;
+  background-size: 10%;
+  cursor: pointer;
+  font: 500 14px/17px "Montserrat";
+  text-align: left;
+}
+.button:focus {
+  outline: none;
+}
+.button:hover {
+  background: rgba(24, 28, 39, 0.2);
+}

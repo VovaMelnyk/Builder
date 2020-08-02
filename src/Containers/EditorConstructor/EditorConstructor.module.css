@@ -1,0 +1,6 @@
+.MainWrapper {
+  display: block;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-width: 500px;
+}
