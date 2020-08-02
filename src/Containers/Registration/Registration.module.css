@@ -88,6 +88,16 @@
   border-bottom: 1px solid #ff2c0c;
 }
 
+.error {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #ff2c0c;
+}
+
 .button {
   width: 170px;
   margin: 60px auto 0;

@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./DashboardItem.module.css";
-import PreloaderV1 from "./PreloaderV1";
 
-const DashboardItem = () => {
+const DashboardItemV2 = () => {
   return (
     <div className={styles.resumeItem}>
-      <div className={styles.resumeName}>No resume found</div>
+      <div className={styles.resumeName}>"basicInfo.title"</div>
       <div className={styles.resume}>
-        <PreloaderV1 />
+        <img src="/icons/resv2.png" />
       </div>
-      {/* <div className={styles.buttonBlock}>
+      <div className={styles.buttonBlock}>
         <button className={styles.button}>
           <img src="/icons/Dowload.svg" className={styles.buttonSvg} /> Download
         </button>
@@ -21,9 +20,9 @@ const DashboardItem = () => {
           <img src="/icons/Delete.svg" className={styles.buttonSvg} />
           Delete
         </button>
-      </div> */}
+      </div>
     </div>
   );
 };
 
-export default DashboardItem;
+export default DashboardItemV2;
