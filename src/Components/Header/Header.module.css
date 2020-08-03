@@ -1,24 +1,31 @@
 .header {
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
-  padding: 21px 55px 0;
+  padding: 21px 10px 0;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
+
 }
+
 .logo {
   background-image: url("./logo.svg");
   width: 140px;
   height: 42px;
   margin-bottom: 21px;
 }
+
 .headerNav {
   width: 30%;
   min-width: 389px;
 }
+
 .headerNavSwitcher {
   width: 37%;
   min-width: 520px;
 }
+
 .headerNavList {
   display: flex;
   justify-content: space-between;
@@ -26,6 +33,7 @@
   color: #181c27;
   height: 100%;
 }
+
 .link {
   height: 100%;
   padding-top: 12px;
@@ -35,6 +43,7 @@
   text-decoration: none;
   display: block;
 }
+
 .activeLink {
   border-bottom: 4px solid #ff6b08;
 }
@@ -46,6 +55,7 @@
   color: rgba(24, 28, 39, 0.6);
   cursor: pointer;
 }
+
 .headerLogOutSwitch {
   width: 25%;
 }

@@ -1,13 +1,8 @@
 import { reduxUserTypes } from "../../constants";
 
-const initialState = {
+const initialState = {};
 
-};
-
-const userLogOut = {
-  // email: "",
-  // uid: "",
-};
+const userLogOut = {};
 
 export default (state = initialState, action) => {
   switch (action.type) {

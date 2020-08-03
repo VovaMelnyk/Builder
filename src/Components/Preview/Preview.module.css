@@ -3,11 +3,13 @@
 	justify-content: space-between;
 	margin-bottom: 22px;
 }
+
 .previewCaption {
 	font: 500 18px/22px "Montserrat";
 	letter-spacing: 0.04em;
 	color: #181c27;
 }
+
 .download {
 	width: 131px;
 	background-color: #181c27;
@@ -30,6 +32,7 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
 .select {
 	font: 500 14px/17px "Montserrat";
 	letter-spacing: 0.04em;

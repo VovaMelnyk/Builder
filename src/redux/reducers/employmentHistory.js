@@ -10,14 +10,6 @@ import {
 import moment from "moment";
 
 const initialState = [
-  {
-    jobTitle: "Front end Developer",
-    employer: "Google",
-    start: moment()._d,
-    end: moment()._d,
-    city: "Kyiv",
-    description: "Bla bla bla bla",
-  },
 ];
 
 export default (state = initialState, { type, payload }) => {
