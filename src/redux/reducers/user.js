@@ -1,8 +1,6 @@
 import { reduxUserTypes } from "../../constants";
 
-const initialState = {
-
-};
+const initialState = {};
 
 const userLogOut = {
   // email: "",

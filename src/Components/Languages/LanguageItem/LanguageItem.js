@@ -46,7 +46,7 @@ const LanguageItem = (props) => {
             Edit
           </div>
           <div className={styles.deleteBtn} onClick={deletedNewLanguage}>
-            {" "}
+
             Delete
           </div>
           <div className={`${open ? styles.arrowBtn : styles.arrowBtnDown}`} onClick={toggle} value=" "></div>

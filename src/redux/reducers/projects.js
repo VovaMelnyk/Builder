@@ -2,11 +2,7 @@ import { ADD_PROJECT, SET_PROJECT, DELETE_PROJECT } from "../projects/types";
 import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
-  {
-    projectTitle: "YouTube",
-    company: "Google",
-    description: "Bla bla bla bla",
-  },
+ 
 ];
 
 export default (state = initialState, action) => {

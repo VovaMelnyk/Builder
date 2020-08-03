@@ -1,10 +1,7 @@
 import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
-  { skill: "React" },
-  { skill: "HTML" },
-  { skill: "CSS" },
-  { skill: "JS" },
+  
 ];
 
 export default (state = initialState, action) => {
