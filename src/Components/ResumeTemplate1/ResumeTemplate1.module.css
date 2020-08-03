@@ -1,6 +1,5 @@
 .resumeWrapper {
   margin: 0 auto;
-  /* padding: 70px 100px 49px; */
   width: 970px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06), 1px 3px 4px rgba(0, 0, 0, 0.08),
     1px 4px 6px rgba(0, 0, 0, 0.12);
@@ -52,7 +51,9 @@
 }
 
 .wrapper_column {
+  width: 100%;
   margin-bottom: 40px;
+  overflow-wrap: break-word;
 }
 
 .title_columns {
@@ -82,7 +83,7 @@
 
 /*column_left*/
 .wrapper_column_left {
-  width: 270px;
+  min-width: 270px;
   padding-top: 40px;
   padding-right: 10px;
   border-right: 1px solid rgba(24, 28, 39, 0.1);
@@ -110,7 +111,7 @@ p.info_text:last-child {
 
 /*column_right*/
 .wrapper_column_right {
-  width: 100%;
+  max-width: 500px;
   padding-top: 40px;
   padding-left: 30px;
 }

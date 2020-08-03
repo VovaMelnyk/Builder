@@ -3,9 +3,9 @@ import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
   {
-    projectTitle: "YouTube",
-    company: "Google",
-    description: "Bla bla bla bla",
+    projectTitle: "",
+    company: "",
+    description: "",
   },
 ];
 

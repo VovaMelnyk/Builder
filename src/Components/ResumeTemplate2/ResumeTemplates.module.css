@@ -5,10 +5,12 @@
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06), 1px 3px 4px rgba(0, 0, 0, 0.08),
     1px 4px 6px rgba(0, 0, 0, 0.12);
 }
+
 .Container {
-	margin: 0 auto;
-	padding: 60px 70px 100px;
+  margin: 0 auto;
+  padding: 60px 70px 100px;
 }
+
 .ResumeHeding {
   display: flex;
   flex-direction: column;
@@ -85,6 +87,7 @@
   background-position: center;
   background-size: contain;
 }
+
 .ContactItem {
   display: flex;
   align-items: center;
@@ -107,16 +110,21 @@
   display: flex;
   justify-content: space-between;
 }
+
 .column1 {
   width: 70%;
+
+  overflow-wrap: break-word;
 }
+
 .column2 {
-	width: 30%;
-	padding-left: 50px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+  width: 30%;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
 .BoxName {
   margin-bottom: 32px;
   padding: 4px 16px;
@@ -155,6 +163,7 @@
   padding-left: 10px;
   padding-bottom: 40px;
 }
+
 .UlItem {
   padding-top: 8px;
   font-family: Roboto;
@@ -167,6 +176,7 @@
 
   color: rgba(24, 28, 39, 0.6);
 }
+
 .BoxSubtitle {
   padding-top: 4px;
   padding-bottom: 8px;

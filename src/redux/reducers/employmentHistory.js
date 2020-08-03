@@ -11,12 +11,12 @@ import moment from "moment";
 
 const initialState = [
   {
-    jobTitle: "Front end Developer",
-    employer: "Google",
+    jobTitle: "",
+    employer: "",
     start: moment()._d,
     end: moment()._d,
-    city: "Kyiv",
-    description: "Bla bla bla bla",
+    city: "",
+    description: "",
   },
 ];
 

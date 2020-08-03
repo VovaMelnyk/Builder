@@ -2,8 +2,8 @@ import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
   {
-    language: "Ukrainian",
-    level: "native",
+    language: "",
+    level: "",
   },
 ];
 

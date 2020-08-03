@@ -8,11 +8,11 @@ ul {
 
 	padding: 35px 100px 35px 70px;
 	background-color: #fff;
-	width: 100%;
-	height: calc(100vh - 290px);
-	overflow-y: scroll;
-	overflow-x: hidden;
+	width: 640px;
+	min-height: 900px;
+
 }
+
 .preview::-webkit-scrollbar {
 	width: 10px;
 }
@@ -30,9 +30,11 @@ ul {
 .preview::-webkit-scrollbar-thumb:hover {
 	background: #7c7777;
 }
+
 .topPart {
 	margin-bottom: 20px;
 }
+
 .name {
 	font-family: "Montserrat", sans-serif;
 	font-style: normal;
@@ -120,6 +122,7 @@ ul {
 .cvInfo {
 	padding: 20px 0 0 30px;
 	width: calc(100% * (300 / 470));
+	overflow-wrap: break-word;
 }
 
 .cvInfoComponent:first-child::after {

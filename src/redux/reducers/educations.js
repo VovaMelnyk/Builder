@@ -8,8 +8,8 @@ import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
   {
-    school: "Best school ever",
-    degree: "master",
+    school: "",
+    degree: "",
     start: moment()._d,
     end: moment()._d,
   },

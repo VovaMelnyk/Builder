@@ -1,6 +1,7 @@
-.container{
+.container {
   margin-bottom: 16px;
 }
+
 .wrapper {
   max-width: 470px;
   display: flex;
@@ -19,24 +20,25 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
     0px 1px 2px rgba(0, 0, 0, 0.12);
 }
+
 .control {
   outline: none;
   border: none;
   box-shadow: none;
 }
+
 .header {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  /* identical to box height */
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-
   color: #181c27;
 }
+
 .buttonSpace {
   display: flex;
 }
@@ -82,13 +84,15 @@
   background-size: 60%;
   background-position: 95%;
 }
+
 .arrowBtnDown {
   width: 0;
   background-image: url("/icons/employment_toggle_icon.svg");
   background-size: 60%;
-  
+
   transform: rotate(180deg);
 }
+
 .form {
   margin: 0 auto;
   background: rgba(24, 28, 39, 0.1);
@@ -99,6 +103,7 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
     0px 1px 2px rgba(0, 0, 0, 0.12);
 }
+
 .select,
 .input {
   font-family: Montserrat;
@@ -113,12 +118,14 @@
   width: 211px;
   padding-left: 10px;
 }
+
 .select div {
   outline: none;
   border: none;
   box-shadow: none;
   border-color: red;
 }
+
 .select:focus {
   outline: none;
   border: none;
@@ -128,6 +135,7 @@
 .input:focus {
   outline: none;
 }
+
 .input::placeholder {
   font-family: Montserrat;
   font-style: normal;
@@ -138,10 +146,12 @@
 
   color: rgba(24, 28, 39, 0.6);
 }
+
 .languageName {
   margin-left: 5px;
   margin-right: 5px;
 }
+
 .languageLevel {
   margin-left: 5px;
   margin-right: 5px;
