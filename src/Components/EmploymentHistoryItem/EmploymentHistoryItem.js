@@ -48,44 +48,90 @@ const EmploymentHistoryItem = ({
           </h5>
           <div className={styles.EmploymentHistoryItem_Editor_Edit_Btn_Box}>
             <button
-              className={`${styles.EmploymentHistoryItem_Editor_Btn} ${styles.EmploymentHistoryItem_Editor_Edit_Btn}`}
+              className={
+                theme === "dark"
+                  ? `${styles.EmploymentHistoryItem_Editor_Btn} ${styles.EmploymentHistoryItem_Editor_Btn_Dark} ${styles.EmploymentHistoryItem_Editor_Edit_Btn} ${styles.EmploymentHistoryItem_Editor_Edit_Btn_Dark}`
+                  : `${styles.EmploymentHistoryItem_Editor_Btn} ${styles.EmploymentHistoryItem_Editor_Edit_Btn}`
+              }
               onClick={toggle}
             >
               Edit
             </button>
             <button
-              className={`${styles.EmploymentHistoryItem_Editor_Btn} ${styles.EmploymentHistoryItem_Editor_Delete_Btn}`}
+              className={
+                theme === "dark"
+                  ? ` ${styles.EmploymentHistoryItem_Editor_Btn_Dark} ${styles.EmploymentHistoryItem_Editor_Delete_Btn} ${styles.EmploymentHistoryItem_Editor_Delete_Btn_Dark}`
+                  : `${styles.EmploymentHistoryItem_Editor_Btn} ${styles.EmploymentHistoryItem_Editor_Edit_Btn}`
+              }
               onClick={deleteEmployment}
             >
               Delete
             </button>
             <button
-              className={`${styles.EmploymentHistoryItem_Editor_Btn} ${
-                open
-                  ? styles.EmploymentHistoryItem_Editor_Toggle_Btn
-                  : styles.EmploymentHistoryItem_Editor_Toggle_Btn_Rotate
-              }`}
+              className={
+                theme === "dark"
+                  ? `${styles.EmploymentHistoryItem_Editor_Btn_Dark} ${
+                      open
+                        ? styles.EmploymentHistoryItem_Editor_Toggle_Btn_Dark
+                        : styles.EmploymentHistoryItem_Editor_Toggle_Btn_Rotate_Dark
+                    } `
+                  : `${styles.EmploymentHistoryItem_Editor_Btn} ${
+                      open
+                        ? styles.EmploymentHistoryItem_Editor_Toggle_Btn
+                        : styles.EmploymentHistoryItem_Editor_Toggle_Btn_Rotate
+                    } `
+              }
               onClick={toggle}
             ></button>
           </div>
         </div>
         <div className={styles.EmploymentHistoryItem_Editor_Years_Box}>
-          <p className={styles.EmploymentHistoryItem_Editor_Years_Descr}>
+          <p
+            className={
+              theme === "dark"
+                ? `${styles.EmploymentHistoryItem_Editor_Years_Descr} ${styles.EmploymentHistoryItem_Editor_Years_Descr_Dark}`
+                : styles.EmploymentHistoryItem_Editor_Years_Descr
+            }
+          >
             Start
-            <span className={styles.EmploymentHistoryItem_Editor_Years_Span}>
+            <span
+              className={
+                theme === "dark"
+                  ? `${styles.EmploymentHistoryItem_Editor_Years_Span} ${styles.EmploymentHistoryItem_Editor_Years_Span_Dark}`
+                  : styles.EmploymentHistoryItem_Editor_Years_Span
+              }
+            >
               {moment(start).format("MM/YYYY")}
             </span>
           </p>
-          <p className={styles.EmploymentHistoryItem_Editor_Years_Descr}>
+          <p
+            className={
+              theme === "dark"
+                ? `${styles.EmploymentHistoryItem_Editor_Years_Descr} ${styles.EmploymentHistoryItem_Editor_Years_Descr_Dark}`
+                : styles.EmploymentHistoryItem_Editor_Years_Descr
+            }
+          >
             End
-            <span className={styles.EmploymentHistoryItem_Editor_Years_Span}>
+            <span
+              className={
+                theme === "dark"
+                  ? `${styles.EmploymentHistoryItem_Editor_Years_Span} ${styles.EmploymentHistoryItem_Editor_Years_Span_Dark}`
+                  : styles.EmploymentHistoryItem_Editor_Years_Span
+              }
+            >
               {moment(end).format("MM/YYYY")}
             </span>
           </p>
         </div>
       </div>
       {open && (
-        <form className={styles.EmploymentHistoryItem_Form}>
+        <form
+          className={
+            theme === "dark"
+              ? styles.EmploymentHistoryItem_Form_Dark
+              : styles.EmploymentHistoryItem_Form
+          }
+        >
           <input
             type="text"
             placeholder="Job Title"
