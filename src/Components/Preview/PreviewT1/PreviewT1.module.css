@@ -5,12 +5,12 @@ ul {
 .preview {
 	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.02), 1px 1px 4px rgba(0, 0, 0, 0.06),
 		1px 4px 4px rgba(0, 0, 0, 0.08);
-
 	padding: 35px 100px 35px 70px;
 	background-color: #fff;
-	width: 640px;
-	min-height: 900px;
-
+	width: 100%;
+	height: calc(100vh - 290px);
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .preview::-webkit-scrollbar {

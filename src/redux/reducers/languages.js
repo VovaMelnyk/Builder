@@ -1,10 +1,6 @@
 import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
-  {
-    language: "",
-    level: "",
-  },
 ];
 
 export default (state = initialState, action) => {

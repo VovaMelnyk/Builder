@@ -3,7 +3,7 @@
 	display: block;
 	max-width: 1280px;
 	min-width: 500px;
-	height: 1010px;
+	height: calc(100vh - 130px);
 	margin-right: 60px;
 	overflow-y: scroll;
 }
