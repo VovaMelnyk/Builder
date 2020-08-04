@@ -1,10 +1,6 @@
-import { CLEAR_RESUME } from "../../constants";
+import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
-  {
-    language: "Ukrainian",
-    level: "native",
-  },
 ];
 
 export default (state = initialState, action) => {
@@ -21,6 +17,8 @@ export default (state = initialState, action) => {
       return newStateSet;
     case CLEAR_RESUME:
       return initialState;
+    case UPDATE_RESUME:
+      return action.payload.languages;
     default:
       return state;
   }

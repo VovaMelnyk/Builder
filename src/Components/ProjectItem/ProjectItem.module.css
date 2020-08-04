@@ -3,74 +3,108 @@
 }
 
 .header {
-    padding: 12px 13px 13px 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #FFFFFF;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.12);
+  padding: 12px 13px 13px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+.header_Dark {
+  composes: header;
+  background: #181c27;
 }
 
 .header__title {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+.header__title_Dark {
+  composes: header__title;
+  color: #fff;
 }
 
 .header__btn_container {
-    display: flex;
+  display: flex;
 }
 
 .header__btn {
-    width: 62px;
-    display: flex;
-    align-items: center;
-    padding-left: 24px;
-    font-family: "Montserrat", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: 0.04em;
-    color: rgba(24, 28, 39, 0.4);
-    border: none;
-    background-color: transparent;
-    background-position: 10%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    outline: none;
+  width: 62px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.04em;
+  color: rgba(24, 28, 39, 0.4);
+  border: none;
+  background-color: transparent;
+  background-position: 10%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
 }
 
 .header__btn_pen {
-    margin-right: 24px;
-    background-image: url("/icons/employment_edit_icon.svg");
-    background-size: contain;
+  margin-right: 24px;
+  background-image: url("/icons/employment_edit_icon.svg");
+  background-size: contain;
+}
+.header__btn_pen_Dark {
+  composes: header__btn;
+  composes: header__btn_pen;
+  color: rgba(255, 255, 255, 0.6);
+  background-image: url("./icons/pen-dark.svg");
 }
 
 .header__btn_close {
-    margin-right: 24px;
-    background-image: url("/icons/employment_delete_icon.svg");
-    background-size: contain;
+  composes: header__btn;
+  margin-right: 24px;
+  background-image: url("/icons/employment_delete_icon.svg");
+  background-size: contain;
 }
 
+.header__btn_close_Dark {
+  composes: header__btn_close;
+  color: rgba(255, 255, 255, 0.6);
+  background-image: url("./icons/delete-dark.svg");
+}
 .header__btn_hide_up {
-    width: 0;
-    background-image: url("/icons/employment_toggle_icon.svg");
-    background-size: 60%;
-    background-position: 95%;
+  composes: header__btn;
+  width: 0;
+  background-image: url("/icons/employment_toggle_icon.svg");
+  background-size: 60%;
+  background-position: 95%;
+}
+.header__btn_hide_up_Dark {
+  composes: header__btn_hide_up;
+  background-image: url("./icons/up-down.svg");
 }
 
 .header__btn_hide_down {
-    width: 0;
-    background-image: url("/icons/employment_toggle_icon.svg");
-    background-size: 60%;
-    background-position: 15%;
-    transform: rotate(180deg);
+  composes: header__btn;
+  width: 0;
+  background-image: url("/icons/employment_toggle_icon.svg");
+  background-size: 60%;
+  background-position: 15%;
+  transform: rotate(180deg);
+}
+.header__btn_hide_down_Dark {
+  composes: header__btn_hide_down;
+  background-image: url("./icons/up-down.svg");
 }
 
 .header__form {
   background: rgba(24, 28, 39, 0.1);
+}
+.header__form_Dark {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .header__form_hide {

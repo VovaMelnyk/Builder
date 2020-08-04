@@ -4,15 +4,9 @@ import {
   DELETE_EDUCATION,
 } from "../actions/educations";
 import moment from "moment";
-import { CLEAR_RESUME } from "../../constants";
+import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
-  {
-    school: "Best school ever",
-    degree: "master",
-    start: moment()._d,
-    end: moment()._d,
-  },
 ];
 
 export default (state = initialState, action) => {
@@ -29,6 +23,8 @@ export default (state = initialState, action) => {
       return newStateDelete;
     case CLEAR_RESUME:
       return initialState;
+    case UPDATE_RESUME:
+      return action.payload.educations;
     default:
       return state;
   }

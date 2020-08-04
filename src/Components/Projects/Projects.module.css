@@ -12,3 +12,7 @@
   font-size: 16px;
   line-height: 20px;
 }
+.title_Dark {
+  composes: title;
+  color: #ffffff;
+}

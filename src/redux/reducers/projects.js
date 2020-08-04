@@ -1,12 +1,8 @@
 import { ADD_PROJECT, SET_PROJECT, DELETE_PROJECT } from "../projects/types";
-import { CLEAR_RESUME } from "../../constants";
+import { CLEAR_RESUME, UPDATE_RESUME } from "../../constants";
 
 const initialState = [
-  {
-    projectTitle: "YouTube",
-    company: "Google",
-    description: "Bla bla bla bla",
-  },
+ 
 ];
 
 export default (state = initialState, action) => {
@@ -23,6 +19,8 @@ export default (state = initialState, action) => {
       return newStateSet;
     case CLEAR_RESUME:
       return initialState;
+    case UPDATE_RESUME:
+      return action.payload.projects;
     default:
       return state;
   }

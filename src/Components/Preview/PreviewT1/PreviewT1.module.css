@@ -5,7 +5,6 @@ ul {
 .preview {
 	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.02), 1px 1px 4px rgba(0, 0, 0, 0.06),
 		1px 4px 4px rgba(0, 0, 0, 0.08);
-
 	padding: 35px 100px 35px 70px;
 	background-color: #fff;
 	width: 100%;
@@ -13,6 +12,7 @@ ul {
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+
 .preview::-webkit-scrollbar {
 	width: 10px;
 }
@@ -30,9 +30,11 @@ ul {
 .preview::-webkit-scrollbar-thumb:hover {
 	background: #7c7777;
 }
+
 .topPart {
 	margin-bottom: 20px;
 }
+
 .name {
 	font-family: "Montserrat", sans-serif;
 	font-style: normal;
@@ -120,6 +122,7 @@ ul {
 .cvInfo {
 	padding: 20px 0 0 30px;
 	width: calc(100% * (300 / 470));
+	overflow-wrap: break-word;
 }
 
 .cvInfoComponent:first-child::after {

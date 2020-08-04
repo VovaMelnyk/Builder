@@ -5,18 +5,11 @@ import {
   CHANGE_POSITION_START_DATE,
   CHANGE_POSITION_END_DATE,
   CLEAR_RESUME,
+  UPDATE_RESUME,
 } from "../../constants";
 import moment from "moment";
 
 const initialState = [
-  {
-    jobTitle: "Front end Developer",
-    employer: "Google",
-    start: moment()._d,
-    end: moment()._d,
-    city: "Kyiv",
-    description: "Bla bla bla bla",
-  },
 ];
 
 export default (state = initialState, { type, payload }) => {
@@ -44,6 +37,8 @@ export default (state = initialState, { type, payload }) => {
       );
     case CLEAR_RESUME:
       return initialState;
+    case UPDATE_RESUME:
+      return payload.employmentHistory;
     default:
       return state;
   }

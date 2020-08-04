@@ -1,4 +1,4 @@
-import { BASIC_INFO } from "../../constants";
+import { BASIC_INFO, UPDATE_RESUME } from "../../constants";
 import { CHANGE_TYPE } from "../../constants/";
 import { CLEAR_RESUME } from "../../constants";
 
@@ -15,4 +15,9 @@ export const changeType = (number) => ({
 
 export const clearResume = () => ({
   type: CLEAR_RESUME,
+});
+
+export const updateResume = (data) => ({
+  type: UPDATE_RESUME,
+  payload: data,
 });

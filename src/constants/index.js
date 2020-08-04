@@ -29,3 +29,4 @@ export const reduxUserTypes = {
 
 export const CHANGE_TYPE = "CHANGE_TYPE";
 export const CLEAR_RESUME = "CLEAR_RESUME";
+export const UPDATE_RESUME = "UPDATE_RESUME";

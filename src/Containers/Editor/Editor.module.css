@@ -1,9 +1,10 @@
 .editorWrapper {
   display: flex;
-  justify-content: space-between;
-  padding: 40px 4% 0;
+  justify-content: center;
+  padding: 40px 0 30px;
   background: #fafafa;
 }
+
 .BackgroundDark {
   background: rgba(24, 28, 39, 0.9);
   padding: 40px 4% 40px;
