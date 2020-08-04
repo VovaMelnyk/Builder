@@ -2,52 +2,59 @@ import React from "react";
 import style from "./Education.module.css";
 import EducationItem from "./EducationItem";
 import { addEducation, deleteEducation } from "../../redux/actions/educations";
-import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 import "react-datepicker/dist/react-datepicker.css";
 import AddButton from "../AddButton/AddButton";
 
 const Education = ({ educations }) => {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
+	const theme = useSelector((state) => state.theme);
 
-  const handleAddClick = () => {
-    dispatch(
-      addEducation({
-        school: "",
-        degree: "",
-        start: Date.now(),
-        end: Date.now()
-      })
-    );
-  };
+	const handleAddClick = () => {
+		dispatch(
+			addEducation({
+				school: "",
+				degree: "",
+				start: Date.now(),
+				end: Date.now(),
+			})
+		);
+	};
 
-  const handleRemoveClick = index => {
-    dispatch(deleteEducation(index));
-  };
+	const handleRemoveClick = (index) => {
+		dispatch(deleteEducation(index));
+	};
 
-  return (
-    <div className={style.wraper}>
-      <h1 className={style.title}>Education</h1>
-      <div className={style.itemsWrapper}>
-        {educations.map((el, index) => (
-          <EducationItem
-            key={index}
-            school={el.school}
-            index={index}
-            degree={el.degree}
-            start={el.start}
-            end={el.end}
-            handleRemoveClick={handleRemoveClick}
-          />
-        ))}
-      </div>
-      <AddButton onClick={handleAddClick} title={"Education"} />
-    </div>
-  );
+	return (
+		<div className={style.wraper}>
+			<h1
+				className={
+					theme === "dark" ? `${style.title} ${style.titleDark}` : style.title
+				}
+			>
+				Education
+			</h1>
+			<div className={style.itemsWrapper}>
+				{educations.map((el, index) => (
+					<EducationItem
+						key={index}
+						school={el.school}
+						index={index}
+						degree={el.degree}
+						start={el.start}
+						end={el.end}
+						handleRemoveClick={handleRemoveClick}
+					/>
+				))}
+			</div>
+			<AddButton onClick={handleAddClick} title={"Education"} />
+		</div>
+	);
 };
 
-const mapStateToProps = state => ({
-  educations: state.resume.educations
+const mapStateToProps = (state) => ({
+	educations: state.resume.educations,
 });
 
 export default connect(mapStateToProps)(Education);
